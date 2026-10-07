@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./raw/**)",
+      "Read(./private/**)",
+      "Read(**/*.docx)",
+      "Edit(./raw/**)",
+      "Edit(./private/**)"
+    ]
+  }
+}

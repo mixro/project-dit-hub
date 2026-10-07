@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#10161D" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Search past engineering final-year projects, explore the problems they tackled, and check whether your idea has been done." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- Start the first data request while the JS bundle is still downloading. -->
+    <link rel="preload" href="/data/manifest.json" as="fetch" crossorigin />
+    <title>DIT Project Hub</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This site needs JavaScript to search projects.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

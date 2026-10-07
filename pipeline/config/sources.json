@@ -1,0 +1,131 @@
+{
+  "_comment": "One entry per source document. Facts the document does not state itself are recorded here, with a note, so they can be corrected in one place.",
+  "sources": [
+    {
+      "id": "ee-2026-title-defense",
+      "file": "TITTLE_NEW_2026_EE-2.docx",
+      "layout": "title-defense-v1",
+      "institutionId": "dit",
+      "programmeId": "electrical-engineering",
+      "level": "Bachelor of Engineering",
+      "cohort": "BENG 22 EE",
+      "academicYear": "2025/2026",
+      "year": 2026,
+      "event": "title-defense",
+      "eventDate": "2026-07-01",
+      "columns": {
+        "serial": "S.NO",
+        "regNo": "REG NO",
+        "name": "NAME",
+        "title": "TITLE",
+        "remarks": "REMARKS",
+        "newTitle": "NEW TITLE"
+      },
+      "notes": "Header states DIT Electrical Engineering Department, BENG 22 EE, title defending 1 July 2026."
+    },
+    {
+      "id": "bachelor-2020-final-presentation",
+      "file": "Project_Titles_2019-2020.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "programmeId": "unknown",
+      "level": "Bachelor Degree",
+      "cohort": null,
+      "academicYear": "2019/2020",
+      "year": 2020,
+      "event": "final-presentation",
+      "eventDate": "2020-08-10",
+      "defaultDecision": {
+        "value": "accepted",
+        "provenance": "inferred",
+        "reason": "Listed for final presentation, so the title had been approved earlier."
+      },
+      "columns": {
+        "serial": "S/N",
+        "name": "NAME",
+        "title": "TITLE"
+      },
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): MUST referenced five times, Iyunga substation, Songwe airport, Mbeya bus terminal. Serial numbers 66, 68-83, 108 and 125 are missing."
+    },
+    {
+      "id": "tentative-2018",
+      "file": "Project_Titles_2017-18.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "programmeId": "unknown",
+      "level": "Bachelor Degree",
+      "cohort": null,
+      "academicYear": "2017/2018",
+      "year": 2018,
+      "event": "tentative-titles",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Tentative titles; no decisions recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "regNo": "ADM. NO.",
+        "name": "NAMES",
+        "title": "TITLE"
+      },
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): names 'Mbeya University of science and Technology', MUST library, MUST canteen, MUST computer lab, VETA Busokelo, Mbalizi. Supervisors column is empty and is never extracted. Some cells hold several alternative titles on separate lines."
+    },
+    {
+      "id": "titles-2019",
+      "file": "Project_Titles_2018-2019.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "programmeId": "unknown",
+      "level": "Bachelor Degree",
+      "cohort": null,
+      "academicYear": "2018/2019",
+      "year": 2019,
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "serial": "#0",
+        "name": "NAME",
+        "title": "TITLE",
+        "regNo": [
+          "REG",
+          "REG.NO",
+          "REG .NO"
+        ]
+      },
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): car parking at MUST, Mbeya referral hospital, Iwambi, Ikuti, Mbeya city. Split across three tables; serial column has no header."
+    }
+  ],
+  "institutions": [
+    {
+      "id": "dit",
+      "label": "Dar es Salaam Institute of Technology"
+    },
+    {
+      "id": "unconfirmed",
+      "label": "Institution not confirmed",
+      "note": "Three documents (2017/18, 2018/19, 2019/20) contain strong evidence of being from MUST (Mbeya University of Science and Technology). Confirm before public launch."
+    }
+  ],
+  "programmes": [
+    {
+      "id": "electrical-engineering",
+      "label": "Electrical Engineering"
+    },
+    {
+      "id": "unknown",
+      "label": "Programme not recorded"
+    }
+  ],
+  "publishing": {
+    "publishRejectedTitles": true,
+    "publishSubmissionLinks": true,
+    "_note": "Both flags need DIT confirmation before a public launch."
+  }
+}

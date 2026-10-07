@@ -1,0 +1,1126 @@
+{
+  "_comment": "Patterns are Python regexes matched case-insensitively against the corrected title. Tags produced here are marked provenance='derived' in the output.",
+  "categories": [
+    {
+      "id": "agriculture",
+      "label": "Agriculture & Food",
+      "patterns": [
+        "irrigat",
+        "\\bfarm",
+        "\\bcrop",
+        "maize",
+        "poultry",
+        "\\bchick",
+        "chicken",
+        "broiler",
+        "\\begg",
+        "incubator",
+        "hatchery",
+        "aquaculture",
+        "\\bfish",
+        "sardine",
+        "tilapia",
+        "\\bseed",
+        "fertili[sz]er",
+        "fertigation",
+        "beehive",
+        "\\bsoil",
+        "greenhouse",
+        "hydroponic",
+        "cashew",
+        "cocoa",
+        "chill?i",
+        "tomato",
+        "peanut",
+        "groundnut",
+        "\\bbean",
+        "\\bpeas\\b",
+        "coffee husk",
+        "seaweed",
+        "aflatoxin",
+        "grain",
+        "\\bmilk\\b",
+        "smallholder",
+        "cultivation",
+        "plantation",
+        "drying (system|machine)",
+        "\\bdryer",
+        "vegetable",
+        "fruit",
+        "pest\\b|pests\\b|pesticide|insecticide",
+        "rodent"
+      ]
+    },
+    {
+      "id": "energy",
+      "label": "Energy & Power",
+      "patterns": [
+        "energy",
+        "power",
+        "electric(ity|al) (supply|distribution|network|consumers)",
+        "transformer",
+        "substation",
+        "\\bgrid",
+        "inverter",
+        "converter",
+        "\\bsolar",
+        "\\bwind\\b",
+        "hydro",
+        "biogas",
+        "generator",
+        "battery",
+        "charging",
+        "\\bmeter",
+        "load shedding",
+        "load (prioriti|management|control)",
+        "power factor",
+        "harmonic",
+        "voltage",
+        "relay",
+        "\\bfault",
+        "outage",
+        "tanesco",
+        "circuit breaker",
+        "\\bmccb",
+        "surge arrester",
+        "earth (leakage|resistance)",
+        "grounding",
+        "electrical (wires|cables|installation|panels|appliances|maintenance)"
+      ]
+    },
+    {
+      "id": "water",
+      "label": "Water & Sanitation",
+      "patterns": [
+        "\\bwater\\b",
+        "irrigat",
+        "desalination",
+        "reverse osmosis",
+        "sewage",
+        "septic",
+        "gray water",
+        "dawasa",
+        "chuwasa",
+        "moruwasa",
+        "dewatering",
+        "\\bpump",
+        "\\bflood"
+      ]
+    },
+    {
+      "id": "healthcare",
+      "label": "Healthcare",
+      "patterns": [
+        "patient",
+        "hospital",
+        "dispensary",
+        "health cent",
+        "medic",
+        "\\bpill",
+        "vaccine",
+        "heart ?beat",
+        "epilep",
+        "nebuli[sz]er",
+        "nerve stimulation",
+        "kidney",
+        "\\bstool",
+        "mosquito",
+        "\\btb lab",
+        "ct scan",
+        "posture",
+        "unconscious",
+        "sanitary pad",
+        "hygiene"
+      ]
+    },
+    {
+      "id": "transportation",
+      "label": "Transport & Mobility",
+      "patterns": [
+        "vehicle",
+        "\\bcar\\b",
+        "\\bbus\\b|\\bbuses\\b",
+        "railway",
+        "\\bsgr\\b",
+        "\\btrain",
+        "tazara",
+        "rail ",
+        "traffic",
+        "\\broad",
+        "ferry",
+        "airport",
+        "flight",
+        "parking",
+        "motorbike",
+        "bodaboda",
+        "motorcycle",
+        "e-bike|electric bike",
+        "tricycle",
+        "rikshaw|bajaj",
+        "tri-?ev",
+        "\\bev\\b|electric car|hybrid car",
+        "speed",
+        "headlight",
+        "driver",
+        "fuel truck",
+        "forklift",
+        "toll",
+        "passenger",
+        "boats?\\b",
+        "level crossing",
+        "brt"
+      ]
+    },
+    {
+      "id": "safety-security",
+      "label": "Safety & Security",
+      "patterns": [
+        "security",
+        "\\bsafety",
+        "\\bsafe\\b",
+        "theft",
+        "thie(f|ves)",
+        "burglar",
+        "intruder",
+        "alarm",
+        "fingerprint",
+        "authenticat",
+        "password",
+        "door lock",
+        "\\bfire",
+        "gas (leakage|detection)",
+        "poison gas",
+        "\\blpg\\b",
+        "accident",
+        "protection against",
+        "rescue",
+        "lockout",
+        "deterren",
+        "tamper",
+        "cheating",
+        "exam(ination)? (hall|room)",
+        "invigilat",
+        "child proximity",
+        "protective equipment",
+        "\\bppe\\b",
+        "helmet",
+        "emergency"
+      ]
+    },
+    {
+      "id": "mining",
+      "label": "Mining",
+      "patterns": [
+        "mining",
+        "\\bmines?\\b",
+        "\\bminers?\\b",
+        "\\bgold\\b",
+        "mineral",
+        "electrowinning",
+        "stamico",
+        "coal",
+        "salt mine"
+      ]
+    },
+    {
+      "id": "industry",
+      "label": "Industry & Manufacturing",
+      "patterns": [
+        "industr",
+        "conveyor",
+        "\\bplc\\b",
+        "\\bsilo",
+        "bottle washer",
+        "caustic",
+        "boiler",
+        "bagasse",
+        "cement",
+        "raw mill",
+        "warehouse",
+        "forklift",
+        "loading and unloading",
+        "centrifuge",
+        "welding",
+        "coil winding",
+        "sealing machine",
+        "soap",
+        "turbocharger",
+        "power plant",
+        "painting machine",
+        "sand screening",
+        "core cutter",
+        "\\bsmes\\b",
+        "fabrication",
+        "machine controller",
+        "production",
+        "paper mills",
+        "sorting (system|segment)",
+        "milling",
+        "crushing"
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Education & Training",
+      "patterns": [
+        "learning kit",
+        "training kit",
+        "teaching kit",
+        "for (hands-on )?learning",
+        "demonstration panel",
+        "training model",
+        "learning at",
+        "classroom",
+        "library",
+        "semester registration",
+        "teaching and learning",
+        "whiteboard|white board",
+        "examination"
+      ]
+    },
+    {
+      "id": "buildings",
+      "label": "Buildings & Homes",
+      "patterns": [
+        "home",
+        "house",
+        "domestic",
+        "residential",
+        "residence",
+        "building",
+        "tenant",
+        "household",
+        "air condition",
+        "\\bhvac",
+        "ventilation",
+        "\\blift\\b",
+        "\\broof",
+        "appliances",
+        "kitchen",
+        "stove",
+        "cooker",
+        "\\bdoor",
+        "\\bgate\\b",
+        "lighting|illumination|\\blamp",
+        "switching toggles",
+        "office",
+        "hostel"
+      ]
+    },
+    {
+      "id": "environment",
+      "label": "Environment & Waste",
+      "patterns": [
+        "waste",
+        "dustbin",
+        "waste bin",
+        "\\bbin\\b",
+        "recycl",
+        "compost",
+        "dumpsite",
+        "incinerat",
+        "air (quality|pollution)",
+        "pollution",
+        "noise",
+        "fumes",
+        "\\bodou?r",
+        "\\bpm 2\\.5|pm2\\.5|pm 10",
+        "\\bflood",
+        "wildlife",
+        "biodegradable"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility & Assistive Tech",
+      "patterns": [
+        "blind",
+        "visually impaired",
+        "sign language",
+        "speech impaired",
+        "paraly[sz]ed",
+        "physically disabled",
+        "wheelchair",
+        "mobility-impaired",
+        "aging",
+        "special needs",
+        "cognitive impairment",
+        "albinism"
+      ]
+    },
+    {
+      "id": "commerce",
+      "label": "Payments & Commerce",
+      "patterns": [
+        "payment",
+        "\\bfare",
+        "\\batm\\b|teller machine",
+        "vending",
+        "fuel station",
+        "shopping cart",
+        "billing",
+        "prepaid",
+        "\\bloan",
+        "tariff",
+        "minimarket",
+        "advertisement",
+        "vendors?\\b",
+        "card payment"
+      ]
+    },
+    {
+      "id": "telecom",
+      "label": "Telecommunications",
+      "patterns": [
+        "telecom",
+        "\\bbts\\b",
+        "airtel",
+        "vodacom",
+        "zantel",
+        "ttcl",
+        "data cent",
+        "server room"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "power-systems",
+      "label": "Power Systems & Protection",
+      "patterns": [
+        "transformer",
+        "substation",
+        "distribution (line|network|system|board)",
+        "transmission line",
+        "\\bgrid\\b|grid[- ]",
+        "\\brelay",
+        "load shedding",
+        "power factor",
+        "harmonic",
+        "power quality",
+        "voltage restorer",
+        "static compensator",
+        "phase (sequence|balance|load)",
+        "single phasing",
+        "three phase",
+        "3 phase",
+        "overvoltage",
+        "earth (leakage|resistance)",
+        "grounding",
+        "\\bfault",
+        "circuit breaker",
+        "\\bmccb",
+        "isolat(or|ion switch)",
+        "surge arrester",
+        "outage",
+        "line rating",
+        "neutral failure",
+        "traction power",
+        "load (prioriti|management|breaker)",
+        "power distribution"
+      ]
+    },
+    {
+      "id": "power-electronics",
+      "label": "Power Electronics",
+      "patterns": [
+        "inverter",
+        "converter",
+        "charg(er|ing)",
+        "multilevel",
+        "modulation",
+        "welding machine",
+        "\\bpwm",
+        "voltage regulator",
+        "power electronic",
+        "\\bssr\\b",
+        "induction (cooker|cape|cap)",
+        "\\bdc (injection|mini)",
+        "thyristor",
+        "hvdc",
+        "\\bups\\b",
+        "transfer switch"
+      ]
+    },
+    {
+      "id": "renewable-energy",
+      "label": "Renewable Energy",
+      "patterns": [
+        "\\bsolar",
+        "photovoltaic",
+        "\\bpv\\b",
+        "\\bwind\\b",
+        "wind-",
+        "hydro ?power|hydropower|pico-hydro",
+        "biogas",
+        "piezoelectric",
+        "thermoelectric",
+        "waste heat",
+        "energy harvesting",
+        "regenerative",
+        "sun tracking|solar tracking",
+        "health care waste",
+        "coffee husk",
+        "renewable",
+        "biomass",
+        "rice husk",
+        "solar tracker"
+      ]
+    },
+    {
+      "id": "machines-drives",
+      "label": "Electrical Machines & Drives",
+      "patterns": [
+        "\\bmotor\\b|\\bmotors\\b",
+        "generator",
+        "turbocharger",
+        "servo",
+        "brushless",
+        "braking",
+        "synchroni[sz]ation"
+      ]
+    },
+    {
+      "id": "energy-management",
+      "label": "Energy Metering & Management",
+      "patterns": [
+        "\\bmeter",
+        "submeter",
+        "energy (monitoring|consumption|management|optimi[sz]ation|use)",
+        "power monitoring",
+        "billing",
+        "tariff",
+        "prepaid",
+        "units"
+      ]
+    },
+    {
+      "id": "automation-control",
+      "label": "Automation & Control",
+      "patterns": [
+        "automat",
+        "\\bcontrol",
+        "\\bplc\\b",
+        "\\bscada",
+        "\\bhmi\\b",
+        "\\bdcs\\b",
+        "closed loop",
+        "feedback"
+      ]
+    },
+    {
+      "id": "embedded-iot",
+      "label": "Embedded Systems & IoT",
+      "patterns": [
+        "\\biot\\b|internet of things",
+        "microcontroller",
+        "arduino",
+        "\\bpic\\b",
+        "embedded",
+        "esp32",
+        "\\bgsm\\b",
+        "\\bsms\\b",
+        "lora",
+        "bluetooth",
+        "wireless",
+        "mobile phone|smart ?phone|cell phone",
+        "web based|online"
+      ]
+    },
+    {
+      "id": "instrumentation",
+      "label": "Instrumentation & Sensing",
+      "patterns": [
+        "monitor",
+        "detect",
+        "sensing",
+        "sensor",
+        "measur",
+        "analy[sz]",
+        "tachometer",
+        "checker",
+        "tester|testing",
+        "counter",
+        "level"
+      ]
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics & Mechatronics",
+      "patterns": [
+        "robot",
+        "drone",
+        "autonomous",
+        "robotic arm",
+        "line-following",
+        "machine\\b",
+        "forklift"
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "label": "AI & Machine Learning",
+      "patterns": [
+        "\\bai\\b|ai-",
+        "artificial intelligence",
+        "machine learning",
+        "image recognition",
+        "facial recognition",
+        "camera recognition",
+        "computer vision",
+        "predictive"
+      ]
+    },
+    {
+      "id": "communications",
+      "label": "Communications & Networking",
+      "patterns": [
+        "\\bgsm\\b",
+        "\\bgps\\b",
+        "\\brfid\\b",
+        "lora",
+        "\\brf\\b|radio frequency",
+        "wireless",
+        "bluetooth",
+        "\\bsms\\b",
+        "infrastructure-to-vehicle|\\bi2v\\b"
+      ]
+    }
+  ],
+  "technologies": [
+    {
+      "id": "iot",
+      "label": "IoT",
+      "patterns": [
+        "\\biot\\b|iot-|internet of things"
+      ]
+    },
+    {
+      "id": "gsm-sms",
+      "label": "GSM / SMS",
+      "patterns": [
+        "\\bgsm\\b",
+        "\\bsms\\b"
+      ]
+    },
+    {
+      "id": "gps",
+      "label": "GPS",
+      "patterns": [
+        "\\bgps\\b"
+      ]
+    },
+    {
+      "id": "rfid",
+      "label": "RFID",
+      "patterns": [
+        "\\brfid\\b",
+        "radio frequency identification"
+      ]
+    },
+    {
+      "id": "lora",
+      "label": "LoRa",
+      "patterns": [
+        "\\blora\\b"
+      ]
+    },
+    {
+      "id": "bluetooth",
+      "label": "Bluetooth",
+      "patterns": [
+        "bluetooth"
+      ]
+    },
+    {
+      "id": "rf-wireless",
+      "label": "RF / Wireless",
+      "patterns": [
+        "\\brf\\b|radio frequency",
+        "wireless"
+      ]
+    },
+    {
+      "id": "plc",
+      "label": "PLC",
+      "patterns": [
+        "\\bplc\\b",
+        "programmable logic controller"
+      ]
+    },
+    {
+      "id": "scada",
+      "label": "SCADA / HMI",
+      "patterns": [
+        "\\bscada\\b",
+        "\\bhmi\\b",
+        "\\bdcs\\b"
+      ]
+    },
+    {
+      "id": "arduino",
+      "label": "Arduino",
+      "patterns": [
+        "arduino"
+      ]
+    },
+    {
+      "id": "pic",
+      "label": "PIC microcontroller",
+      "patterns": [
+        "\\bpic\\b"
+      ]
+    },
+    {
+      "id": "microcontroller",
+      "label": "Microcontroller / Embedded",
+      "patterns": [
+        "microcontroller",
+        "embedded",
+        "microprocessor"
+      ]
+    },
+    {
+      "id": "solar-pv",
+      "label": "Solar PV",
+      "patterns": [
+        "\\bsolar",
+        "photovoltaic",
+        "\\bpv\\b"
+      ]
+    },
+    {
+      "id": "wind",
+      "label": "Wind power",
+      "patterns": [
+        "\\bwind\\b|wind-"
+      ]
+    },
+    {
+      "id": "hydro",
+      "label": "Hydropower",
+      "patterns": [
+        "hydro ?power|hydropower|pico-hydro"
+      ]
+    },
+    {
+      "id": "biogas",
+      "label": "Biogas / biomass",
+      "patterns": [
+        "biogas",
+        "coffee husk",
+        "health care waste"
+      ]
+    },
+    {
+      "id": "battery",
+      "label": "Battery systems / BMS",
+      "patterns": [
+        "battery",
+        "\\bbms\\b"
+      ]
+    },
+    {
+      "id": "inverter-converter",
+      "label": "Inverters & converters",
+      "patterns": [
+        "inverter",
+        "converter"
+      ]
+    },
+    {
+      "id": "ai",
+      "label": "Artificial intelligence",
+      "patterns": [
+        "\\bai\\b|ai-based|ai-assisted",
+        "artificial intelligence"
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "label": "Machine learning",
+      "patterns": [
+        "machine learning",
+        "predictive"
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "label": "Computer vision / camera",
+      "patterns": [
+        "camera",
+        "image recognition",
+        "facial recognition",
+        "computer vision",
+        "hololens",
+        "smart glasses"
+      ]
+    },
+    {
+      "id": "drone",
+      "label": "Drones",
+      "patterns": [
+        "drone"
+      ]
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics",
+      "patterns": [
+        "robot"
+      ]
+    },
+    {
+      "id": "ultrasonic",
+      "label": "Ultrasonic",
+      "patterns": [
+        "ultra-?sonic"
+      ]
+    },
+    {
+      "id": "uv",
+      "label": "Ultraviolet (UV)",
+      "patterns": [
+        "\\buv\\b|uv-c|ultraviolet"
+      ]
+    },
+    {
+      "id": "piezoelectric",
+      "label": "Piezoelectric",
+      "patterns": [
+        "piezo"
+      ]
+    },
+    {
+      "id": "thermoelectric",
+      "label": "Thermoelectric",
+      "patterns": [
+        "thermoelectric"
+      ]
+    },
+    {
+      "id": "biometrics",
+      "label": "Fingerprint / biometrics",
+      "patterns": [
+        "fingerprint|finger print",
+        "facial recognition",
+        "biometric"
+      ]
+    },
+    {
+      "id": "voice-audio",
+      "label": "Voice / audio",
+      "patterns": [
+        "\\bvoice",
+        "speech",
+        "\\baudio",
+        "audible",
+        "sound notification",
+        "announcement",
+        "speaking"
+      ]
+    },
+    {
+      "id": "mobile-app",
+      "label": "Mobile phone / app",
+      "patterns": [
+        "mobile phone|smart ?phone|cell phone|mobile app|mobile billing|mobile payment|android|mobilephone"
+      ]
+    },
+    {
+      "id": "web",
+      "label": "Web platform",
+      "patterns": [
+        "web based|web-based|online booking"
+      ]
+    },
+    {
+      "id": "pwm",
+      "label": "PWM control",
+      "patterns": [
+        "\\bpwm\\b"
+      ]
+    },
+    {
+      "id": "relay-ssr",
+      "label": "Relays / SSR",
+      "patterns": [
+        "\\brelays?\\b",
+        "\\bssr\\b"
+      ]
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors",
+      "patterns": [
+        "sensor",
+        "sensing"
+      ]
+    },
+    {
+      "id": "reverse-osmosis",
+      "label": "Reverse osmosis / filtration",
+      "patterns": [
+        "reverse osmosis",
+        "filtration",
+        "ion exchange"
+      ]
+    },
+    {
+      "id": "display",
+      "label": "LED / LCD display",
+      "patterns": [
+        "\\bled\\b|led-based",
+        "\\blcd\\b",
+        "digital display"
+      ]
+    },
+    {
+      "id": "infrared",
+      "label": "Infrared",
+      "patterns": [
+        "\\bir\\b|infrared"
+      ]
+    },
+    {
+      "id": "keypad-password",
+      "label": "Keypad / password",
+      "patterns": [
+        "keypad",
+        "password"
+      ]
+    },
+    {
+      "id": "zigbee",
+      "label": "ZigBee",
+      "patterns": [
+        "zigbee"
+      ]
+    },
+    {
+      "id": "thyristor",
+      "label": "Thyristors / SCR",
+      "patterns": [
+        "thyristor"
+      ]
+    },
+    {
+      "id": "analog-circuits",
+      "label": "Analog circuits (op-amp, 555)",
+      "patterns": [
+        "operational amplifier",
+        "ne555|555 timer",
+        "crystal oscillator"
+      ]
+    },
+    {
+      "id": "stepper-motor",
+      "label": "Stepper motor",
+      "patterns": [
+        "stepper motor"
+      ]
+    }
+  ],
+  "places": {
+    "_comment": "Sites, towns and organisations named in titles. These are public institutions or places, never people. Used for a 'Case-study site' filter and excluded from similarity scoring.",
+    "items": [
+      [
+        "dar-es-salaam",
+        "Dar es Salaam",
+        "dar es salaam|dar-es-salaam|mbagala|ilala|kigamboni|makumbusho|\\bdsm\\b|national stadium"
+      ],
+      [
+        "geita",
+        "Geita",
+        "geita"
+      ],
+      [
+        "iringa",
+        "Iringa",
+        "iringa|mufindi|mafinga|mtera"
+      ],
+      [
+        "mara",
+        "Mara",
+        "\\bmara\\b"
+      ],
+      [
+        "dodoma",
+        "Dodoma",
+        "dodoma|mzakwe|mvumi"
+      ],
+      [
+        "zanzibar",
+        "Zanzibar",
+        "zanzibar"
+      ],
+      [
+        "kigoma",
+        "Kigoma",
+        "kigoma|kasulu|uvinza"
+      ],
+      [
+        "rukwa",
+        "Rukwa",
+        "rukwa|sumbawanga|nkasi"
+      ],
+      [
+        "mbeya",
+        "Mbeya",
+        "mbeya|iyunga|chunya|busokelo|rungwe|mwakibete|mwanjelwa|mbalizi|kyela|iwambi|ikuti|kitete|uyole|mbeya cement"
+      ],
+      [
+        "songwe",
+        "Songwe",
+        "songwe|mbozi|vwawa|songwe industrial"
+      ],
+      [
+        "kilimanjaro",
+        "Kilimanjaro",
+        "kilimanjaro|rombo"
+      ],
+      [
+        "singida",
+        "Singida",
+        "singida"
+      ],
+      [
+        "songea",
+        "Ruvuma",
+        "songea|namtumbo|tunduru"
+      ],
+      [
+        "kagera",
+        "Kagera",
+        "bukoba|misenyi|kyera"
+      ],
+      [
+        "pwani",
+        "Pwani",
+        "bagamoyo|mkuranga"
+      ],
+      [
+        "mwanza",
+        "Mwanza",
+        "nansio|kishili|busega|\\bmwanza"
+      ],
+      [
+        "morogoro",
+        "Morogoro",
+        "mtibwa|mgeta|kidete|moruwasa|mkubwa sugar"
+      ],
+      [
+        "dit",
+        "DIT campus",
+        "\\bdit\\b"
+      ],
+      [
+        "must",
+        "MUST campus",
+        "\\bmust\\b"
+      ],
+      [
+        "tanesco",
+        "TANESCO",
+        "tanesco"
+      ],
+      [
+        "sgr",
+        "SGR railway",
+        "\\bsgr\\b"
+      ],
+      [
+        "tazara",
+        "TAZARA",
+        "tazara"
+      ],
+      [
+        "tpa",
+        "Tanzania Ports Authority",
+        "\\btpa\\b|ports authority"
+      ],
+      [
+        "dawasa",
+        "DAWASA",
+        "dawasa"
+      ],
+      [
+        "muhimbili",
+        "Muhimbili National Hospital",
+        "muhimbili"
+      ],
+      [
+        "katavi",
+        "Katavi",
+        "katavi"
+      ],
+      [
+        "shinyanga",
+        "Shinyanga",
+        "mwadui"
+      ],
+      [
+        "arusha",
+        "Arusha",
+        "arusha|oltrumeti"
+      ],
+      [
+        "mtwara",
+        "Mtwara",
+        "mtwara"
+      ],
+      [
+        "tanga",
+        "Tanga",
+        "bumbule"
+      ],
+      [
+        "tbl",
+        "Tanzania Breweries",
+        "\\btbl\\b|tanzania breweries|darbrew"
+      ],
+      [
+        "veta",
+        "VETA",
+        "\\bveta\\b"
+      ]
+    ]
+  },
+  "workTypes": [
+    [
+      "design",
+      "Design",
+      "design"
+    ],
+    [
+      "implementation",
+      "Implementation",
+      "implement"
+    ],
+    [
+      "fabrication",
+      "Fabrication",
+      "fabricat|prototyp"
+    ],
+    [
+      "development",
+      "Development",
+      "develop"
+    ],
+    [
+      "improvement",
+      "Improvement",
+      "improve|enhance|optimi[sz]"
+    ],
+    [
+      "analysis",
+      "Analysis",
+      "analysis|potential|performance"
+    ],
+    [
+      "learning-kit",
+      "Training kit",
+      "learning kit|training kit|teaching kit|demonstration panel|training model"
+    ]
+  ]
+}

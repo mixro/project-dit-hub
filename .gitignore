@@ -1,0 +1,10 @@
+# Personal data: never commit
+raw/
+private/
+# Build output is reproducible; commit only if you deploy from git
+__pycache__/
+node_modules/
+# Claude Code personal settings
+.claude/settings.local.json
+CLAUDE.local.md
+app/dist/

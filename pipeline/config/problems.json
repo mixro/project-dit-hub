@@ -1,0 +1,1268 @@
+{
+  "_comment": "Each problem is a general, real-world engineering problem. Descriptions describe the problem class, never a specific student's project, so nothing is invented about individual projects. A project links to every problem whose rules match its corrected title: at least one 'any' pattern, all 'requires' patterns, and no 'excludes' pattern.",
+  "problems": [
+    {
+      "id": "transformer-condition",
+      "title": "Distribution transformer failures",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Distribution transformers fail from overheating, overloading, oil degradation, oil theft and poor earthing. Failures are expensive and cause long outages, so utilities need early warning of developing faults.",
+      "requires": [
+        "transformer"
+      ],
+      "any": [
+        "oil",
+        "temperature",
+        "overheat",
+        "monitor",
+        "loading",
+        "overload",
+        "fault",
+        "gas",
+        "earth",
+        "theft",
+        "condition",
+        "protection",
+        "outage",
+        "losses",
+        "phase load",
+        "silica gel"
+      ]
+    },
+    {
+      "id": "line-fault-location",
+      "title": "Faults and remote switching on power lines and substations",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "When a fault occurs on a line or substation, crews often patrol long distances to find it and switch by hand. Remote monitoring, fault location and remote switching shorten outages.",
+      "any": [
+        "fault (detection|location|localization|diagnos)",
+        "line (fault|patrol)",
+        "transmission line",
+        "neutral failure",
+        "fault detection",
+        "power outage and fault",
+        "distance relays",
+        "faults in electrical networks",
+        "smart relay",
+        "substation monitoring",
+        "load breaker switch",
+        "fault current",
+        "circuit breaker",
+        "auto-recloser",
+        "load break switch",
+        "breakers to power transformers",
+        "overloaded line",
+        "blown ?up fuses",
+        "conductor temperature",
+        "underground cable",
+        "buried cables",
+        "lightning arrester",
+        "synchroni[sz]ation failure",
+        "distribution network analysis",
+        "blackout",
+        "switch gears",
+        "power outages",
+        "pole bending",
+        "electrical pole",
+        "lightning arresters? on distribution"
+      ],
+      "excludes": [
+        "motor",
+        "transformer oil",
+        "street ?light"
+      ]
+    },
+    {
+      "id": "outage-notification",
+      "title": "Customers unaware of power outages",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Consumers and utilities often learn about outages late. Automatic outage alerts improve response times and customer communication.",
+      "any": [
+        "outage",
+        "power failure"
+      ]
+    },
+    {
+      "id": "load-management",
+      "title": "Managing limited power with load shedding and prioritisation",
+      "categoryIds": [
+        "energy",
+        "buildings"
+      ],
+      "description": "When supply or backup capacity is limited, essential loads must keep running while non-critical loads are shed. Doing this manually is slow and error-prone.",
+      "any": [
+        "load shedding",
+        "load prioriti",
+        "load management",
+        "non ?critical loads",
+        "load control",
+        "isolation switch for noncritical",
+        "load sharing",
+        "peak load",
+        "peak and normal"
+      ]
+    },
+    {
+      "id": "power-quality",
+      "title": "Poor power quality: power factor, harmonics and voltage problems",
+      "categoryIds": [
+        "energy",
+        "industry"
+      ],
+      "description": "Low power factor, harmonics, voltage sags, phase imbalance and wrong phase sequence waste energy, raise bills and damage equipment, especially in industry.",
+      "any": [
+        "power factor",
+        "harmonic",
+        "power quality",
+        "voltage restorer",
+        "static compensator",
+        "voltage regulator",
+        "phase sequence",
+        "single phasing",
+        "phase balance",
+        "overvoltage",
+        "auto selection of any available phase",
+        "line rating",
+        "over ?voltage",
+        "under ?voltage",
+        "voltage profile",
+        "voltage regulation",
+        "auto-phase changer",
+        "capacitor banks",
+        "reactive power",
+        "voltage variation",
+        "load balance"
+      ]
+    },
+    {
+      "id": "energy-metering",
+      "title": "Fair, accurate electricity metering and billing",
+      "categoryIds": [
+        "energy",
+        "commerce",
+        "buildings"
+      ],
+      "description": "Shared meters in multi-tenant buildings, tampering, credit management and unclear consumption make electricity billing unfair or inaccurate.",
+      "any": [
+        "energy meter",
+        "submeter",
+        "electricity meter",
+        "prepa(id|yment).*(meter|energy|electric)",
+        "multi-tenant electricity",
+        "tariff",
+        "sharing (electricity )?units",
+        "energy billing",
+        "meter separator",
+        "pre-?paid meters",
+        "meters for electric bills",
+        "power meter billing",
+        "electric bills",
+        "renters and landlord",
+        "meter tampering",
+        "energy meter",
+        "tariff calculation",
+        "talking energy meter"
+      ],
+      "excludes": [
+        "water meter",
+        "water billing",
+        "water supply",
+        "water meter"
+      ]
+    },
+    {
+      "id": "energy-consumption",
+      "title": "High and invisible energy consumption",
+      "categoryIds": [
+        "energy",
+        "buildings"
+      ],
+      "description": "Homes, offices and facilities rarely see where their energy goes. Monitoring and automatic control help reduce waste and cost.",
+      "any": [
+        "energy (monitoring|consumption|optimi[sz]ation|use)",
+        "power monitoring",
+        "reducing energy consumption",
+        "energy efficient",
+        "intelligent distribution board",
+        "electronic distribution board",
+        "electrical load control",
+        "control and monitoring of electrical energy",
+        "energy saving",
+        "energy saver",
+        "power saving",
+        "power wastage",
+        "power management",
+        "running without load",
+        "energy losses",
+        "displays current, power and voltage"
+      ]
+    },
+    {
+      "id": "renewable-generation",
+      "title": "Energy access from renewable and waste sources",
+      "categoryIds": [
+        "energy",
+        "environment"
+      ],
+      "description": "Off-grid and unreliable-grid areas need affordable local generation. Solar, wind, hydro, biomass and energy harvesting can supply or supplement power.",
+      "any": [
+        "sun tracking",
+        "solar tracking",
+        "energy harvesting",
+        "power generation",
+        "generation of electricity",
+        "hybrid power system",
+        "hybrid renewable",
+        "pico-hydro",
+        "piezoelectric",
+        "thermoelectric",
+        "waste heat",
+        "energy recovery",
+        "energy potential",
+        "biogas plant",
+        "hydro ?power plant",
+        "coffee husk",
+        "solar pv and",
+        "mobile phone charging by using solar",
+        "biomass",
+        "rice husk",
+        "sound energy",
+        "electromagnetic waves",
+        "wireless power transfer",
+        "electricity harvesting",
+        "self running energy",
+        "solar tracker",
+        "solar energy powered",
+        "dc motors for rural",
+        "alternator driven",
+        "generator for home",
+        "diesel-solar",
+        "mobisol",
+        "footstep power"
+      ]
+    },
+    {
+      "id": "backup-power",
+      "title": "Reliable backup power and source switching",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Grid interruptions force switching between grid, generator, solar and batteries. Slow or unsafe changeover disrupts sensitive loads such as hospitals and data centres.",
+      "any": [
+        "backup",
+        "changeover",
+        "power switching",
+        "three source",
+        "synchroni[sz]ation of generators",
+        "available phase",
+        "isolator reset",
+        "transfer switch",
+        "\\bups\\b",
+        "back ?up",
+        "three different sources",
+        "power break",
+        "switching of power supply",
+        "switching electronic circuit of solar and electrical",
+        "emergency power",
+        "emergency lighting"
+      ]
+    },
+    {
+      "id": "generator-fuel",
+      "title": "Fuel losses: consumption, theft, leakage and contamination",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Generator sites, fuel stations and transport fleets lose money through inefficient running, theft, leaks and contaminated fuel.",
+      "any": [
+        "generator.*fuel",
+        "fuel consumption",
+        "fuel and power outage",
+        "generator parameters",
+        "diesel fuel contamination",
+        "fuel storage tank",
+        "fuel leakage",
+        "oil leakage detection",
+        "petrol station",
+        "genset",
+        "heavy fuel oil",
+        "fuel level",
+        "fuel theft",
+        "alternator to the busbar",
+        "synchronous generator",
+        "fuel consumption rate"
+      ]
+    },
+    {
+      "id": "power-conversion",
+      "title": "Efficient power conversion for solar, batteries and drives",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Solar systems, batteries, motors and chargers depend on inverters and converters. Their efficiency, protection and control determine how well the whole system performs.",
+      "any": [
+        "inverter",
+        "converter",
+        "modulation technique",
+        "multilevel",
+        "welding machine",
+        "charging process",
+        "battery charger",
+        "storage battery"
+      ]
+    },
+    {
+      "id": "ev-charging",
+      "title": "Charging and managing electric vehicles",
+      "categoryIds": [
+        "energy",
+        "transportation"
+      ],
+      "description": "Electric bikes, tricycles and cars are growing in Tanzania, but charging infrastructure, battery management and charging billing are still limited.",
+      "any": [
+        "e-bike",
+        "electric bike",
+        "tricycle",
+        "e-motorcycle",
+        "\\bev charging",
+        "charging station",
+        "bajaj",
+        "rikshaw",
+        "tri-?ev",
+        "hybrid car",
+        "48v"
+      ]
+    },
+    {
+      "id": "electrical-safety",
+      "title": "Electrical installation safety",
+      "categoryIds": [
+        "safety-security",
+        "energy",
+        "buildings"
+      ],
+      "description": "Faulty wiring, fake cables, poor earthing, lightning surges and unsafe maintenance cause shocks, fires and equipment damage.",
+      "any": [
+        "earth leakage",
+        "electrical safety",
+        "lockout",
+        "electrical panels",
+        "voltage detector",
+        "fake electrical wires",
+        "purity of electrical cables",
+        "\\bmccb",
+        "surge arrester",
+        "earth resistance",
+        "grounding resistance",
+        "earth quality",
+        "circuit breaker control",
+        "home electrical safety",
+        "electrical wiring",
+        "electric fence"
+      ]
+    },
+    {
+      "id": "motor-maintenance",
+      "title": "Equipment and motor breakdowns",
+      "categoryIds": [
+        "industry",
+        "energy"
+      ],
+      "description": "Motors and industrial equipment fail from overload, vibration, overheating and phase problems. Without condition monitoring and planned maintenance, breakdowns cause costly downtime.",
+      "requires": [
+        "motor|machine|maintenance|equipment|drive"
+      ],
+      "any": [
+        "predictive maintenance",
+        "fault diagnosis",
+        "condition monitoring",
+        "protection",
+        "vibration",
+        "braking",
+        "single control circuit",
+        "maintenance scheduling",
+        "overload control",
+        "cooling system",
+        "maintenance scheduling",
+        "controlled dc servo",
+        "speed control",
+        "controller",
+        "bidirectional control",
+        "overheating",
+        "phase failure",
+        "test bench",
+        "rewound",
+        "protector",
+        "temperature monitoring of motor",
+        "electric drive",
+        "washing machine",
+        "tripping mechanism",
+        "induction motor"
+      ]
+    },
+    {
+      "id": "street-lighting",
+      "title": "Faulty and wasteful street lighting",
+      "categoryIds": [
+        "energy",
+        "transportation"
+      ],
+      "description": "Street lights fail unnoticed or stay on unnecessarily, which reduces road safety and wastes energy.",
+      "any": [
+        "street ?light"
+      ]
+    },
+    {
+      "id": "water-quality",
+      "title": "Unsafe drinking and process water",
+      "categoryIds": [
+        "water",
+        "healthcare"
+      ],
+      "description": "Contaminated, salty or hard water harms health and equipment. Affordable monitoring and treatment are needed where laboratory testing is far away.",
+      "any": [
+        "water quality",
+        "filtration",
+        "purification",
+        "desalination",
+        "reverse osmosis",
+        "disinfection",
+        "hard water",
+        "ion exchange",
+        "conductivity",
+        "water treatment"
+      ]
+    },
+    {
+      "id": "water-distribution",
+      "title": "Water supply, pumping and leakage",
+      "categoryIds": [
+        "water"
+      ],
+      "description": "Utilities and buildings struggle with burst pipes, overflowing tanks, unreliable supply and inefficient pumping, which wastes water and energy.",
+      "any": [
+        "pipe burst",
+        "pressure control",
+        "water distribution",
+        "water supply",
+        "water management",
+        "level control",
+        "water pump",
+        "tank",
+        "flow detection",
+        "liquid level",
+        "dewatering",
+        "distributor system",
+        "water system leakages",
+        "water leakage",
+        "pipeline",
+        "water theft"
+      ],
+      "excludes": [
+        "fuel",
+        "petroleum",
+        "septic",
+        "sewage",
+        "radiator"
+      ]
+    },
+    {
+      "id": "water-billing",
+      "title": "Water metering and billing",
+      "categoryIds": [
+        "water",
+        "commerce"
+      ],
+      "description": "Shared connections and inaccurate meters make water billing unfair, and air in pipes can make meters read wrongly.",
+      "any": [
+        "water meter",
+        "water billing",
+        "pre-?paid water",
+        "air interference",
+        "water buying",
+        "prepaid water",
+        "water meter"
+      ]
+    },
+    {
+      "id": "irrigation",
+      "title": "Inefficient irrigation water use",
+      "categoryIds": [
+        "agriculture",
+        "water"
+      ],
+      "description": "Manual irrigation wastes water and labour and gives crops uneven moisture. Automatic, sensor-driven and solar-powered irrigation can improve yields.",
+      "any": [
+        "irrigat",
+        "fertigation",
+        "\\bwatering",
+        "plant moisture",
+        "submersible pump",
+        "irrigation water pump",
+        "waters? (the )?(crops|plants|farm)",
+        "soil moisture",
+        "water(ing)? (the )?crops"
+      ]
+    },
+    {
+      "id": "sanitation",
+      "title": "Sanitation, sewage and wastewater",
+      "categoryIds": [
+        "water",
+        "environment",
+        "healthcare"
+      ],
+      "description": "Overflowing septic tanks, poor toilet hygiene and wasted grey water create health risks and lost resources.",
+      "any": [
+        "sewage",
+        "septic",
+        "gray water",
+        "grey water",
+        "hygiene",
+        "sanitary",
+        "toilet"
+      ]
+    },
+    {
+      "id": "postharvest-losses",
+      "title": "Post-harvest losses: drying and storage",
+      "categoryIds": [
+        "agriculture"
+      ],
+      "description": "Crops, fish and fruit spoil quickly without good drying, cooling and storage. Smallholders lose a large share of their harvest after it leaves the field.",
+      "any": [
+        "drying",
+        "dryer",
+        "cold storage",
+        "preservation",
+        "aflatoxin",
+        "refrigerat",
+        "grains store",
+        "drying lines"
+      ]
+    },
+    {
+      "id": "livestock-poultry",
+      "title": "Livestock, poultry and aquaculture management",
+      "categoryIds": [
+        "agriculture"
+      ],
+      "description": "Poultry, fish and bee farmers need stable temperature, humidity, water quality and disease control. Manual care is labour-intensive and losses are high.",
+      "any": [
+        "poultry",
+        "\\bchick",
+        "chicken",
+        "broiler",
+        "incubator",
+        "hatchery",
+        "aquaculture",
+        "beehive",
+        "milk",
+        "tilapia",
+        "chicken vaccinator",
+        "chick feeder",
+        "poultry drinker",
+        "chicks yard",
+        "egg incubator",
+        "home incubator",
+        "poultry farming"
+      ]
+    },
+    {
+      "id": "pest-wildlife",
+      "title": "Protecting crops, stores and homes from pests and animals",
+      "categoryIds": [
+        "agriculture",
+        "healthcare"
+      ],
+      "description": "Rodents, insects, mosquitoes, birds of prey and wild animals destroy crops and stores and spread disease.",
+      "any": [
+        "rodent",
+        "pest",
+        "insecticide",
+        "mosquito",
+        "hippopotamus",
+        "monkey",
+        "hawk",
+        "lizard",
+        "grubs",
+        "deterren",
+        "\\bbird",
+        "flies",
+        "animals intrusion",
+        "trespassing animals",
+        "cattle",
+        "repellent",
+        "scaring"
+      ]
+    },
+    {
+      "id": "crop-soil",
+      "title": "Soil fertility and crop monitoring",
+      "categoryIds": [
+        "agriculture"
+      ],
+      "description": "Farmers often apply fertiliser and plant without knowing soil nutrients, moisture or growing conditions, which lowers yields and wastes inputs.",
+      "any": [
+        "\\bsoil",
+        "fertili[sz]er",
+        "nutrient",
+        "greenhouse",
+        "hydroponic",
+        "seed sowing",
+        "cultivation and seeding",
+        "crop monitoring",
+        "fertility",
+        "weeds",
+        "spray pump|sprayer|fumigation",
+        "grass cutter",
+        "aquaponics"
+      ]
+    },
+    {
+      "id": "agro-processing",
+      "title": "Mechanising small-scale food processing",
+      "categoryIds": [
+        "agriculture",
+        "industry"
+      ],
+      "description": "Peeling, roasting, milling, sorting and cutting are often done by hand, which is slow, inconsistent and unhygienic.",
+      "any": [
+        "peeling",
+        "roasting",
+        "milling system",
+        "sorting system separating",
+        "fruit isolation",
+        "vegetables cutting",
+        "descaling",
+        "seed extractor",
+        "seaweed harvesting",
+        "feather removal",
+        "cashew",
+        "groundnuts vending",
+        "coffee burner",
+        "sunflower"
+      ]
+    },
+    {
+      "id": "patient-care",
+      "title": "Patient monitoring and medication adherence",
+      "categoryIds": [
+        "healthcare"
+      ],
+      "description": "Understaffed facilities and home-based patients need help with vital-sign monitoring, medication reminders and safe handling of samples and medicines.",
+      "any": [
+        "patient",
+        "medicine",
+        "pill",
+        "heart ?beat",
+        "epilep",
+        "nebuli[sz]er",
+        "nerve stimulation",
+        "kidney",
+        "vaccine",
+        "stool",
+        "medical supply",
+        "hospital floor",
+        "posture",
+        "tb lab",
+        "ward emergency",
+        "electrocardiograph|\\becg\\b",
+        "tele ?health",
+        "infusion",
+        "blood warmer",
+        "home-care bed",
+        "hoist for paralytic",
+        "premature bab",
+        "heart rate",
+        "incubator by using solar"
+      ]
+    },
+    {
+      "id": "assistive-tech",
+      "title": "Independence for people with disabilities",
+      "categoryIds": [
+        "accessibility",
+        "healthcare"
+      ],
+      "description": "People with visual, hearing, speech or mobility impairments face barriers in moving, communicating and voting independently.",
+      "any": [
+        "blind",
+        "visually impaired",
+        "sign language",
+        "speech impaired",
+        "paraly[sz]ed",
+        "physically disabled",
+        "wheelchair",
+        "mobility-impaired",
+        "aging",
+        "special needs",
+        "cognitive impairment",
+        "albinism",
+        "visual impaired",
+        "physically challenged",
+        "blindness"
+      ]
+    },
+    {
+      "id": "road-safety",
+      "title": "Road accidents and driver behaviour",
+      "categoryIds": [
+        "transportation",
+        "safety-security"
+      ],
+      "description": "Speeding, drunk or drowsy driving, glare, poor pedestrian crossings and slow emergency response contribute to road deaths.",
+      "any": [
+        "speed",
+        "accident",
+        "headlight",
+        "seat belt",
+        "alcohol",
+        "sleepiness",
+        "traffic",
+        "red light",
+        "pedestrian",
+        "zebra",
+        "level crossing",
+        "bump",
+        "road curve",
+        "emergency vehicle",
+        "license authentication",
+        "automobile braking",
+        "vehicle.*braking",
+        "overloaded (car|buses|vehicle)",
+        "overload in heavy duty",
+        "over ?weight",
+        "sleep sensing",
+        "weighbridge",
+        "bridge traffic",
+        "drunk",
+        "head-on collision",
+        "bicycle",
+        "driver fatigue",
+        "seatbelt|seat belt",
+        "railway gate",
+        "pedestrian cross"
+      ]
+    },
+    {
+      "id": "railway-safety",
+      "title": "Railway safety and reliability",
+      "categoryIds": [
+        "transportation",
+        "safety-security"
+      ],
+      "description": "Rail networks, including the new SGR, need reliable track, signalling, crossing and traction-power monitoring to prevent derailments and delays.",
+      "any": [
+        "railway",
+        "\\bsgr\\b",
+        "\\btrain",
+        "tazara",
+        "rail transportation",
+        "locomotive"
+      ]
+    },
+    {
+      "id": "vehicle-security",
+      "title": "Vehicle theft, tracking and condition",
+      "categoryIds": [
+        "transportation",
+        "safety-security"
+      ],
+      "description": "Vehicle owners need protection against theft and early warning of faults such as low fuel, overheating and missed maintenance.",
+      "any": [
+        "vehicle tracking",
+        "car security",
+        "ignition",
+        "car theft",
+        "car safety",
+        "motorbike",
+        "bodaboda",
+        "fuel indicator",
+        "car fault",
+        "radiator",
+        "car battery",
+        "time for maintenance",
+        "car parking security",
+        "fuel level indicator",
+        "driving specific vehicle",
+        "rain sensing wiper",
+        "car battery",
+        "vehicle starting",
+        "vehicle tracking",
+        "fuel theft",
+        "motorcycle"
+      ]
+    },
+    {
+      "id": "transport-services",
+      "title": "Parking, ticketing and passenger services",
+      "categoryIds": [
+        "transportation",
+        "commerce"
+      ],
+      "description": "Parking, ferries, buses and airports suffer from queues, overloading, manual fare collection and poor passenger information.",
+      "any": [
+        "parking",
+        "\\btoll",
+        "ferry",
+        "bus stop",
+        "passenger",
+        "baggage",
+        "check in",
+        "cargo weight",
+        "fare",
+        "ticket",
+        "revenue collecting",
+        "bus-station",
+        "announcement in a bus",
+        "luggage",
+        "train station",
+        "weighing system",
+        "route cost",
+        "marine",
+        "fishermen",
+        "buses"
+      ]
+    },
+    {
+      "id": "access-security",
+      "title": "Intrusion, theft and access control",
+      "categoryIds": [
+        "safety-security"
+      ],
+      "description": "Homes, server rooms, workshops and businesses need affordable ways to control access and detect intruders.",
+      "any": [
+        "security system",
+        "door lock",
+        "burglar",
+        "intruder",
+        "fingerprint",
+        "authentication",
+        "server room",
+        "electric fence",
+        "gate control",
+        "thie(f|ves)",
+        "theft",
+        "roll up-?doors",
+        "equipment management",
+        "child proximity",
+        "kids arrive",
+        "railway track security",
+        "security checking",
+        "child protection",
+        "surveillance",
+        "secret locking",
+        "intercom",
+        "outside the gate",
+        "trespass",
+        "distress signal",
+        "women safety",
+        "entrance control",
+        "door opener",
+        "object identification",
+        "metal detector",
+        "library.*security|security system that will detect"
+      ],
+      "excludes": [
+        "transformer oil",
+        "car theft"
+      ]
+    },
+    {
+      "id": "exam-integrity",
+      "title": "Examination cheating and identity fraud",
+      "categoryIds": [
+        "education",
+        "safety-security"
+      ],
+      "description": "Phones, impersonation and manual checks undermine fairness in examination halls.",
+      "any": [
+        "exam",
+        "noise detection and urgent calls"
+      ]
+    },
+    {
+      "id": "fire-gas",
+      "title": "Fire and hazardous gas leaks",
+      "categoryIds": [
+        "safety-security"
+      ],
+      "description": "LPG, chlorine dioxide and other gas leaks and electrical fires can cause deaths and destroy property if not detected early.",
+      "any": [
+        "\\bfire",
+        "gas leakage",
+        "gas detection",
+        "\\blpg",
+        "poison gas",
+        "clo₂|clo2",
+        "fumes",
+        "gas cylinder",
+        "smoke",
+        "fire fighting"
+      ]
+    },
+    {
+      "id": "mining-safety",
+      "title": "Safety and productivity in mining",
+      "categoryIds": [
+        "mining",
+        "safety-security"
+      ],
+      "description": "Underground and small-scale miners face gas, collapse and flooding hazards and use inefficient processing methods.",
+      "any": [
+        "mining",
+        "\\bmines?\\b",
+        "\\bminers?\\b",
+        "\\bgold\\b",
+        "electrowinning"
+      ]
+    },
+    {
+      "id": "worker-safety",
+      "title": "Worker safety on sites",
+      "categoryIds": [
+        "safety-security",
+        "industry"
+      ],
+      "description": "Construction, telecom and industrial workers face injuries when protective equipment is missing or hazards go unnoticed.",
+      "any": [
+        "protective equipment",
+        "\\bppe\\b",
+        "field engineers",
+        "safety jacket",
+        "maintenance safety",
+        "forklift",
+        "factory worker",
+        "safety of workers",
+        "excessive dust",
+        "mining workers"
+      ]
+    },
+    {
+      "id": "building-comfort",
+      "title": "Comfort and automation in buildings",
+      "categoryIds": [
+        "buildings"
+      ],
+      "description": "Air conditioning, ventilation, lighting, lifts and appliances are often manually controlled, which wastes energy and limits accessibility.",
+      "any": [
+        "air condition",
+        "\\bhvac",
+        "ventilation",
+        "\\blift\\b",
+        "retractable roof",
+        "illumination",
+        "switching toggles",
+        "home appliances",
+        "smart building",
+        "building management",
+        "kitchen gadget",
+        "ergonomic chair",
+        "smart classroom",
+        "smart home",
+        "hotel",
+        "appliances using",
+        "domestic appliances",
+        "lighting system",
+        "curtain",
+        "elevator",
+        "geyser",
+        "electric iron",
+        "sliding window",
+        "home different electrical",
+        "domestic lighting",
+        "home lighting",
+        "crib",
+        "hand wash",
+        "water tap",
+        "home automation",
+        "home appliances",
+        "appliances",
+        "lighting during",
+        "guest house"
+      ]
+    },
+    {
+      "id": "clean-cooking",
+      "title": "Affordable, clean cooking",
+      "categoryIds": [
+        "energy",
+        "buildings",
+        "environment"
+      ],
+      "description": "Charcoal and firewood cooking harms health and forests. Electric, solar and induction cooking can be cleaner if they are affordable.",
+      "any": [
+        "stove",
+        "cooker",
+        "cooking"
+      ]
+    },
+    {
+      "id": "waste-management",
+      "title": "Solid waste collection and recycling",
+      "categoryIds": [
+        "environment"
+      ],
+      "description": "Overflowing bins, unsorted waste and limited recycling create health hazards and lose recoverable materials.",
+      "any": [
+        "dustbin",
+        "waste bin",
+        "waste receptacle",
+        "\\bbin\\b",
+        "recycl",
+        "compost",
+        "dumpsite",
+        "waste management",
+        "municipal solid waste",
+        "poultry waste",
+        "post-consumer paper",
+        "incinerator",
+        "trash",
+        "eats pollution"
+      ]
+    },
+    {
+      "id": "air-noise-pollution",
+      "title": "Air and noise pollution",
+      "categoryIds": [
+        "environment",
+        "healthcare"
+      ],
+      "description": "Urban dust, vehicle emissions, kitchen fumes and noise affect health but are rarely measured locally.",
+      "any": [
+        "air quality",
+        "air pollution",
+        "noise",
+        "fumes",
+        "odou?r",
+        "pm ?2\\.5"
+      ]
+    },
+    {
+      "id": "disaster-warning",
+      "title": "Emergency response and early warning",
+      "categoryIds": [
+        "environment",
+        "safety-security"
+      ],
+      "description": "Communities need early warning of floods and severe weather, and faster emergency response when accidents happen.",
+      "any": [
+        "flood",
+        "rainfall",
+        "rescue",
+        "emergency response",
+        "rain alarm",
+        "possibility of raining",
+        "forest fire"
+      ]
+    },
+    {
+      "id": "industrial-automation",
+      "title": "Automating industrial processes",
+      "categoryIds": [
+        "industry"
+      ],
+      "description": "Factories, ports and plants still rely on manual handling, inspection and dosing, which limits throughput, consistency and safety.",
+      "any": [
+        "conveyor",
+        "\\bplc",
+        "\\bsilo",
+        "bottle washer",
+        "caustic",
+        "boiler",
+        "bagasse",
+        "raw mill",
+        "warehouse",
+        "forklift",
+        "loading and unloading",
+        "centrifuge",
+        "coil winding",
+        "sealing machine",
+        "soap cutting",
+        "turbocharger",
+        "steam power plant",
+        "painting machine",
+        "sand screening",
+        "core cutter",
+        "upvc",
+        "coal crushing",
+        "carwash",
+        "car washing",
+        "sorting segment",
+        "electric furnace",
+        "plates at",
+        "wall painter",
+        "forging|foundry|furnace",
+        "mash filter",
+        "blow moulding",
+        "stone crusher",
+        "metal removing",
+        "dust in control panels",
+        "salt water concentration",
+        "bottle filling",
+        "punching",
+        "packing system",
+        "electrolyte mixer",
+        "sugar estate",
+        "coil winding"
+      ]
+    },
+    {
+      "id": "technical-training",
+      "title": "Hands-on training equipment for technical education",
+      "categoryIds": [
+        "education"
+      ],
+      "description": "Technical institutions lack affordable laboratory kits, so students learn practical skills from theory alone.",
+      "any": [
+        "learning kit",
+        "training kit",
+        "teaching kit",
+        "for learning",
+        "demonstration panel",
+        "training model",
+        "testing kit"
+      ]
+    },
+    {
+      "id": "payments-vending",
+      "title": "Cashless payment and automated vending",
+      "categoryIds": [
+        "commerce"
+      ],
+      "description": "Cash handling, queues and manual sales slow down retail, fuel and banking services.",
+      "any": [
+        "payment",
+        "\\batm\\b|teller machine",
+        "vending",
+        "fuel station",
+        "shopping cart",
+        "loan system",
+        "expiry date",
+        "\\bcoin\\b",
+        "smart trolley",
+        "shopping mall",
+        "expiry date"
+      ]
+    },
+    {
+      "id": "campus-information",
+      "title": "Information, queues and services on campus",
+      "categoryIds": [
+        "education"
+      ],
+      "description": "Libraries, registration, notices and voting on campus often depend on manual processes and paper.",
+      "any": [
+        "library",
+        "queue",
+        "registration",
+        "advertisement",
+        "projector",
+        "substitution board",
+        "voting",
+        "white ?board",
+        "information system",
+        "mail box",
+        "measuring human height",
+        "visitor sensing",
+        "tachometer",
+        "sound regulator",
+        "loads? life cycle",
+        "file management",
+        "class master",
+        "announcement",
+        "bell ringing",
+        "lecture room",
+        "visitor counter",
+        "shift arrangement",
+        "record management",
+        "postal",
+        "boarding schools",
+        "electronic tutor",
+        "component tester",
+        "gauge meter",
+        "audio mixer",
+        "amplifier",
+        "television",
+        "body mass index",
+        "clock control",
+        "coin counting",
+        "volume of sound",
+        "library"
+      ]
+    },
+    {
+      "id": "telecom-sites",
+      "title": "Power and safety at telecom sites and data centres",
+      "categoryIds": [
+        "telecom",
+        "energy"
+      ],
+      "description": "Remote BTS towers and data centres depend on generators and batteries. Outages, fuel theft and unsafe maintenance raise costs.",
+      "any": [
+        "\\bbts\\b",
+        "airtel tower",
+        "data center",
+        "telecommunication sites",
+        "outdoor bts",
+        "airtel sites",
+        "fm radio"
+      ]
+    },
+    {
+      "id": "wildlife-conservation",
+      "title": "Wildlife monitoring and conservation",
+      "categoryIds": [
+        "environment"
+      ],
+      "description": "Parks and guides need to know where wildlife is and protect it from conflict with people and infrastructure, using limited staff over large areas.",
+      "any": [
+        "wildlife hotspot",
+        "wildlife mapping",
+        "wildlife monitoring"
+      ]
+    },
+    {
+      "id": "rural-electrification",
+      "title": "Bringing electricity to unserved villages, islands and schools",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Many villages, islands and rural institutions are far from the national grid. Extending lines, building mini-grids or using local generation each has different costs and technical limits.",
+      "any": [
+        "electrification",
+        "micro ?hydro power plant to supply",
+        "solar power light plant",
+        "mini-grid",
+        "micro-grid",
+        "rural home use"
+      ]
+    },
+    {
+      "id": "phone-signal-control",
+      "title": "Controlling phone use where it is unsafe or disruptive",
+      "categoryIds": [
+        "safety-security",
+        "education",
+        "telecom"
+      ],
+      "description": "Phones cause cheating in exams, distraction while driving and security risks in banks. Detection, muting and jamming each raise different technical and legal questions.",
+      "any": [
+        "jammer",
+        "jamming",
+        "network blocking",
+        "network coverage",
+        "audio muting",
+        "phone detector",
+        "mobile phone detection",
+        "cell phone in examination"
+      ]
+    }
+  ]
+}
