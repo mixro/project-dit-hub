@@ -12,12 +12,11 @@ export default function Home() {
   const years = core.manifest.counts.years;
   const unconfirmed = core.sources.filter((s) => s.institutionId === "unconfirmed").length;
 
-  // Problems sized by how many projects tackled them: the index *is* the data.
-  const problems = useMemo(() => {
-    const used = core.problems.filter((p) => p.projectCount > 0).sort((a, b) => a.title.localeCompare(b.title));
-    const max = Math.max(...used.map((p) => p.projectCount));
-    return used.map((p) => ({ ...p, size: p.projectCount / max > 0.5 ? 3 : p.projectCount / max > 0.2 ? 2 : 1 }));
-  }, [core.problems]);
+  // Most-worked-on problems first, so the order itself shows where past effort went.
+  const problems = useMemo(
+    () => core.problems.filter((p) => p.projectCount > 0).sort((a, b) => b.projectCount - a.projectCount || a.title.localeCompare(b.title)),
+    [core.problems],
+  );
 
   const go = (q: string) => {
     if (!q) return navigate("/projects");
@@ -51,14 +50,17 @@ export default function Home() {
 
       <section className="index" aria-labelledby="index-h">
         <h2 id="index-h">Problems students have worked on</h2>
-        <p className="muted">Larger names have more projects. Open one to see how solutions changed over the years.</p>
-        <p className="problem-index">
+        <p className="muted">Most projects first. Open one to see how solutions changed over the years.</p>
+        <ul className="problem-grid">
           {problems.map((p) => (
-            <Link key={p.id} to={`/problems/${p.id}`} className={`pi pi-${p.size}`} onClick={() => track("problem_opened", { id: p.id, from: "home-index" })}>
-              {p.title}<sup>{p.projectCount}</sup>
-            </Link>
+            <li key={p.id}>
+              <Link to={`/problems/${p.id}`} className="problem-card" onClick={() => track("problem_opened", { id: p.id, from: "home-index" })}>
+                <span className="problem-card-title">{p.title}</span>
+                <span className="problem-card-count">{p.projectCount} {p.projectCount === 1 ? "project" : "projects"}</span>
+              </Link>
+            </li>
           ))}
-        </p>
+        </ul>
       </section>
 
       {unconfirmed > 0 && (

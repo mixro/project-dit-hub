@@ -5,7 +5,7 @@
 export type EventName =
   | "search_performed" | "filter_used" | "project_opened" | "problem_opened" | "category_opened"
   | "similar_project_clicked" | "comparison_started" | "comparison_completed" | "technology_selected"
-  | "idea_checked" | "page_viewed";
+  | "idea_checked" | "page_viewed" | "menu_opened";
 
 interface LoggedEvent { t: number; name: EventName; props?: Record<string, unknown> }
 

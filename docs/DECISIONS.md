@@ -13,6 +13,12 @@ Template:
 
 ---
 
+## 2026-10-08: Home page cards, centred layout and slide-out menu
+**Context:** the user asked for a cleaner, more professional home page.
+**Decision:** problems on the home page are now an equal-size card grid sorted by project count (most first), each showing "N projects"; this replaces the size-by-count index from the 2026-10-07 UX entry. On ≥900 px the hero, search and idea box are centred. A menu icon in the top-right opens a slide-out menu from the right listing every page (adds Home, Compare, About); the bottom tab bar on phones and top links on desktop stay. New analytics event `menu_opened`.
+**Alternatives:** alphabetical cards (loses the "where effort went" signal); the menu replacing the top links or all navigation (rejected: bigger untested change before student testing).
+**Consequences:** `Home.tsx`, `Layout.tsx`, `analytics.ts`, `styles.css`. Main JS +0.5 KB gzipped, CSS +0.3 KB. Phase 2 sessions should note whether students use the menu or the tab bar (`menu_opened` vs `page_viewed`).
+
 ## 2026-10-07: Personal documents may live outside the repo
 **Decision:** `HUB_RAW_DIR` / `HUB_PRIVATE_DIR` env vars let the pipeline read Word files from outside the project; `.claude/settings.json` also denies reading `raw/`, `private/` and `*.docx`.
 **Why:** deny rules guard Claude Code's file tools, but keeping files outside the repo is the strongest protection.
