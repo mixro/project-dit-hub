@@ -60,7 +60,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <a className="skip" href="#main">Skip to content</a>
       <header className="topbar">
         <div className="wrap topbar-inner">
-          <Link to="/" className="brand" aria-label="DIT Project Hub home">
+          <Link to="/" className="brand" aria-label="INSTiWISE home">
             <img src="/logo.png" alt="" width="34" height="34" />
             <span>INSTiWISE</span>
           </Link>

@@ -45,6 +45,6 @@ export function useCore(): Core {
 
 export function useDocumentTitle(title: string) {
   useEffect(() => {
-    document.title = title ? `${title} – DIT Project Hub` : "DIT Project Hub";
+    document.title = title ? `${title} – INSTiWISE` : "INSTiWISE – Explore past final-year engineering projects";
   }, [title]);
 }
