@@ -13,6 +13,12 @@ Template:
 
 ---
 
+## 2026-10-08: Claude may read source documents; names still never published
+**Context:** the user wants to hand new title lists (Word and PDF) to Claude to process. The goal of the privacy rule was always to keep names off the website, not to keep Claude from seeing the documents.
+**Decision:** Claude may open and read source documents in `raw/`, `private/` or `HUB_RAW_DIR`. Unchanged: allow-list publishing, the privacy gate, and no names or registration numbers in `output/`, `app/`, config, reports, logs, tests or commits. Added: in chat, rows are referred to by `sourceId` + serial; source documents stay read-only (`.claude/settings.json` now denies Edit/Write there instead of Read).
+**Alternatives:** keep Claude blind to the documents and have the user describe column layouts (rejected: slow, and the user asked for the change).
+**Consequences:** `CLAUDE.md` rule 1, `.claude/settings.json`. Supersedes the read-deny part of "Personal documents may live outside the repo" (2026-10-07); keeping documents outside the repo is still allowed. Document contents are sent to Anthropic as part of the conversation when Claude reads them. PDF input still needs pipeline support (not built).
+
 ## 2026-10-08: Home page cards, centred layout and slide-out menu
 **Context:** the user asked for a cleaner, more professional home page.
 **Decision:** problems on the home page are now an equal-size card grid sorted by project count (most first), each showing "N projects"; this replaces the size-by-count index from the 2026-10-07 UX entry. On ≥900 px the hero, search and idea box are centred. A menu icon in the top-right opens a slide-out menu from the right listing every page (adds Home, Compare, About); the bottom tab bar on phones and top links on desktop stay. New analytics event `menu_opened`.

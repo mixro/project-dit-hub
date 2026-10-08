@@ -25,6 +25,8 @@ Driven by Phase 2 findings. Candidates to validate, not to build blindly:
 
 ## Phase 4: Historical data 💭
 - ❓ Get DIT title lists for 2019–2025 (most valuable data)
+- ❓ The 4 source `.docx` files are not in `raw/` on this machine (2026-10-08), so the pipeline can't rebuild until they are restored
+- 💭 PDF input for the pipeline (new lists may arrive as PDF; needs a recorded decision on the extraction library)
 - ❓ Confirm the origin of the 2017–2020 lists (likely MUST)
 - 💭 Collect short solution summaries from supervisors or students (the only honest way to fill `solutionSummary`)
 
