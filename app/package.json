@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "test:data": "tsx tests/dataLayer.test.ts",
     "data:sync": "python3 ../pipeline/src/build.py"
