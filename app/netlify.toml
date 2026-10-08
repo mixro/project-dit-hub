@@ -1,0 +1,24 @@
+# Put this file at app/netlify.toml and set Netlify "Base directory" = app.
+# With a base directory, the paths below are relative to app/.
+[build]
+  command = "npm run build"
+  publish = "dist"            # the BUILT site (app/dist), never app/ itself
+
+[build.environment]
+  NODE_VERSION = "20"         # Vite 6 needs Node 18+
+
+# SPA fallback. for deep links like /projects/p2026-...
+# Existing files (assets, data) are served first, so JS is never swapped for HTML.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
