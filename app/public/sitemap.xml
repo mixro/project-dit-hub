@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Main pages only. Project and problem pages are reached by links from these. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://instiwise-project-hub.netlify.app/</loc></url>
+  <url><loc>https://instiwise-project-hub.netlify.app/projects</loc></url>
+  <url><loc>https://instiwise-project-hub.netlify.app/problems</loc></url>
+  <url><loc>https://instiwise-project-hub.netlify.app/check</loc></url>
+  <url><loc>https://instiwise-project-hub.netlify.app/insights</loc></url>
+  <url><loc>https://instiwise-project-hub.netlify.app/about</loc></url>
+</urlset>

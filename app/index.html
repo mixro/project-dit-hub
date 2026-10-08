@@ -12,12 +12,12 @@
     <link rel="icon" href="/logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="/logo.png" />
 
-    <!-- Social previews (Open Graph: WhatsApp, Facebook, LinkedIn, Telegram). https://instiwise-project-hub.netlify.app is filled in at build time (vite.config.ts). -->
+    <!-- Social previews (Open Graph: WhatsApp, Facebook, LinkedIn, Telegram). %SITE_URL% is filled in at build time (vite.config.ts). -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="INSTiWISE" />
     <meta property="og:title" content="INSTiWISE – Explore past final-year engineering projects" />
     <meta property="og:description" content="Search past projects, explore the problems behind them, and see how close your idea is to existing work before you propose it." />
-    <meta property="og:image" content="https://instiwise-project-hub.netlify.app/og-image.png" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1201" />
     <meta property="og:image:height" content="631" />
@@ -28,11 +28,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="INSTiWISE – Explore past final-year engineering projects" />
     <meta name="twitter:description" content="Search past projects, explore the problems behind them, and see how close your idea is to existing work before you propose it." />
-    <meta name="twitter:image" content="https://instiwise-project-hub.netlify.app/og-image.png" />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
     <meta name="twitter:image:alt" content="INSTiWISE: explore past final-year engineering projects" />
 
     <script type="application/ld+json">
-      { "@context": "https://schema.org", "@type": "WebSite", "name": "INSTiWISE", "url": "https://instiwise-project-hub.netlify.app/", "description": "Search past final-year engineering projects, explore the real problems behind them, and check whether your idea has been done before." }
+      { "@context": "https://schema.org", "@type": "WebSite", "name": "INSTiWISE", "url": "%SITE_URL%/", "description": "Search past final-year engineering projects, explore the real problems behind them, and check whether your idea has been done before." }
     </script>
 
     <!-- Start the first data request while the JS bundle is still downloading. -->

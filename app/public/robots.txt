@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Raw dataset files are for the app, not for search results.
+Disallow: /data/
+
+Sitemap: https://instiwise-project-hub.netlify.app/sitemap.xml

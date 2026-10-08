@@ -11,7 +11,7 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ❓ Performance re-measured 2026-10-08: main JS is ~80 KB gzipped (not ~59 KB), so first load is likely above the ~120 KB budget; needs a look before deployment
 
 ## Phase 2: Student testing 🔜
-- 🔜 Deploy to Netlify or Vercel (base directory `app`); set `SITE_URL` to the final domain so social previews show `og-image.png`
+- 🔜 Deploy to Netlify (base directory `app`) at https://instiwise-project-hub.netlify.app. The address lives in `app/.env.production`, `public/robots.txt` and `public/sitemap.xml`; update all three if the domain changes
 - 🔜 Student testing kit: task scripts, observation sheet, session-log analysis script
 - 🔜 Run 5–8 sessions; record findings in `docs/DECISIONS.md`
 - 💭 Commit the Playwright browser checks as `app/tests/e2e`
