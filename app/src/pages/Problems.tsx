@@ -7,6 +7,9 @@ export default function Problems() {
   useDocumentTitle("Problems");
   const core = useCore();
   const [filter, setFilter] = useState("");
+  // Categories collapse to keep the page scannable; null = default (only the largest open).
+  const [open, setOpen] = useState<Set<string> | null>(null);
+  const filtering = filter.trim() !== "";
   const years = core.manifest.counts.years;
 
   // Each problem appears under its first (main) area, so the list has no duplicates.
@@ -20,9 +23,17 @@ export default function Problems() {
       map.set(cat, [...(map.get(cat) ?? []), p]);
     }
     return [...map.entries()]
-      .map(([cat, ps]) => ({ cat, label: core.label("categories", cat), problems: ps.sort((a, b) => b.projectCount - a.projectCount) }))
-      .sort((a, b) => b.problems.reduce((n, p) => n + p.projectCount, 0) - a.problems.reduce((n, p) => n + p.projectCount, 0));
+      .map(([cat, ps]) => ({ cat, label: core.label("categories", cat), problems: ps.sort((a, b) => b.projectCount - a.projectCount), projects: ps.reduce((n, p) => n + p.projectCount, 0) }))
+      .sort((a, b) => b.projects - a.projects);
   }, [core, filter]);
+
+  const isOpen = (cat: string) => (open ? open.has(cat) : cat === groups[0]?.cat);
+  const allOpen = groups.length > 0 && groups.every((g) => isOpen(g.cat));
+  const toggle = (cat: string) => {
+    const next = new Set(open ?? (groups[0] ? [groups[0].cat] : []));
+    if (next.has(cat)) next.delete(cat); else next.add(cat);
+    setOpen(next);
+  };
 
   return (
     <div className="problems-page">
@@ -33,9 +44,26 @@ export default function Problems() {
 
       {groups.length === 0 && <p className="muted">No problem matches “{filter}”. Try a shorter word.</p>}
 
+      {groups.length > 0 && (
+        <div className="pgroups-bar">
+          <p className="muted small">{groups.length} {groups.length === 1 ? "area" : "areas"}{filtering ? " match" : ". Open one to see its problems."}</p>
+          {!filtering && (
+            <button className="btn-text" onClick={() => setOpen(allOpen ? new Set() : new Set(groups.map((g) => g.cat)))}>
+              {allOpen ? "Collapse all" : "Expand all"}
+            </button>
+          )}
+        </div>
+      )}
+
       {groups.map((g) => (
-        <section key={g.cat} className="pgroup">
-          <h2>{g.label}</h2>
+        // While filtering, every matching area stays open so no result is hidden.
+        <details key={g.cat} className="pgroup" open={filtering || isOpen(g.cat)}
+          onToggle={(e) => { if (!filtering && e.currentTarget.open !== isOpen(g.cat)) toggle(g.cat); }}>
+          <summary>
+            <h2>{g.label}</h2>
+            <span className="pgroup-meta">{g.problems.length} {g.problems.length === 1 ? "problem" : "problems"} · {g.projects} projects</span>
+            <svg className="chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7.4 8.6 12 13.2l4.6-4.6L18 10l-6 6-6-6Z" fill="currentColor" /></svg>
+          </summary>
           <ul className="plist">
             {g.problems.map((p) => (
               <li key={p.id}>
@@ -52,7 +80,7 @@ export default function Problems() {
               </li>
             ))}
           </ul>
-        </section>
+        </details>
       ))}
     </div>
   );

@@ -13,6 +13,12 @@ Template:
 
 ---
 
+## 2026-10-09: Theme switch (dark default, light mode) and collapsible problem areas
+**Context:** the user asked to keep the existing dark look, add a light mode with a switch beside the menu icon, and make the problem categories collapsible.
+**Decision:** dark is the default for every visitor; a sun/moon button in the top bar switches to light, remembered on the device (`hub.theme.v1`) and applied before first paint by an inline script in `index.html`, so there is no flash. The light palette keeps the documented brand colours (paper #FBFBF9, ink #172130, green #0B6E4F) and adds soft card shadows and a faint green glow behind the home hero. The Problems page groups areas into collapsible sections: the largest open by default, "Expand all / Collapse all", and every matching area open while filtering. New analytics event `theme_changed`.
+**Alternatives:** follow the device's light/dark setting (the previous behaviour; replaced because the user wants dark as the default look).
+**Consequences:** `index.html`, `styles.css`, `lib/theme.ts`, `Layout.tsx`, `Problems.tsx`, `analytics.ts`, `app/CLAUDE.md`. Main JS +0.5 KB, CSS +0.4 KB gzipped.
+
 ## 2026-10-09: Multiple programmes, phase 1 (data foundation, programme inference, institution rules)
 **Context:** `docs/design/MULTI_PROGRAMME_DESIGN.md` phase 1, plus sections 0 and 10 and `docs/CONVERSION_NOTES.md`. Four new lists arrived (ETE, COE, ICT, UDSM).
 **Decision:**

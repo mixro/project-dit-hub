@@ -8,6 +8,7 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ✅ Performance: ~59 KB JS + 4.5 KB CSS + ~49 KB data (gzipped) on first load
 - ✅ Tests: 15 data-layer tests; 14 browser checks (run manually, scripts not yet in repo)
 - ✅ Home refresh (2026-10-08): centred desktop layout, problem card grid sorted by project count, slide-out menu
+- ✅ Theme switch (2026-10-09): dark default, light mode, collapsible problem areas
 - ❓ Performance re-measured 2026-10-08: main JS is ~80 KB gzipped (not ~59 KB), so first load is likely above the ~120 KB budget; needs a look before deployment. Multi-programme data added ~14 KB more (2026-10-09)
 
 ## Multiple programmes (design: `docs/design/MULTI_PROGRAMME_DESIGN.md`)
@@ -30,11 +31,12 @@ Driven by Phase 2 findings. Candidates to validate, not to build blindly:
 - Which filters students actually use (remove the rest)
 - Whether the problem cards or search is the main entry point
 - Whether students use the slide-out menu or the tab bar / top links
+- How many students switch to light mode (`theme_changed`); whether dark should stay the default
 - Synonyms from real search logs (including Swahili terms)
 
 ## Phase 4: Historical data 💭
 - ❓ Get DIT title lists for 2019–2025 (most valuable data)
-- ❓ The 4 source `.docx` files are not in `raw/` on this machine (2026-10-08), so the pipeline can't rebuild until they are restored
+- ✅ The 4 original EE `.docx` files are back in `raw/` (2026-10-09); the pipeline rebuilds again
 - 💭 PDF input for the pipeline (new lists may arrive as PDF; needs a recorded decision on the extraction library)
 - ❓ Confirm the origin of the 2017–2020 lists (likely MUST)
 - 💭 Collect short solution summaries from supervisors or students (the only honest way to fill `solutionSummary`)

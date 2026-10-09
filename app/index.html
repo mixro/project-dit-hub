@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -7,8 +7,17 @@
     <meta name="description" content="Search past final-year engineering projects, explore the real problems behind them, and check whether your idea has been done before. Built for DIT students." />
     <meta name="application-name" content="INSTiWISE" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#10161D" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#10161D" />
+    <!-- Apply the saved theme before first paint, so light-mode users never see a dark flash. Key matches src/lib/theme.ts. -->
+    <script>
+      (function () {
+        var t; try { t = localStorage.getItem("hub.theme.v1"); } catch (e) {}
+        if (t === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#FBFBF9");
+        }
+      })();
+    </script>
     <link rel="icon" href="/logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="/logo.png" />
 

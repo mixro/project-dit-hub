@@ -4,13 +4,13 @@ Stack: React 19, Vite, TypeScript (strict). Runtime dependencies: react and reac
 
 ## Architecture
 
-- `src/data/`: data layer. `dataClient.ts` (fetch with timeout, retries, validation, caching, lazy per-source detail shards), `projectService.ts` (the ONLY API pages use), `search.ts` (search, synonyms, idea checker using pipeline rules), `types.ts` (schema v1, mirrors pipeline output).
+- `src/data/`: data layer. `dataClient.ts` (fetch with timeout, retries, validation, caching, lazy per-source detail shards), `projectService.ts` (the ONLY API pages use), `search.ts` (search, synonyms, idea checker using pipeline rules), `types.ts` (schema v2, mirrors pipeline output).
 - `src/lib/router.tsx`: small History-API router. Filter/search state lives in URL params; filter changes use `replace`, opening a page uses `push`.
 - `src/lib/core.tsx`: loads core data once, gives `useCore()` lookups (`label()`, `byId`, `problemById`).
 - `src/lib/compare.ts`: compare selection (max 3), localStorage-backed store.
 - `src/lib/analytics.ts`: on-device event log for student testing. Event names follow spec section 28. Add a `track()` call for any new user action worth studying.
 - `src/pages/*`: lazy-loaded except Home. `src/components/*`: shared UI.
-- `src/styles.css`: single stylesheet with tokens. Light and dark mode via `prefers-color-scheme`.
+- `src/styles.css`: single stylesheet with tokens. Dark is the default; light tokens apply when `<html data-theme="light">`. `src/lib/theme.ts` switches it (top-bar button, saved as `hub.theme.v1`); the inline script in `index.html` applies the saved theme before first paint. New colours need both a light and a dark value.
 
 ## Design system
 

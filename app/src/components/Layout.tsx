@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 
 import { Link, useLocation } from "../lib/router";
 import { compareStore, useCompare } from "../lib/compare";
 import { track } from "../lib/analytics";
+import { setTheme, useTheme } from "../lib/theme";
 
 const NAV = [
   { to: "/projects", label: "Projects", icon: "M10 4a6 6 0 1 0 3.9 10.6l4.2 4.2 1.4-1.4-4.2-4.2A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" },
@@ -18,6 +19,9 @@ const MENU = [
   { to: "/about", label: "About the data" },
 ];
 
+const SUN = "M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM2 13h2a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2Zm18 0h2a1 1 0 0 0 0-2h-2a1 1 0 0 0 0 2ZM11 2v2a1 1 0 0 0 2 0V2a1 1 0 0 0-2 0Zm0 18v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-2 0ZM5.99 4.58a1 1 0 0 0-1.41 1.41l1.06 1.06a1 1 0 0 0 1.41-1.41L5.99 4.58Zm12.37 12.37a1 1 0 0 0-1.41 1.41l1.06 1.06a1 1 0 0 0 1.41-1.41l-1.06-1.06Zm1.06-10.96a1 1 0 0 0-1.41-1.41l-1.06 1.06a1 1 0 0 0 1.41 1.41l1.06-1.06ZM7.05 18.36a1 1 0 0 0-1.41-1.41l-1.06 1.06a1 1 0 0 0 1.41 1.41l1.06-1.06Z";
+const MOON = "M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1Z";
+
 function Icon({ d }: { d: string }) {
   return <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={d} fill="currentColor" /></svg>;
 }
@@ -30,6 +34,9 @@ export function Layout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuBtn = useRef<HTMLButtonElement>(null);
   const drawer = useRef<HTMLElement>(null);
+  const theme = useTheme();
+  const nextTheme = theme === "dark" ? "light" : "dark";
+  const switchTheme = () => { setTheme(nextTheme); track("theme_changed", { to: nextTheme, path }); };
 
   // Close on any navigation, including Back.
   useEffect(() => { setMenuOpen(false); }, [path]);
@@ -69,9 +76,14 @@ export function Layout({ children }: { children: ReactNode }) {
               <Link key={n.to} to={n.to} className={active(n.to) ? "active" : ""} aria-current={active(n.to) ? "page" : undefined}>{n.label}</Link>
             ))}
           </nav>
-          <button ref={menuBtn} className="menu-btn" aria-label="Open menu" aria-expanded={menuOpen} aria-controls="site-menu" onClick={openMenu}>
-            <Icon d="M3 6h18v2H3Zm0 5h18v2H3Zm0 5h18v2H3Z" />
-          </button>
+          <div className="topbar-actions">
+            <button className="icon-btn" aria-label={`Switch to ${nextTheme} mode`} title={`Switch to ${nextTheme} mode`} onClick={switchTheme}>
+              <Icon d={theme === "dark" ? SUN : MOON} />
+            </button>
+            <button ref={menuBtn} className="menu-btn" aria-label="Open menu" aria-expanded={menuOpen} aria-controls="site-menu" onClick={openMenu}>
+              <Icon d="M3 6h18v2H3Zm0 5h18v2H3Zm0 5h18v2H3Z" />
+            </button>
+          </div>
         </div>
       </header>
 
