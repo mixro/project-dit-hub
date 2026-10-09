@@ -1,0 +1,125 @@
+{
+ "_comment": "Weighted title signals for estimating this programme when a document does not state it (design doc section 10). Each entry: [regex, weight]; 3 = strong, 2 = usual, 1 = weak hint. Matched case-insensitively against the corrected title; each pattern counts once. JavaScript-compatible regex only.",
+ "signals": [
+  [
+   "antenna",
+   3
+  ],
+  [
+   "\\brf\\b|radio frequency",
+   3
+  ],
+  [
+   "signal",
+   2
+  ],
+  [
+   "telecom",
+   3
+  ],
+  [
+   "modulat",
+   3
+  ],
+  [
+   "fib(re|er) optic|optical fib",
+   3
+  ],
+  [
+   "\\bbts\\b|base station|transmission site",
+   3
+  ],
+  [
+   "transmitter|receiver|transceiver",
+   2
+  ],
+  [
+   "jammer|jamming",
+   3
+  ],
+  [
+   "\\bradio",
+   2
+  ],
+  [
+   "frequency",
+   2
+  ],
+  [
+   "wireless",
+   2
+  ],
+  [
+   "bluetooth",
+   2
+  ],
+  [
+   "lora|zigbee",
+   2
+  ],
+  [
+   "li-?fi",
+   3
+  ],
+  [
+   "wi-?fi",
+   1
+  ],
+  [
+   "communication",
+   1
+  ],
+  [
+   "cellular|mobile network|\\b(4|5)g\\b|\\blte\\b",
+   2
+  ],
+  [
+   "satellite",
+   2
+  ],
+  [
+   "metal detector",
+   2
+  ],
+  [
+   "audio",
+   2
+  ],
+  [
+   "embedded",
+   1
+  ],
+  [
+   "image processing|computer vision|anpr|number plate",
+   1
+  ],
+  [
+   "geofenc|\\bgps\\b|location tracking|beacon",
+   1
+  ],
+  [
+   "sensor|arduino|microcontroller|raspberry|gsm|rfid",
+   0.5
+  ],
+  [
+   "circuit|electronic|sensor|sensing|detector|alarm|\\bgate\\b|\\bdoor",
+   0.5
+  ],
+  [
+   "sensor network",
+   2
+  ],
+  [
+   "amplifier|oscillator|operational amplifier",
+   2
+  ],
+  [
+   "\\bgps\\b",
+   1
+  ],
+  [
+   "announcement|intercom|speaker|sound",
+   1
+  ]
+ ]
+}

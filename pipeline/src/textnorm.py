@@ -49,20 +49,17 @@ class GlueSplitter:
     """Repairs words fused by missing spaces, e.g. AUTOMATICCIRCUIT -> AUTOMATIC CIRCUIT.
 
     The vocabulary is learned from the corpus itself: a token is split only if it
-    is rare and every piece is a common word elsewhere in the titles."""
+    is rare and every piece is a common word elsewhere in the titles. Real compound
+    words it must not split go in corrections.json `keepWords`. (A system spelling
+    dictionary used to be consulted too; it made output differ between machines.)"""
 
     SHORT_OK = {"OF", "ON", "IN", "TO", "AT", "BY"}
-    HUNSPELL = "/usr/share/hunspell/en_US.dic"  # optional extra guard if installed
 
     def __init__(self, texts: list[str], keep_words: list[str], min_piece_freq: int = 2):
         from collections import Counter
-        from pathlib import Path
         self.freq = Counter(w for t in texts for w in re.findall(r"[A-Z]+", t.upper()))
         self.min = min_piece_freq
         self.keep = {w.upper() for w in keep_words}
-        dic = Path(self.HUNSPELL)
-        if dic.exists():
-            self.keep |= {l.split("/")[0].strip().upper() for l in dic.read_text(errors="ignore").splitlines()[1:] if len(l) > 6}
 
     def _ok(self, piece: str) -> bool:
         return piece in self.SHORT_OK or (len(piece) >= 3 and self.freq[piece] >= self.min)

@@ -1,0 +1,4 @@
+{
+  "_comment": "Programme-specific similarity stopwords: words so common in this programme's titles that they say nothing about similarity.",
+  "stopwords": []
+}

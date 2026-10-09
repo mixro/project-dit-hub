@@ -1,0 +1,40 @@
+{
+  "_comment": "Work types: [id, label, regex].",
+  "workTypes": [
+    [
+      "design",
+      "Design",
+      "design"
+    ],
+    [
+      "implementation",
+      "Implementation",
+      "implement"
+    ],
+    [
+      "fabrication",
+      "Fabrication",
+      "fabricat|prototyp"
+    ],
+    [
+      "development",
+      "Development",
+      "develop"
+    ],
+    [
+      "improvement",
+      "Improvement",
+      "improve|enhance|optimi[sz]"
+    ],
+    [
+      "analysis",
+      "Analysis",
+      "analysis|potential|performance"
+    ],
+    [
+      "learning-kit",
+      "Training kit",
+      "learning kit|training kit|teaching kit|demonstration panel|training model"
+    ]
+  ]
+}

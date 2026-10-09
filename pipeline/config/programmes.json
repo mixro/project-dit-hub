@@ -1,0 +1,91 @@
+{
+  "_comment": "DIT programmes (codes confirmed 2026-10-09) and award levels. Programme IDs are permanent (they appear in URLs); labels can change. Only programmes with at least one published project are published. SLT's full name is not yet confirmed. aliases map programme names as written in documents to an ID. Rules per programme live in programmes/<id>/.",
+  "levels": [
+    {
+      "id": "od",
+      "label": "Ordinary Diploma"
+    },
+    {
+      "id": "beng",
+      "label": "Bachelor of Engineering"
+    }
+  ],
+  "programmes": [
+    {
+      "id": "electrical-engineering",
+      "code": "EE",
+      "label": "Electrical Engineering",
+      "departmentId": "electrical",
+      "aliases": [
+        "EE",
+        "ELECTRICAL",
+        "ELECTRICAL ENGINEERING",
+        "BENG EE"
+      ]
+    },
+    {
+      "id": "mechanical-engineering",
+      "code": "ME",
+      "label": "Mechanical Engineering",
+      "departmentId": "mechanical",
+      "aliases": [
+        "ME",
+        "MECHANICAL",
+        "MECHANICAL ENGINEERING",
+        "BENG ME"
+      ]
+    },
+    {
+      "id": "electronics-telecommunication-engineering",
+      "code": "ETE",
+      "label": "Electronics and Telecommunication Engineering",
+      "departmentId": "electronics-telecommunication",
+      "aliases": [
+        "ETE",
+        "ELECTRONICS AND TELECOMMUNICATION",
+        "ELECTRONICS & TELECOMMUNICATION",
+        "BENG ETE"
+      ]
+    },
+    {
+      "id": "civil-engineering",
+      "code": "CE",
+      "label": "Civil Engineering",
+      "departmentId": "civil",
+      "aliases": [
+        "CE",
+        "CIVIL",
+        "CIVIL ENGINEERING",
+        "BENG CE"
+      ]
+    },
+    {
+      "id": "computer-engineering",
+      "code": "COE",
+      "label": "Computer Engineering",
+      "departmentId": "computer",
+      "aliases": [
+        "COE",
+        "COMPUTER",
+        "COMPUTER ENGINEERING",
+        "BENG COE"
+      ]
+    },
+    {
+      "id": "science-laboratory-technology",
+      "code": "SLT",
+      "label": "Science and Laboratory Technology",
+      "departmentId": "laboratory",
+      "aliases": [
+        "SLT",
+        "LABORATORY",
+        "SCIENCE AND LABORATORY TECHNOLOGY"
+      ]
+    }
+  ],
+  "inference": {
+    "_comment": "Programme estimate confidence: 'high' when the top score is >= minScore and >= dominance x the second score; otherwise 'low'. No signal at all: the source's fallbackProgrammeId, else 'unassigned'.",
+    "minScore": 3,
+    "dominance": 2
+  }
+}

@@ -387,3 +387,6 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- programme badge: text code in a neutral chip, never colour-coded ---------- */
+.prog { display: inline-flex; align-items: center; padding: 0 6px; min-height: 20px; border: 1px solid var(--rule-strong); border-radius: 4px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; color: var(--ink-2); background: var(--surface); line-height: 1; }

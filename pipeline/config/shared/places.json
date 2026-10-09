@@ -1,0 +1,165 @@
+{
+  "_comment": "Sites, towns and organisations named in titles. These are public institutions or places, never people. Used for a 'Case-study site' filter and excluded from similarity scoring.",
+  "items": [
+    [
+      "dar-es-salaam",
+      "Dar es Salaam",
+      "dar es salaam|dar-es-salaam|mbagala|ilala|kigamboni|makumbusho|\\bdsm\\b|national stadium"
+    ],
+    [
+      "geita",
+      "Geita",
+      "geita"
+    ],
+    [
+      "iringa",
+      "Iringa",
+      "iringa|mufindi|mafinga|mtera"
+    ],
+    [
+      "mara",
+      "Mara",
+      "\\bmara\\b"
+    ],
+    [
+      "dodoma",
+      "Dodoma",
+      "dodoma|mzakwe|mvumi"
+    ],
+    [
+      "zanzibar",
+      "Zanzibar",
+      "zanzibar"
+    ],
+    [
+      "kigoma",
+      "Kigoma",
+      "kigoma|kasulu|uvinza"
+    ],
+    [
+      "rukwa",
+      "Rukwa",
+      "rukwa|sumbawanga|nkasi"
+    ],
+    [
+      "mbeya",
+      "Mbeya",
+      "mbeya|iyunga|chunya|busokelo|rungwe|mwakibete|mwanjelwa|mbalizi|kyela|iwambi|ikuti|kitete|uyole|mbeya cement"
+    ],
+    [
+      "songwe",
+      "Songwe",
+      "songwe|mbozi|vwawa|songwe industrial"
+    ],
+    [
+      "kilimanjaro",
+      "Kilimanjaro",
+      "kilimanjaro|rombo"
+    ],
+    [
+      "singida",
+      "Singida",
+      "singida"
+    ],
+    [
+      "songea",
+      "Ruvuma",
+      "songea|namtumbo|tunduru"
+    ],
+    [
+      "kagera",
+      "Kagera",
+      "bukoba|misenyi|kyera"
+    ],
+    [
+      "pwani",
+      "Pwani",
+      "bagamoyo|mkuranga"
+    ],
+    [
+      "mwanza",
+      "Mwanza",
+      "nansio|kishili|busega|\\bmwanza"
+    ],
+    [
+      "morogoro",
+      "Morogoro",
+      "mtibwa|mgeta|kidete|moruwasa|mkubwa sugar"
+    ],
+    [
+      "dit",
+      "DIT campus",
+      "\\bdit\\b"
+    ],
+    [
+      "must",
+      "MUST campus",
+      "\\bmust\\b"
+    ],
+    [
+      "tanesco",
+      "TANESCO",
+      "tanesco"
+    ],
+    [
+      "sgr",
+      "SGR railway",
+      "\\bsgr\\b"
+    ],
+    [
+      "tazara",
+      "TAZARA",
+      "tazara"
+    ],
+    [
+      "tpa",
+      "Tanzania Ports Authority",
+      "\\btpa\\b|ports authority"
+    ],
+    [
+      "dawasa",
+      "DAWASA",
+      "dawasa"
+    ],
+    [
+      "muhimbili",
+      "Muhimbili National Hospital",
+      "muhimbili"
+    ],
+    [
+      "katavi",
+      "Katavi",
+      "katavi"
+    ],
+    [
+      "shinyanga",
+      "Shinyanga",
+      "mwadui"
+    ],
+    [
+      "arusha",
+      "Arusha",
+      "arusha|oltrumeti"
+    ],
+    [
+      "mtwara",
+      "Mtwara",
+      "mtwara"
+    ],
+    [
+      "tanga",
+      "Tanga",
+      "bumbule"
+    ],
+    [
+      "tbl",
+      "Tanzania Breweries",
+      "\\btbl\\b|tanzania breweries|darbrew"
+    ],
+    [
+      "veta",
+      "VETA",
+      "\\bveta\\b"
+    ]
+  ]
+}

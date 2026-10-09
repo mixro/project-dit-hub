@@ -1,0 +1,97 @@
+{
+ "_comment": "Weighted title signals for estimating this programme when a document does not state it (design doc section 10). Each entry: [regex, weight]; 3 = strong, 2 = usual, 1 = weak hint. Matched case-insensitively against the corrected title; each pattern counts once. JavaScript-compatible regex only.",
+ "signals": [
+  [
+   "concrete",
+   3
+  ],
+  [
+   "pavement",
+   3
+  ],
+  [
+   "\\broads?\\b",
+   1
+  ],
+  [
+   "geotechnical|soil stabili",
+   3
+  ],
+  [
+   "foundation",
+   2
+  ],
+  [
+   "drainage|storm ?water|culvert",
+   3
+  ],
+  [
+   "building materials?",
+   3
+  ],
+  [
+   "survey",
+   2
+  ],
+  [
+   "structural|reinforced",
+   3
+  ],
+  [
+   "\\bbeams?\\b|\\bslabs?\\b|\\bcolumns?\\b",
+   3
+  ],
+  [
+   "\\bcement",
+   3
+  ],
+  [
+   "aggregate",
+   2
+  ],
+  [
+   "asphalt|bitumen",
+   3
+  ],
+  [
+   "highway",
+   2
+  ],
+  [
+   "construction",
+   1
+  ],
+  [
+   "housing",
+   1
+  ],
+  [
+   "\\bbricks?\\b",
+   2
+  ],
+  [
+   "timber",
+   2
+  ],
+  [
+   "steel structure",
+   2
+  ],
+  [
+   "\\bbridge",
+   1
+  ],
+  [
+   "\\bdam\\b",
+   1
+  ],
+  [
+   "flood",
+   1
+  ],
+  [
+   "sewer|wastewater treatment",
+   2
+  ]
+ ]
+}

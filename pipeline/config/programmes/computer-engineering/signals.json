@@ -1,0 +1,193 @@
+{
+ "_comment": "Weighted title signals for estimating this programme when a document does not state it (design doc section 10). Each entry: [regex, weight]; 3 = strong, 2 = usual, 1 = weak hint. Matched case-insensitively against the corrected title; each pattern counts once. JavaScript-compatible regex only.",
+ "signals": [
+  [
+   "\\bweb\\b|website|web-based|web based|web portal",
+   3
+  ],
+  [
+   "mobile app|android|\\bapp\\b|application",
+   2
+  ],
+  [
+   "database",
+   2
+  ],
+  [
+   "management system|management platform",
+   2
+  ],
+  [
+   "information system",
+   3
+  ],
+  [
+   "platform",
+   2
+  ],
+  [
+   "portal",
+   3
+  ],
+  [
+   "online",
+   2
+  ],
+  [
+   "e-commerce|e-learning|e-recruit|e-residen|e-passport|e-visa",
+   2
+  ],
+  [
+   "blockchain|decentrali[sz]ed",
+   3
+  ],
+  [
+   "machine learning|deep learning|neural network",
+   3
+  ],
+  [
+   "artificial intelligence|\\bai\\b|ai-",
+   2
+  ],
+  [
+   "chatbot",
+   3
+  ],
+  [
+   "ussd",
+   3
+  ],
+  [
+   "software",
+   2
+  ],
+  [
+   "recommendation",
+   2
+  ],
+  [
+   "predict",
+   2
+  ],
+  [
+   "sentiment",
+   3
+  ],
+  [
+   "forex|trading",
+   2
+  ],
+  [
+   "inventory",
+   2
+  ],
+  [
+   "booking|reservation",
+   2
+  ],
+  [
+   "registration",
+   1
+  ],
+  [
+   "verification",
+   1
+  ],
+  [
+   "attendance",
+   1
+  ],
+  [
+   "voting|e-voting",
+   2
+  ],
+  [
+   "cyber|intrusion detection|forensic|insider threat|authentication",
+   2
+  ],
+  [
+   "digital",
+   1
+  ],
+  [
+   "tracking system|tracker",
+   1
+  ],
+  [
+   "marketplace|marketing|auction|ordering|delivery system",
+   2
+  ],
+  [
+   "qr code",
+   1
+  ],
+  [
+   "\\bsms\\b",
+   1
+  ],
+  [
+   "payroll|budget|accounting|loan|savings|microfinance|fundrais",
+   2
+  ],
+  [
+   "crowdsourc",
+   2
+  ],
+  [
+   "virtual reality|\\bvr\\b|augmented reality",
+   2
+  ],
+  [
+   "counsel",
+   1
+  ],
+  [
+   "information",
+   1
+  ],
+  [
+   "\\bdata\\b|analytics|dashboard",
+   1
+  ],
+  [
+   "recognition|detection system",
+   0.5
+  ],
+  [
+   "internet",
+   1
+  ],
+  [
+   "subtitle|translation tool",
+   2
+  ],
+  [
+   "\\bdevelop(ment|ing)?\\b",
+   1
+  ],
+  [
+   "\\bsmes?\\b|business|\\bsales\\b|tourism|heritage|rental|tenant|real estate|church|\\bschool|student|staff|employee|customer|\\btax\\b|records?\\b|document|\\bnews\\b|social|talent|travel|ticketing|library|alumni|complaint|grievance|leave\\b|hotel|restaurant|menu|shop\\b|store\\b|supermarket|pharmacy|hospital|clinic|patient record|appointment",
+   1
+  ],
+  [
+   "management system",
+   1
+  ],
+  [
+   "\\bsystem for (managing|tracking|recording)",
+   2
+  ],
+  [
+   "recogni[sz]ing|recognition",
+   0.5
+  ],
+  [
+   "timetable|scheduling",
+   3
+  ],
+  [
+   "classif|categori[sz]",
+   2
+  ]
+ ]
+}

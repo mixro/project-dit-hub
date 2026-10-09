@@ -56,7 +56,8 @@ const novel = await svc.checkIdea("quantum entanglement telescope calibration");
 check("no-match wording avoids originality claim", novel.ok && /not a judgement of originality/.test(novel.value.summary));
 
 const ins = await svc.getInsights();
-check("insights computed for all 4 years", ins.ok && ins.value.byYear.length === 4, ins.ok ? JSON.stringify(ins.value.byYear) : "");
+const yearCount = core.ok ? core.value.manifest.counts.years.length : -1;
+check("insights computed for every year in the data", ins.ok && ins.value.byYear.length === yearCount, ins.ok ? JSON.stringify(ins.value.byYear) : "");
 
 const multi = await svc.queryProjects({ text: "phone jammer" });
 check("new 2018 themes searchable", multi.ok && multi.value.items.some(p => p.year === 2018), multi.ok ? `${multi.value.total} results` : "");
@@ -66,6 +67,52 @@ if (core.ok) {
   const det = alt ? await svc.getProject(alt.id) : null;
   check("alternative titles linked to each other", !!det && det.ok && det.value.detail.relatedSubmissionIds.length === 2,
         det && det.ok ? `${det.value.detail.relatedSubmissionIds.length} linked` : "");
+}
+
+// ---- programmes (schema 2) ----
+if (core.ok) {
+  const { projects, taxonomy, sources } = core.value;
+  const progs = new Set(taxonomy.programmes.map(p => p.id));
+  const levels = new Set(taxonomy.levels.map(l => l.id));
+  const badProg = projects.filter(p =>
+    !progs.has(p.programmeId) || (p.levelId !== null && !levels.has(p.levelId)) ||
+    !["recorded", "from-source-name", "inferred-from-title"].includes(p.programmeProvenance) ||
+    (p.programmeProvenance === "inferred-from-title") !== (p.programmeConfidence !== undefined));
+  check("every project has a known programme, level and programme provenance", badProg.length === 0, `${badProg.length} invalid`);
+
+  const ee = ["ee-2026-title-defense", "bachelor-2020-final-presentation", "tentative-2018", "titles-2019"];
+  check("the four original sources are Electrical Engineering",
+        ee.every(id => sources.find(s => s.id === id)?.programmeId === "electrical-engineering") &&
+        projects.filter(p => ee.includes(p.sourceId)).every(p => p.programmeId === "electrical-engineering" && p.programmeProvenance === "recorded"));
+
+  check("only programmes with projects are published", taxonomy.programmes.every(g => projects.some(p => p.programmeId === g.id)),
+        taxonomy.programmes.map(g => g.code).join(", "));
+
+  const byId = new Map(projects.map(p => [p.id, p]));
+  const sample = projects.filter((_, i) => i % 25 === 0);
+  let splitOk = true;
+  for (const s of sample) {
+    const det = await svc.getProject(s.id);
+    if (!det.ok) { splitOk = false; break; }
+    const { sameProgramme, otherProgrammes } = det.value.detail.similar;
+    splitOk &&= sameProgramme.length <= 6 && otherProgrammes.length <= 3 &&
+      sameProgramme.every(x => byId.get(x.id)?.programmeId === s.programmeId) &&
+      otherProgrammes.every(x => byId.has(x.id) && byId.get(x.id)!.programmeId !== s.programmeId);
+  }
+  check("similar projects are split into same and other programmes", splitOk, `${sample.length} projects checked`);
+
+  check("unpublished sources (UDSM) are absent from public data",
+        !sources.some(s => s.id === "udsm-fyp-portal") && !projects.some(p => p.institutionId === "udsm" || p.sourceId === "udsm-fyp-portal"));
+
+  const ict = projects.filter(p => p.sourceId === "ict-2025-title-list");
+  const coe = projects.filter(p => p.sourceId === "coe-beng21-title-list");
+  check("estimated programmes are labelled as estimates",
+        ict.length > 0 && ict.every(p => p.programmeProvenance === "inferred-from-title" && !!p.programmeConfidence) &&
+        coe.every(p => p.programmeProvenance === "from-source-name" && p.programmeId === "computer-engineering"),
+        `${ict.length} ICT estimated`);
+
+  const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  check("group projects with identical titles are one project (COE)", new Set(coe.map(p => norm(p.title))).size === coe.length, `${coe.length} COE projects`);
 }
 
 // ---- failure modes ----

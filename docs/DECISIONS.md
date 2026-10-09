@@ -13,6 +13,25 @@ Template:
 
 ---
 
+## 2026-10-09: Multiple programmes, phase 1 (data foundation, programme inference, institution rules)
+**Context:** `docs/design/MULTI_PROGRAMME_DESIGN.md` phase 1, plus sections 0 and 10 and `docs/CONVERSION_NOTES.md`. Four new lists arrived (ETE, COE, ICT, UDSM).
+**Decision:**
+- Config split into `pipeline/config/shared/` and `programmes/<id>/`, with a programme catalogue in `programmes.json`. A project is tagged with shared rules plus its own programme's rules; its programme's problems are listed first. Verified with only EE data: identical IDs, tags, decisions and similar projects (`compare_outputs.py`); 5 projects show a different first problem.
+- The four original sources are EE, level `beng` (user, 2026-10-09). One programme per project (no joint-programme projects). Data schema 2: `levelId`, `programmeProvenance`, `programmeConfidence`, similar projects split into same / other programmes (shown as one list until phase 4).
+- Programme inference from titles for sources with `programmeId: "infer"`: weighted signals per programme, `high`/`low` confidence, the source's fallback wins ties and covers titles with no signal, user corrections in `programme_overrides.json`. Calibration on 930 known titles: 81% overall (EE 88%, COE 75%, ETE 13%), below the design's 90% target. ETE titles read like EE titles; that is a limit of title-only inference, not a missing word list.
+- Institution as stated or `unconfirmed`. ETE = DIT; COE and ICT = unconfirmed; UDSM = `udsm`, processed but `publish: false`, so it is in no public file, similarity list or search vocabulary.
+- Not stated stays unknown: ICT and UDSM level `null`; UDSM year `null`; COE year 2024/25 marked `yearProvenance: "inferred"`; ICT event "Title list" (header does not say title defence).
+- Group projects: identical titles from different students in one source merge only when the source sets `mergeGroupTitles` (COE: 3 merges).
+- Published on the site with labels: programme code badge on rows, idea-check results and similar projects; "Programme" and "Level" on the project page with "(estimated from the title)"; Programme filter (`?prog=`).
+- Build fixes found on the way: the optional system spelling dictionary made output machine-dependent (removed; CHANGEOVER, PREPAYMENT, CARWASH, LOCKOUT added to `keepWords`); words with an explicit spelling fix are never split automatically; the privacy gate now also scans `reports/`.
+**Alternatives:** keep new lists unpublished until the scope UX (rejected: user chose to publish with labels); publish UDSM hidden in the UI (rejected: it would shift DIT similarity scores and leak into data files); merge group titles in every list (rejected: could change EE data).
+**Consequences:** first-load data +14 KB gzipped (project index 54 KB). ETE/COE/ICT are mostly unclassified (ETE 40%, COE 75%, ICT 78%) until their rules are written (phase 2). 24 ICT estimates are low-confidence and listed in the quality report for review.
+
+## 2026-10-09: Document workflow adopted from the multi-programme design (section 9)
+**Context:** `docs/design/MULTI_PROGRAMME_DESIGN.md` section 9 sets the wording for how Claude Code processes documents.
+**Decision:** root `CLAUDE.md` rule 1 now uses the design's wording, plus "never modify source documents" and the pre-commit `git status` check. `pipeline/CLAUDE.md` gains the per-document procedure. `.claude/settings.json` already matched (Read denies removed 2026-10-08; Edit and Write denies on `raw/` and `private/` kept). `.gitignore` already ignores `raw/` and `private/`.
+**Consequences:** `inspect_doc.py` and `docs/ADDING_DOCUMENTS.md`, both referenced by the design, do not exist yet; the procedure says so. Supersedes the 2026-10-08 rule wording below.
+
 ## 2026-10-08: Claude may read source documents; names still never published
 **Context:** the user wants to hand new title lists (Word and PDF) to Claude to process. The goal of the privacy rule was always to keep names off the website, not to keep Claude from seeing the documents.
 **Decision:** Claude may open and read source documents in `raw/`, `private/` or `HUB_RAW_DIR`. Unchanged: allow-list publishing, the privacy gate, and no names or registration numbers in `output/`, `app/`, config, reports, logs, tests or commits. Added: in chat, rows are referred to by `sourceId` + serial; source documents stay read-only (`.claude/settings.json` now denies Edit/Write there instead of Read).

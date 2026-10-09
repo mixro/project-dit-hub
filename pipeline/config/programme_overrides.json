@@ -1,0 +1,4 @@
+{
+  "_comment": "Corrections to estimated programmes: { \"<projectId>\": \"<programmeId>\" }. Wins over inference and survives rebuilds. Use IDs from reports/quality-report.json.",
+  "overrides": {}
+}

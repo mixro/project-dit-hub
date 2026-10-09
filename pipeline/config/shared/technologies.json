@@ -1,0 +1,379 @@
+{
+  "_comment": "Technologies. programmeIds lists the programmes a technology is relevant to; empty means all.",
+  "technologies": [
+    {
+      "id": "iot",
+      "label": "IoT",
+      "patterns": [
+        "\\biot\\b|iot-|internet of things"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "gsm-sms",
+      "label": "GSM / SMS",
+      "patterns": [
+        "\\bgsm\\b",
+        "\\bsms\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "gps",
+      "label": "GPS",
+      "patterns": [
+        "\\bgps\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "rfid",
+      "label": "RFID",
+      "patterns": [
+        "\\brfid\\b",
+        "radio frequency identification"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "lora",
+      "label": "LoRa",
+      "patterns": [
+        "\\blora\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "bluetooth",
+      "label": "Bluetooth",
+      "patterns": [
+        "bluetooth"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "rf-wireless",
+      "label": "RF / Wireless",
+      "patterns": [
+        "\\brf\\b|radio frequency",
+        "wireless"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "plc",
+      "label": "PLC",
+      "patterns": [
+        "\\bplc\\b",
+        "programmable logic controller"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "scada",
+      "label": "SCADA / HMI",
+      "patterns": [
+        "\\bscada\\b",
+        "\\bhmi\\b",
+        "\\bdcs\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "arduino",
+      "label": "Arduino",
+      "patterns": [
+        "arduino"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "pic",
+      "label": "PIC microcontroller",
+      "patterns": [
+        "\\bpic\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "microcontroller",
+      "label": "Microcontroller / Embedded",
+      "patterns": [
+        "microcontroller",
+        "embedded",
+        "microprocessor"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "solar-pv",
+      "label": "Solar PV",
+      "patterns": [
+        "\\bsolar",
+        "photovoltaic",
+        "\\bpv\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "wind",
+      "label": "Wind power",
+      "patterns": [
+        "\\bwind\\b|wind-"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "hydro",
+      "label": "Hydropower",
+      "patterns": [
+        "hydro ?power|hydropower|pico-hydro"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "biogas",
+      "label": "Biogas / biomass",
+      "patterns": [
+        "biogas",
+        "coffee husk",
+        "health care waste"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "battery",
+      "label": "Battery systems / BMS",
+      "patterns": [
+        "battery",
+        "\\bbms\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "inverter-converter",
+      "label": "Inverters & converters",
+      "patterns": [
+        "inverter",
+        "converter"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "ai",
+      "label": "Artificial intelligence",
+      "patterns": [
+        "\\bai\\b|ai-based|ai-assisted",
+        "artificial intelligence"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "machine-learning",
+      "label": "Machine learning",
+      "patterns": [
+        "machine learning",
+        "predictive"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "computer-vision",
+      "label": "Computer vision / camera",
+      "patterns": [
+        "camera",
+        "image recognition",
+        "facial recognition",
+        "computer vision",
+        "hololens",
+        "smart glasses"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "drone",
+      "label": "Drones",
+      "patterns": [
+        "drone"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics",
+      "patterns": [
+        "robot"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "ultrasonic",
+      "label": "Ultrasonic",
+      "patterns": [
+        "ultra-?sonic"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "uv",
+      "label": "Ultraviolet (UV)",
+      "patterns": [
+        "\\buv\\b|uv-c|ultraviolet"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "piezoelectric",
+      "label": "Piezoelectric",
+      "patterns": [
+        "piezo"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "thermoelectric",
+      "label": "Thermoelectric",
+      "patterns": [
+        "thermoelectric"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "biometrics",
+      "label": "Fingerprint / biometrics",
+      "patterns": [
+        "fingerprint|finger print",
+        "facial recognition",
+        "biometric"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "voice-audio",
+      "label": "Voice / audio",
+      "patterns": [
+        "\\bvoice",
+        "speech",
+        "\\baudio",
+        "audible",
+        "sound notification",
+        "announcement",
+        "speaking"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "mobile-app",
+      "label": "Mobile phone / app",
+      "patterns": [
+        "mobile phone|smart ?phone|cell phone|mobile app|mobile billing|mobile payment|android|mobilephone"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "web",
+      "label": "Web platform",
+      "patterns": [
+        "web based|web-based|online booking"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "pwm",
+      "label": "PWM control",
+      "patterns": [
+        "\\bpwm\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "relay-ssr",
+      "label": "Relays / SSR",
+      "patterns": [
+        "\\brelays?\\b",
+        "\\bssr\\b"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors",
+      "patterns": [
+        "sensor",
+        "sensing"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "reverse-osmosis",
+      "label": "Reverse osmosis / filtration",
+      "patterns": [
+        "reverse osmosis",
+        "filtration",
+        "ion exchange"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "display",
+      "label": "LED / LCD display",
+      "patterns": [
+        "\\bled\\b|led-based",
+        "\\blcd\\b",
+        "digital display"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "infrared",
+      "label": "Infrared",
+      "patterns": [
+        "\\bir\\b|infrared"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "keypad-password",
+      "label": "Keypad / password",
+      "patterns": [
+        "keypad",
+        "password"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "zigbee",
+      "label": "ZigBee",
+      "patterns": [
+        "zigbee"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "thyristor",
+      "label": "Thyristors / SCR",
+      "patterns": [
+        "thyristor"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "analog-circuits",
+      "label": "Analog circuits (op-amp, 555)",
+      "patterns": [
+        "operational amplifier",
+        "ne555|555 timer",
+        "crystal oscillator"
+      ],
+      "programmeIds": []
+    },
+    {
+      "id": "stepper-motor",
+      "label": "Stepper motor",
+      "patterns": [
+        "stepper motor"
+      ],
+      "programmeIds": []
+    }
+  ]
+}

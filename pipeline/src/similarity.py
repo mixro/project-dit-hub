@@ -43,10 +43,13 @@ def band(score: float) -> str | None:
 
 
 class SimilarityIndex:
-    def __init__(self, records: list[dict], drop: set[str]):
+    def __init__(self, records: list[dict], drop: set[str], programme_stopwords: dict[str, set[str]] | None = None):
+        """IDF is computed over every record (shared vocabulary). A programme's own
+        stopwords are dropped only from that programme's titles."""
         self.records = records
         self.drop = drop
-        docs = [tokens(r["searchText"], drop) for r in records]
+        extra = programme_stopwords or {}
+        docs = [tokens(r["searchText"], drop | extra.get(r["programmeId"], set())) for r in records]
         df = Counter(t for d in docs for t in set(d))
         n = len(docs)
         self.idf = {t: math.log((1 + n) / (1 + c)) + 1.0 for t, c in df.items()}
@@ -77,7 +80,8 @@ class SimilarityIndex:
         }
         return score, reasons
 
-    def top_similar(self, i: int, k: int = 6, exclude: set[int] | None = None) -> list[dict]:
+    def top_similar(self, i: int, k_same: int = 6, k_other: int = 3, exclude: set[int] | None = None) -> dict:
+        """Best matches in the project's own programme and, separately, in other programmes."""
         exclude = exclude or set()
         scored = []
         for j in range(len(self.records)):
@@ -88,7 +92,9 @@ class SimilarityIndex:
             if b:
                 scored.append((score, j, b, reasons))
         scored.sort(key=lambda x: -x[0])
-        return [
-            {"id": self.records[j]["id"], "score": round(s, 3), "band": b, "reasons": r}
-            for s, j, b, r in scored[:k]
-        ]
+        own = self.records[i]["programmeId"]
+        out = lambda rows: [{"id": self.records[j]["id"], "score": round(s, 3), "band": b, "reasons": r} for s, j, b, r in rows]
+        return {
+            "sameProgramme": out([x for x in scored if self.records[x[1]]["programmeId"] == own][:k_same]),
+            "otherProgrammes": out([x for x in scored if self.records[x[1]]["programmeId"] != own][:k_other]),
+        }

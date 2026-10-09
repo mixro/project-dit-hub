@@ -70,15 +70,15 @@ Every decision carries `decisionProvenance: "recorded" | "inferred"`, so the UI 
 
 A line break in a title cell is either a wrapped title ("...Alert System For / Excessive Dust...") or a separate alternative title ("Energy saving solar tracker / Fastest Auto Selection of any Available Phase..."). `split_alternatives` splits only when the new line starts like a fresh title and the previous line doesn't end in a connector word or comma. It handles all 10 real multi-line cells correctly. Alternatives become separate projects linked to each other.
 
-`GlueSplitter` repairs words fused by missing spaces. It learns vocabulary from all titles and splits a rare token only if every piece (3+ letters, or OF/ON/IN/TO/AT/BY) is common elsewhere. Real compounds are protected by `keepWords` in `corrections.json`, plus the system hunspell dictionary when one is installed. An early version split MICROPROCESSOR into "MICRO PROCESS OR"; the keep-list and minimum piece length now prevent that. Every split is recorded on the record.
+`GlueSplitter` repairs words fused by missing spaces. It learns vocabulary from all titles and splits a rare token only if every piece (3+ letters, or OF/ON/IN/TO/AT/BY) is common elsewhere. Real compounds are protected by `keepWords` in `config/shared/corrections.json`, and any word with its own spelling fix is never split automatically. (A system spelling dictionary used to be consulted too; it made the build give different results on different machines, so it was removed.) An early version split MICROPROCESSOR into "MICRO PROCESS OR"; the keep-list and minimum piece length now prevent that. Every split is recorded on the record.
 
 ### What "processing" adds, and what it deliberately doesn't
 
 | Field | Source | Provenance label |
 |---|---|---|
 | Title, original wording, remarks | Document | `recorded` |
-| Spelling fixes and glued-word repairs (189 applied) | `config/corrections.json` | each fix listed on the record |
-| Problems (49), categories (14), domains (11), technologies (42), places | Rules in `config/*.json` matched against the title | `derived-from-title` |
+| Spelling fixes and glued-word repairs | `config/shared/corrections.json` | each fix listed on the record |
+| Problems (49), categories (14), domains (11), technologies (42), places | Rules in `config/shared/` plus the project's own programme's rules in `config/programmes/<id>/`, matched against the title | `derived-from-title` |
 | Problem description | Written once per *problem class*, not per project | `general-problem-description` |
 | Solution summary | **Not generated.** A title can't tell us what was built. | `not-available` |
 | Year annotations such as "(2014/2015)" | Kept verbatim; meaning unknown | stored in `annotations` |
@@ -115,9 +115,9 @@ Tests (`app/tests/dataLayer.test.ts`, 15 passing) cover search, Swahili synonyms
 ## 6. Adding the next document
 
 1. Put the `.docx` in `raw/`.
-2. Add an entry to `config/sources.json`: year, programme, event, column names. A new column layout needs a small branch in `interpret.py`.
+2. Add an entry to `config/sources.json`: year, programme (or `"infer"` to estimate it per title), level, department, event, column names. A new column layout needs a small branch in `interpret.py`.
 3. Run `python3 pipeline/src/build.py`.
-4. Read `reports/quality-report.json`. Fix unclassified titles by adding patterns to `config/problems.json`, and add new spelling fixes to `config/corrections.json`.
+4. Read `reports/quality-report.json`. Fix unclassified titles by adding patterns to `config/shared/problems.json` or the programme's `config/programmes/<id>/problems.json`, and add new spelling fixes to `config/shared/corrections.json`. Review estimated programmes under `programmeInference.toReview`; corrections go in `config/programme_overrides.json`.
 5. The build copies `output/public/*` into `app/public/data/` automatically.
 
 Domain knowledge lives in the JSON config, so a lecturer can improve classification without touching code.

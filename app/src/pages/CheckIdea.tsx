@@ -3,6 +3,7 @@ import { projectService } from "../data/projectService";
 import type { DataError } from "../data/types";
 import type { IdeaMatch } from "../data/search";
 import { DecisionBadge } from "../components/Decision";
+import { ProgrammeBadge } from "../components/ProgrammeBadge";
 import { ErrorPanel } from "../components/States";
 import { useCore, useDocumentTitle } from "../lib/core";
 import { Link } from "../lib/router";
@@ -68,7 +69,7 @@ export default function CheckIdea() {
                   <li key={m.project.id}>
                     <span className={`band band-${m.band}`}>{BAND[m.band]}</span>
                     <Link to={`/projects/${m.project.id}`}>{m.project.title}</Link>
-                    <span className="similar-meta">{m.project.year}, <DecisionBadge decision={m.project.decision} /></span>
+                    <span className="similar-meta"><ProgrammeBadge project={m.project} /> {m.project.year}, <DecisionBadge decision={m.project.decision} /></span>
                     <span className="why">
                       Why: {[
                         m.sharedProblemIds.length ? `same problem (${m.sharedProblemIds.map((x) => core.problemById.get(x)?.title ?? x).join(", ")})` : "",

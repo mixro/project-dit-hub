@@ -1,0 +1,207 @@
+{
+  "_comment": "Fields (engineering sub-disciplines) of Electrical Engineering. Domain IDs must be unique across all programmes.",
+  "domains": [
+    {
+      "id": "power-systems",
+      "label": "Power Systems & Protection",
+      "patterns": [
+        "transformer",
+        "substation",
+        "distribution (line|network|system|board)",
+        "transmission line",
+        "\\bgrid\\b|grid[- ]",
+        "\\brelay",
+        "load shedding",
+        "power factor",
+        "harmonic",
+        "power quality",
+        "voltage restorer",
+        "static compensator",
+        "phase (sequence|balance|load)",
+        "single phasing",
+        "three phase",
+        "3 phase",
+        "overvoltage",
+        "earth (leakage|resistance)",
+        "grounding",
+        "\\bfault",
+        "circuit breaker",
+        "\\bmccb",
+        "isolat(or|ion switch)",
+        "surge arrester",
+        "outage",
+        "line rating",
+        "neutral failure",
+        "traction power",
+        "load (prioriti|management|breaker)",
+        "power distribution"
+      ]
+    },
+    {
+      "id": "power-electronics",
+      "label": "Power Electronics",
+      "patterns": [
+        "inverter",
+        "converter",
+        "charg(er|ing)",
+        "multilevel",
+        "modulation",
+        "welding machine",
+        "\\bpwm",
+        "voltage regulator",
+        "power electronic",
+        "\\bssr\\b",
+        "induction (cooker|cape|cap)",
+        "\\bdc (injection|mini)",
+        "thyristor",
+        "hvdc",
+        "\\bups\\b",
+        "transfer switch"
+      ]
+    },
+    {
+      "id": "renewable-energy",
+      "label": "Renewable Energy",
+      "patterns": [
+        "\\bsolar",
+        "photovoltaic",
+        "\\bpv\\b",
+        "\\bwind\\b",
+        "wind-",
+        "hydro ?power|hydropower|pico-hydro",
+        "biogas",
+        "piezoelectric",
+        "thermoelectric",
+        "waste heat",
+        "energy harvesting",
+        "regenerative",
+        "sun tracking|solar tracking",
+        "health care waste",
+        "coffee husk",
+        "renewable",
+        "biomass",
+        "rice husk",
+        "solar tracker"
+      ]
+    },
+    {
+      "id": "machines-drives",
+      "label": "Electrical Machines & Drives",
+      "patterns": [
+        "\\bmotor\\b|\\bmotors\\b",
+        "generator",
+        "turbocharger",
+        "servo",
+        "brushless",
+        "braking",
+        "synchroni[sz]ation"
+      ]
+    },
+    {
+      "id": "energy-management",
+      "label": "Energy Metering & Management",
+      "patterns": [
+        "\\bmeter",
+        "submeter",
+        "energy (monitoring|consumption|management|optimi[sz]ation|use)",
+        "power monitoring",
+        "billing",
+        "tariff",
+        "prepaid",
+        "units"
+      ]
+    },
+    {
+      "id": "automation-control",
+      "label": "Automation & Control",
+      "patterns": [
+        "automat",
+        "\\bcontrol",
+        "\\bplc\\b",
+        "\\bscada",
+        "\\bhmi\\b",
+        "\\bdcs\\b",
+        "closed loop",
+        "feedback"
+      ]
+    },
+    {
+      "id": "embedded-iot",
+      "label": "Embedded Systems & IoT",
+      "patterns": [
+        "\\biot\\b|internet of things",
+        "microcontroller",
+        "arduino",
+        "\\bpic\\b",
+        "embedded",
+        "esp32",
+        "\\bgsm\\b",
+        "\\bsms\\b",
+        "lora",
+        "bluetooth",
+        "wireless",
+        "mobile phone|smart ?phone|cell phone",
+        "web based|online"
+      ]
+    },
+    {
+      "id": "instrumentation",
+      "label": "Instrumentation & Sensing",
+      "patterns": [
+        "monitor",
+        "detect",
+        "sensing",
+        "sensor",
+        "measur",
+        "analy[sz]",
+        "tachometer",
+        "checker",
+        "tester|testing",
+        "counter",
+        "level"
+      ]
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics & Mechatronics",
+      "patterns": [
+        "robot",
+        "drone",
+        "autonomous",
+        "robotic arm",
+        "line-following",
+        "machine\\b",
+        "forklift"
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "label": "AI & Machine Learning",
+      "patterns": [
+        "\\bai\\b|ai-",
+        "artificial intelligence",
+        "machine learning",
+        "image recognition",
+        "facial recognition",
+        "camera recognition",
+        "computer vision",
+        "predictive"
+      ]
+    },
+    {
+      "id": "communications",
+      "label": "Communications & Networking",
+      "patterns": [
+        "\\bgsm\\b",
+        "\\bgps\\b",
+        "\\brfid\\b",
+        "lora",
+        "\\brf\\b|radio frequency",
+        "wireless",
+        "bluetooth",
+        "\\bsms\\b",
+        "infrastructure-to-vehicle|\\bi2v\\b"
+      ]
+    }
+  ]
+}

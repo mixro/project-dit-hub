@@ -1,0 +1,81 @@
+{
+ "_comment": "Weighted title signals for estimating this programme when a document does not state it (design doc section 10). Each entry: [regex, weight]; 3 = strong, 2 = usual, 1 = weak hint. Matched case-insensitively against the corrected title; each pattern counts once. JavaScript-compatible regex only.",
+ "signals": [
+  [
+   "analysis of",
+   2
+  ],
+  [
+   "determination of",
+   3
+  ],
+  [
+   "concentration",
+   2
+  ],
+  [
+   "contaminat",
+   2
+  ],
+  [
+   "microbial|microbiolog",
+   3
+  ],
+  [
+   "\\bassay",
+   3
+  ],
+  [
+   "\\bextracts?\\b|extraction",
+   2
+  ],
+  [
+   "samples?\\b",
+   2
+  ],
+  [
+   "levels of",
+   2
+  ],
+  [
+   "heavy metal",
+   3
+  ],
+  [
+   "physico-?chemical",
+   3
+  ],
+  [
+   "quality assessment",
+   2
+  ],
+  [
+   "bacteria",
+   2
+  ],
+  [
+   "antimicrobial|antibacterial",
+   3
+  ],
+  [
+   "phytochemical",
+   3
+  ],
+  [
+   "titration",
+   3
+  ],
+  [
+   "spectro",
+   3
+  ],
+  [
+   "laborator",
+   1
+  ],
+  [
+   "chemical",
+   1
+  ]
+ ]
+}

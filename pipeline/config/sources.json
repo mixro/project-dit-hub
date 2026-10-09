@@ -1,12 +1,15 @@
 {
-  "_comment": "One entry per source document. Facts the document does not state itself are recorded here, with a note, so they can be corrected in one place.",
+  "_comment": "One entry per source document. Facts the document does not state itself are recorded here, with a note, so they can be corrected in one place. Programmes and levels are defined in programmes.json. programmeProvenance: 'recorded' (stated by the document or the user) or 'from-source-name'; programmeId 'infer' estimates each project's programme from its title (fallbackProgrammeId when no signal). levelId/year may be null when not stated (never guessed). publish: false keeps a source out of all public files. mergeGroupTitles: identical titles from different students become one group project.",
   "sources": [
     {
       "id": "ee-2026-title-defense",
-      "file": "TITTLE_NEW_2026_EE-2.docx",
+      "file": "TITTLE NEW 2026 EE-2.docx",
       "layout": "title-defense-v1",
       "institutionId": "dit",
+      "departmentId": "electrical",
       "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
       "level": "Bachelor of Engineering",
       "cohort": "BENG 22 EE",
       "academicYear": "2025/2026",
@@ -21,14 +24,18 @@
         "remarks": "REMARKS",
         "newTitle": "NEW TITLE"
       },
-      "notes": "Header states DIT Electrical Engineering Department, BENG 22 EE, title defending 1 July 2026."
+      "notes": "Header states DIT Electrical Engineering Department, BENG 22 EE, title defending 1 July 2026.",
+      "yearProvenance": "recorded"
     },
     {
       "id": "bachelor-2020-final-presentation",
-      "file": "Project_Titles_2019-2020.docx",
+      "file": "Project Titles 2019-2020.docx",
       "layout": "title-list-v1",
       "institutionId": "unconfirmed",
-      "programmeId": "unknown",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
       "level": "Bachelor Degree",
       "cohort": null,
       "academicYear": "2019/2020",
@@ -45,14 +52,18 @@
         "name": "NAME",
         "title": "TITLE"
       },
-      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): MUST referenced five times, Iyunga substation, Songwe airport, Mbeya bus terminal. Serial numbers 66, 68-83, 108 and 125 are missing."
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): MUST referenced five times, Iyunga substation, Songwe airport, Mbeya bus terminal. Serial numbers 66, 68-83, 108 and 125 are missing. Programme (Electrical Engineering) and level (Bachelor of Engineering) confirmed by the user on 2026-10-09; the document itself does not state them.",
+      "yearProvenance": "recorded"
     },
     {
       "id": "tentative-2018",
-      "file": "Project_Titles_2017-18.docx",
+      "file": "Project Titles 2017-18.docx",
       "layout": "title-list-v1",
       "institutionId": "unconfirmed",
-      "programmeId": "unknown",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
       "level": "Bachelor Degree",
       "cohort": null,
       "academicYear": "2017/2018",
@@ -70,14 +81,18 @@
         "name": "NAMES",
         "title": "TITLE"
       },
-      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): names 'Mbeya University of science and Technology', MUST library, MUST canteen, MUST computer lab, VETA Busokelo, Mbalizi. Supervisors column is empty and is never extracted. Some cells hold several alternative titles on separate lines."
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): names 'Mbeya University of science and Technology', MUST library, MUST canteen, MUST computer lab, VETA Busokelo, Mbalizi. Supervisors column is empty and is never extracted. Some cells hold several alternative titles on separate lines. Programme (Electrical Engineering) and level (Bachelor of Engineering) confirmed by the user on 2026-10-09; the document itself does not state them.",
+      "yearProvenance": "recorded"
     },
     {
       "id": "titles-2019",
-      "file": "Project_Titles_2018-2019.docx",
+      "file": "Project Titles 2018-2019.docx",
       "layout": "title-list-v1",
       "institutionId": "unconfirmed",
-      "programmeId": "unknown",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
       "level": "Bachelor Degree",
       "cohort": null,
       "academicYear": "2018/2019",
@@ -99,7 +114,114 @@
           "REG .NO"
         ]
       },
-      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): car parking at MUST, Mbeya referral hospital, Iwambi, Ikuti, Mbeya city. Split across three tables; serial column has no header."
+      "notes": "Document never mentions DIT. Evidence it comes from MUST (Mbeya University of Science and Technology): car parking at MUST, Mbeya referral hospital, Iwambi, Ikuti, Mbeya city. Split across three tables; serial column has no header. Programme (Electrical Engineering) and level (Bachelor of Engineering) confirmed by the user on 2026-10-09; the document itself does not state them.",
+      "yearProvenance": "recorded"
+    },
+    {
+      "id": "ete-2025-title-defense",
+      "file": "ETE_2024-2025_title_defense_DIT.docx",
+      "layout": "title-defense-v1",
+      "institutionId": "dit",
+      "departmentId": "electronics-telecommunication",
+      "programmeId": "electronics-telecommunication-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor of Engineering",
+      "cohort": null,
+      "academicYear": "2024/2025",
+      "year": 2025,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "columns": {
+        "serial": "S.NO",
+        "regNo": "REG NO",
+        "name": "NAME",
+        "title": "TITLE",
+        "remarks": "REMARKS"
+      },
+      "notes": "Converted from a DIT Electronics and Telecommunication Engineering PDF (header states DIT, the department, BEng and 2024/2025). Decisions normalised from committee comments; 18 rows have feedback but no explicit decision and stay 'not recorded'. Comments and supervisor columns are never extracted."
+    },
+    {
+      "id": "coe-beng21-title-list",
+      "file": "COE_BEng21_project_list.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "computer",
+      "programmeId": "computer-engineering",
+      "programmeProvenance": "from-source-name",
+      "levelId": "beng",
+      "level": "BEng (from cohort name BEng21)",
+      "cohort": "BEng21 COE",
+      "academicYear": "2024/2025",
+      "year": 2025,
+      "yearProvenance": "inferred",
+      "event": "title-list",
+      "eventDate": null,
+      "mergeGroupTitles": true,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Form submissions; no decisions recorded."
+      },
+      "columns": {
+        "serial": "S.NO",
+        "regNo": "REG NO",
+        "name": "NAME",
+        "title": "TITLE"
+      },
+      "notes": "Converted from Google Form responses. Institution not stated. Programme from the file name and header (BEng21 COE). Year inferred from cohort BEng21 (BEng22 EE defended in 2025/2026). Identical titles from different students are merged as group projects."
+    },
+    {
+      "id": "ict-2025-title-list",
+      "file": "ICT_2024-2025_title_list_UNCONFIRMED.docx",
+      "layout": "title-defense-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": null,
+      "programmeId": "infer",
+      "fallbackProgrammeId": "computer-engineering",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": "2024/2025",
+      "year": 2025,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "columns": {
+        "serial": "S.NO",
+        "regNo": "REG NO",
+        "name": "NAME",
+        "title": "TITLE",
+        "remarks": "REMARKS"
+      },
+      "notes": "Converted from a PDF headed 'ICT project titles 2024/2025'. Institution, programme and level not stated; 'ICT' is not a DIT programme code, so each project's programme is estimated from its title (Computer Engineering when no signal). Phone numbers were removed during conversion; decision wording, comments and supervisors are never extracted."
+    },
+    {
+      "id": "udsm-fyp-portal",
+      "file": "UDSM_FYP_portal_titles_NOT_DIT.docx",
+      "layout": "title-list-v1",
+      "institutionId": "udsm",
+      "departmentId": null,
+      "programmeId": "infer",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": null,
+      "year": null,
+      "event": "title-list",
+      "eventDate": null,
+      "publish": false,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Portal export; no decisions recorded."
+      },
+      "columns": {
+        "serial": "S.NO",
+        "title": "TITLE"
+      },
+      "notes": "Export of the University of Dar es Salaam FYP portal (stated in the source), not DIT. Programme estimated per title; year and level not recorded. Not published until the site can separate institutions."
     }
   ],
   "institutions": [
@@ -108,19 +230,13 @@
       "label": "Dar es Salaam Institute of Technology"
     },
     {
+      "id": "udsm",
+      "label": "University of Dar es Salaam"
+    },
+    {
       "id": "unconfirmed",
       "label": "Institution not confirmed",
       "note": "Three documents (2017/18, 2018/19, 2019/20) contain strong evidence of being from MUST (Mbeya University of Science and Technology). Confirm before public launch."
-    }
-  ],
-  "programmes": [
-    {
-      "id": "electrical-engineering",
-      "label": "Electrical Engineering"
-    },
-    {
-      "id": "unknown",
-      "label": "Programme not recorded"
     }
   ],
   "publishing": {

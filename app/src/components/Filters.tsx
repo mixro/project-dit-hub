@@ -4,7 +4,7 @@ import { useCore } from "../lib/core";
 import { decisionLabel } from "./Decision";
 import type { Decision } from "../data/types";
 
-export type FilterKey = "years" | "decisions" | "categoryIds" | "technologyIds" | "domainIds";
+export type FilterKey = "programmeIds" | "years" | "decisions" | "categoryIds" | "technologyIds" | "domainIds";
 
 interface Props {
   query: ProjectQuery;
@@ -19,6 +19,7 @@ interface Props {
 // On phones this is a bottom sheet; on wide screens a sidebar. Same component.
 // Fewest filters first, with counts, so students see what each choice will give them.
 const GROUPS: { key: FilterKey; title: string; limit: number }[] = [
+  { key: "programmeIds", title: "Programme", limit: 6 },
   { key: "categoryIds", title: "Area", limit: 14 },
   { key: "years", title: "Year", limit: 10 },
   { key: "decisions", title: "Decision", limit: 6 },
@@ -39,6 +40,7 @@ export function Filters({ query, facets, onToggle, onClear, open, onClose, total
   }, [open, onClose]);
 
   const label = (key: FilterKey, id: string) => {
+    if (key === "programmeIds") return core.label("programmes", id);
     if (key === "years") return id;
     if (key === "decisions") return decisionLabel(id as Decision);
     if (key === "categoryIds") return core.label("categories", id);

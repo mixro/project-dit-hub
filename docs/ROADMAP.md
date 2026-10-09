@@ -8,7 +8,16 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ✅ Performance: ~59 KB JS + 4.5 KB CSS + ~49 KB data (gzipped) on first load
 - ✅ Tests: 15 data-layer tests; 14 browser checks (run manually, scripts not yet in repo)
 - ✅ Home refresh (2026-10-08): centred desktop layout, problem card grid sorted by project count, slide-out menu
-- ❓ Performance re-measured 2026-10-08: main JS is ~80 KB gzipped (not ~59 KB), so first load is likely above the ~120 KB budget; needs a look before deployment
+- ❓ Performance re-measured 2026-10-08: main JS is ~80 KB gzipped (not ~59 KB), so first load is likely above the ~120 KB budget; needs a look before deployment. Multi-programme data added ~14 KB more (2026-10-09)
+
+## Multiple programmes (design: `docs/design/MULTI_PROGRAMME_DESIGN.md`)
+- ✅ Phase 1 (2026-10-09): config split into shared + per-programme rules, programme catalogue, schema 2, programme inference from titles, institution rules. 1,007 projects published: EE 760, COE 180, ETE 67 (ETE, COE, ICT lists added); UDSM (463) processed, not published
+- ❓ Review 24 low-confidence ICT programme estimates (`reports/quality-report.json` → `programmeInference.toReview`); corrections go in `pipeline/config/programme_overrides.json`
+- ❓ Two COE titles may be one group project each with a typo or extra words ("E-Residence Verification", "Timetable Generator"); not merged automatically
+- 🔜 Phase 2: write ETE and COE rules (problems, fields) with the user; unclassified today: ETE 40%, COE 75%, ICT 78%
+- 💭 Improve programme inference (81% on known titles, target 90%); ETE vs EE is the hard part
+- 💭 Phase 3 scope UX (programme chooser, header pill), phase 4 split results, phase 5 sharded loading
+- ❓ Institution switcher, needed before the UDSM list can be published
 
 ## Phase 2: Student testing 🔜
 - 🔜 Deploy to Netlify (base directory `app`) at https://instiwise-project-hub.netlify.app. The address lives in `app/.env.production`, `public/robots.txt` and `public/sitemap.xml`; update all three if the domain changes

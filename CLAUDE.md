@@ -9,7 +9,8 @@ Decisions already made, and why: @docs/DECISIONS.md
 
 ## Repository map
 
-- `pipeline/`: Python. Turns Word title lists into public JSON. Domain knowledge lives in `pipeline/config/*.json`, not in code. See `pipeline/CLAUDE.md`.
+- `pipeline/`: Python. Turns Word title lists into public JSON. Domain knowledge lives in `pipeline/config/` (shared rules in `shared/`, per-programme rules in `programmes/<id>/`), not in code. See `pipeline/CLAUDE.md`.
+- `docs/design/MULTI_PROGRAMME_DESIGN.md`: how several programmes (EE, ME, ETE, CE, COE, SLT) and institutions are handled; implemented in phases.
 - `app/`: React 19 + Vite + TypeScript website. See `app/CLAUDE.md` and `app/README.md`.
 - `output/public/`: generated public dataset (also copied to `app/public/data/`). Never edit by hand; regenerate.
 - `reports/quality-report.json`: data issues to review (unclassified titles, gaps, duplicates).
@@ -29,7 +30,7 @@ Personal documents outside the repo: `HUB_RAW_DIR=~/hub-private/raw HUB_PRIVATE_
 
 ## Non-negotiable rules
 
-1. **Privacy.** Claude may open and read source documents (Word or PDF, in `raw/`, `private/` or `HUB_RAW_DIR`) to process them into the dataset. Never edit, move, delete or commit them. Student names and registration numbers must never reach the website: not `output/`, `app/`, config files, reports, logs, tests or commit messages. In chat, refer to rows by `sourceId` + serial, not by name. Public records are built from an allow-list of fields in `build.py`; the privacy gate (`pipeline/src/privacy.py`) fails the build on leaks. Never weaken or bypass it. If it fails, fix the cause.
+1. **Privacy.** You may read files in `raw/` and `private/` to process them. Student names and registration numbers must never appear in anything tracked by git, in `output/`, `app/`, `reports/`, tests, logs, commit messages, or in your chat replies (refer to rows by source id and serial number). Public records are built from an allow-list of fields in `build.py`; the privacy gate (`pipeline/src/privacy.py`) fails the build on leaks. Never weaken or bypass it. If it fails, fix the cause. Never modify source documents. Before every commit, `git status` must show no `.docx` and nothing under `private/`.
 2. **Never fabricate data.** No invented solution summaries, decisions, years or institutions. Unknown stays unknown. Derived information must carry a provenance label (`recorded`, `inferred`, `derived-from-title`).
 3. **No originality claims.** The UI says "No highly similar project was found in the current dataset", never "your project is original". Similarity is labelled "Closely related / Related / Loosely related", never an originality or plagiarism score.
 4. **One source of truth.** Classification rules live in `pipeline/config/`. The browser idea-checker uses the same rules (shipped in `search.json`) and the same scoring weights. Change rules in config, never duplicate them in app code.
@@ -47,6 +48,8 @@ Personal documents outside the repo: `HUB_RAW_DIR=~/hub-private/raw HUB_PRIVATE_
 
 ## Open questions (do not assume answers)
 
-- The 2017/18, 2018/19 and 2019/20 lists are probably from MUST (Mbeya), not DIT. Marked `institutionId: "unconfirmed"`. Do not relabel them without the user's confirmation.
+- The 2017/18, 2018/19 and 2019/20 lists are probably from MUST (Mbeya), not DIT. Marked `institutionId: "unconfirmed"`. Do not relabel them without the user's confirmation. Same for the COE (BEng21) and ICT 2024/25 lists, which do not state an institution.
+- The UDSM portal list is processed but not published (`publish: false`) until the site can separate institutions. Whether to build that switcher now is open.
+- Full name of SLT; level of the ICT and UDSM lists (not stated, kept null).
 - Meaning of "(2014/2015)"-style labels in the 2020 list is unknown; they are preserved verbatim.
 - Whether DIT allows rejected titles to be public (`publishRejectedTitles` in `sources.json`).

@@ -3,14 +3,15 @@
 import { createContext, useContext, useEffect, useMemo, type ReactNode } from "react";
 import { projectService } from "../data/projectService";
 import { useResource } from "../data/useResource";
-import type { CoreData, Problem, ProjectSummary, SourceInfo } from "../data/types";
+import type { CoreData, Problem, Programme, ProjectSummary, SourceInfo } from "../data/types";
 import { ErrorPanel, PageSkeleton } from "../components/States";
 
 export interface Core extends CoreData {
   byId: Map<string, ProjectSummary>;
   problemById: Map<string, Problem>;
   sourceById: Map<string, SourceInfo>;
-  label: (kind: "categories" | "domains" | "technologies" | "places" | "decisions" | "events" | "institutions" | "programmes", id: string) => string;
+  programmeById: Map<string, Programme>;
+  label: (kind: "categories" | "domains" | "technologies" | "places" | "decisions" | "events" | "institutions" | "programmes" | "levels", id: string) => string;
 }
 
 const Ctx = createContext<Core | null>(null);
@@ -28,6 +29,7 @@ export function CoreProvider({ children }: { children: ReactNode }) {
       byId: new Map(d.projects.map((p) => [p.id, p])),
       problemById: new Map(d.problems.map((p) => [p.id, p])),
       sourceById: new Map(d.sources.map((s) => [s.id, s])),
+      programmeById: new Map(d.taxonomy.programmes.map((p) => [p.id, p])),
       label: (kind, id) => maps[kind]?.get(id) ?? id,
     };
   }, [state]);

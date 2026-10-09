@@ -12,11 +12,12 @@ import { track } from "../lib/analytics";
 import type { DataError } from "../data/types";
 
 const PAGE = 25;
-const PARAM: Record<FilterKey, string> = { years: "year", decisions: "decision", categoryIds: "area", technologyIds: "tech", domainIds: "field" };
+const PARAM: Record<FilterKey, string> = { programmeIds: "prog", years: "year", decisions: "decision", categoryIds: "area", technologyIds: "tech", domainIds: "field" };
 
 function readQuery(params: URLSearchParams): ProjectQuery {
   return {
     text: params.get("q") ?? "",
+    programmeIds: params.getAll("prog"),
     years: params.getAll("year").map(Number).filter(Boolean),
     decisions: params.getAll("decision") as Decision[],
     categoryIds: params.getAll("area"),
@@ -59,11 +60,12 @@ export default function Projects() {
     setParams({ [PARAM[k]]: next, show: null });
   }, [params]);
 
-  const clearAll = useCallback(() => setParams({ year: null, decision: null, area: null, tech: null, field: null, problem: null, show: null }), []);
+  const clearAll = useCallback(() => setParams({ prog: null, year: null, decision: null, area: null, tech: null, field: null, problem: null, show: null }), []);
   const closeSheet = useCallback(() => setSheet(false), []);
 
   const activeChips: { k: FilterKey | "problemIds"; id: string; label: string }[] = [
     ...(query.problemIds ?? []).map((id) => ({ k: "problemIds" as const, id, label: core.problemById.get(id)?.title ?? id })),
+    ...(query.programmeIds ?? []).map((id) => ({ k: "programmeIds" as const, id, label: core.label("programmes", id) })),
     ...(query.categoryIds ?? []).map((id) => ({ k: "categoryIds" as const, id, label: core.label("categories", id) })),
     ...(query.years ?? []).map((y) => ({ k: "years" as const, id: String(y), label: String(y) })),
     ...(query.decisions ?? []).map((d) => ({ k: "decisions" as const, id: d, label: decisionLabel(d) })),

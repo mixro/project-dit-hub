@@ -1,4 +1,4 @@
-// Types for the public dataset produced by pipeline/src/build.py (schemaVersion 1).
+// Types for the public dataset produced by pipeline/src/build.py (schemaVersion 2).
 // These are also the shapes the future REST API should return, so the UI does
 // not change when local JSON is replaced by a backend.
 
@@ -10,6 +10,9 @@ export type Decision =
   | "not-presented"
   | "unknown";
 
+/** How a project's programme was set: stated by the document or the user, read from the file name, or estimated from the title. */
+export type ProgrammeProvenance = "recorded" | "from-source-name" | "inferred-from-title";
+
 export type Provenance = "recorded" | "inferred" | "derived-from-title" | "general-problem-description" | "not-available";
 
 export interface ProjectSummary {
@@ -20,6 +23,11 @@ export interface ProjectSummary {
   academicYear: string;
   institutionId: string;
   programmeId: string;
+  programmeProvenance: ProgrammeProvenance;
+  /** Only when the programme was estimated from the title. */
+  programmeConfidence?: "high" | "low";
+  /** null: the document does not state the level. */
+  levelId: string | null;
   event: string;
   decision: Decision;
   problemIds: string[];
@@ -56,7 +64,7 @@ export interface ProjectDetail {
   provenance: Record<string, Provenance>;
   source: { sourceId: string; serial: string | null; duplicateCount: number };
   relatedSubmissionIds: string[];
-  similar: SimilarProject[];
+  similar: { sameProgramme: SimilarProject[]; otherProgrammes: SimilarProject[] };
 }
 
 export interface Project extends ProjectSummary {
@@ -68,6 +76,8 @@ export interface Problem {
   title: string;
   description: string;
   categoryIds: string[];
+  /** null: the problem can arise in any programme. */
+  programmeId: string | null;
   projectCount: number;
   projectCountByYear: Record<string, number>;
   topTechnologyIds: string[];
@@ -80,24 +90,37 @@ export interface Label {
   note?: string;
 }
 
+export interface Programme extends Label {
+  code: string;
+  departmentId: string;
+}
+
 export interface Taxonomy {
   categories: Label[];
-  domains: Label[];
-  technologies: Label[];
+  domains: (Label & { programmeId: string })[];
+  /** programmeIds empty: relevant to every programme. */
+  technologies: (Label & { programmeIds: string[] })[];
   places: Label[];
   workTypes: Label[];
   decisions: Label[];
   events: Label[];
   institutions: Label[];
-  programmes: Label[];
+  /** Only programmes that have published projects. */
+  programmes: Programme[];
+  levels: Label[];
 }
 
 export interface SourceInfo {
   id: string;
   documentName: string;
   institutionId: string;
+  departmentId: string;
   programmeId: string;
-  level: string;
+  programmeProvenance: ProgrammeProvenance;
+  levelId: string | null;
+  /** Level as written in the source document. */
+  level: string | null;
+  yearProvenance: "recorded" | "inferred";
   cohort: string | null;
   academicYear: string;
   year: number;
@@ -115,9 +138,9 @@ export interface SearchModel {
   idf: Record<string, number>;
   documentCount: number;
   rules: {
-    problems: { id: string; any: string[]; requires: string[]; excludes: string[] }[];
-    technologies: { id: string; patterns: string[] }[];
-    domains: { id: string; patterns: string[] }[];
+    problems: { id: string; any: string[]; requires: string[]; excludes: string[]; programmeId: string | null }[];
+    technologies: { id: string; patterns: string[]; programmeIds: string[] }[];
+    domains: { id: string; patterns: string[]; programmeId: string }[];
   };
 }
 

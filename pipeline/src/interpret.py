@@ -181,7 +181,7 @@ def interpret_rows(rows: list[dict], source: dict, keyer: StudentKeyer) -> tuple
         submissions.append(second)
 
     issues.extend(_serial_gaps(rows))
-    return _merge_duplicates(submissions, issues), issues
+    return _merge_duplicates(submissions, issues, source.get("mergeGroupTitles", False)), issues
 
 
 def _serial_gaps(rows: list[dict]) -> list[dict]:
@@ -194,20 +194,27 @@ def _serial_gaps(rows: list[dict]) -> list[dict]:
     return [{"sourceId": rows[0]["sourceId"], "type": "missing-serial-numbers", "value": missing}]
 
 
-def _merge_duplicates(subs: list[dict], issues: list) -> list[dict]:
-    """Same student + same title appearing twice (a row re-entered) -> one record."""
+def _merge_duplicates(subs: list[dict], issues: list, group_titles: bool = False) -> list[dict]:
+    """Same student + same title appearing twice (a row re-entered) -> one record.
+    With group_titles (sources.json "mergeGroupTitles"), the same title from different
+    students in one source is one group project, not several."""
     seen: dict[tuple, dict] = {}
     out = []
     for s in subs:
-        key = (s["sourceId"], s["studentKey"], " ".join(tokens(s["versions"][0]["text"])))
+        key = (s["sourceId"], None if group_titles else s["studentKey"], " ".join(tokens(s["versions"][0]["text"])))
         if key in seen:
             keep = seen[key]
             keep.setdefault("duplicateLocations", []).append(s["location"])
             if keep["decision"] == "unknown" and s["decision"] != "unknown":
                 keep["decision"], keep["decisionProvenance"] = s["decision"], s["decisionProvenance"]
+            if not s["studentKey"]:
+                kind = "duplicate-title-merged"
+            elif s["studentKey"] == keep["studentKey"]:
+                kind = "duplicate-row-merged"
+            else:
+                kind = "group-title-merged"
             issues.append({"sourceId": s["sourceId"], "row": s["location"]["row"], "serial": s["serial"],
-                           "type": "duplicate-row-merged" if s["studentKey"] else "duplicate-title-merged",
-                           "mergedInto": keep["location"]["row"]})
+                           "type": kind, "mergedInto": keep["location"]["row"]})
             s["_mergedInto"] = keep
             continue
         seen[key] = s

@@ -3,6 +3,7 @@ import { projectService } from "../data/projectService";
 import { useResource } from "../data/useResource";
 import type { Project, SimilarProject, TitleVersion } from "../data/types";
 import { DecisionBadge } from "../components/Decision";
+import { ProgrammeBadge } from "../components/ProgrammeBadge";
 import { ErrorPanel, PageSkeleton } from "../components/States";
 import { useCore, useDocumentTitle } from "../lib/core";
 import { Link } from "../lib/router";
@@ -49,6 +50,8 @@ function ProjectView({ project: p }: { project: Project }) {
   const inCompare = compare.includes(p.id);
   const history = d.titleHistory;
   const corrected = history.some((v) => v.corrections.length > 0);
+  // Shown as one list until the programme split UI arrives (multi-programme design, phase 4).
+  const similar = [...d.similar.sameProgramme, ...d.similar.otherProgrammes];
 
   return (
     <article className="detail">
@@ -56,6 +59,8 @@ function ProjectView({ project: p }: { project: Project }) {
       <h1>{p.title}</h1>
 
       <dl className="facts">
+        <div><dt>Programme</dt><dd>{core.programmeById.get(p.programmeId)?.label ?? "Not identified"}{p.programmeProvenance === "inferred-from-title" && <span className="muted small"> (estimated from the title)</span>}</dd></div>
+        <div><dt>Level</dt><dd>{p.levelId ? core.label("levels", p.levelId) : <span className="muted">Not recorded</span>}</dd></div>
         <div><dt>Year</dt><dd>{p.academicYear}</dd></div>
         <div><dt>Decision</dt><dd><DecisionBadge decision={d.decision} inferred={d.decisionProvenance === "inferred"} /></dd></div>
         <div><dt>Listed in</dt><dd>{EVENT_LABEL[p.event] ?? p.event}{source?.cohort ? `, ${source.cohort}` : ""}</dd></div>
@@ -95,11 +100,11 @@ function ProjectView({ project: p }: { project: Project }) {
 
       <section>
         <h2>Similar projects</h2>
-        {d.similar.length === 0 ? (
+        {similar.length === 0 ? (
           <p className="muted">No similar project was found in the current dataset.</p>
         ) : (
           <ul className="similar">
-            {d.similar.map((s) => {
+            {similar.map((s) => {
               const o = core.byId.get(s.id);
               if (!o) return null;
               const shared = [
@@ -111,7 +116,7 @@ function ProjectView({ project: p }: { project: Project }) {
                   <span className={`band band-${s.band}`}>{BAND[s.band]}</span>
                   <Link to={`/projects/${s.id}`} onClick={() => track("similar_project_clicked", { from: p.id, to: s.id, band: s.band })}>{o.title}</Link>
                   <span className="similar-meta">
-                    {o.year}, <DecisionBadge decision={o.decision} />
+                    <ProgrammeBadge project={o} /> {o.year}, <DecisionBadge decision={o.decision} />
                   </span>
                   {(s.reasons.sharedTerms.length > 0 || shared.length > 0) && (
                     <span className="why">

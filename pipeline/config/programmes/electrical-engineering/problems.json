@@ -1,0 +1,354 @@
+{
+  "_comment": "Problems specific to Electrical Engineering. Same format as shared/problems.json; IDs share one namespace with all other problem files.",
+  "problems": [
+    {
+      "id": "transformer-condition",
+      "title": "Distribution transformer failures",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Distribution transformers fail from overheating, overloading, oil degradation, oil theft and poor earthing. Failures are expensive and cause long outages, so utilities need early warning of developing faults.",
+      "requires": [
+        "transformer"
+      ],
+      "any": [
+        "oil",
+        "temperature",
+        "overheat",
+        "monitor",
+        "loading",
+        "overload",
+        "fault",
+        "gas",
+        "earth",
+        "theft",
+        "condition",
+        "protection",
+        "outage",
+        "losses",
+        "phase load",
+        "silica gel"
+      ]
+    },
+    {
+      "id": "line-fault-location",
+      "title": "Faults and remote switching on power lines and substations",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "When a fault occurs on a line or substation, crews often patrol long distances to find it and switch by hand. Remote monitoring, fault location and remote switching shorten outages.",
+      "any": [
+        "fault (detection|location|localization|diagnos)",
+        "line (fault|patrol)",
+        "transmission line",
+        "neutral failure",
+        "fault detection",
+        "power outage and fault",
+        "distance relays",
+        "faults in electrical networks",
+        "smart relay",
+        "substation monitoring",
+        "load breaker switch",
+        "fault current",
+        "circuit breaker",
+        "auto-recloser",
+        "load break switch",
+        "breakers to power transformers",
+        "overloaded line",
+        "blown ?up fuses",
+        "conductor temperature",
+        "underground cable",
+        "buried cables",
+        "lightning arrester",
+        "synchroni[sz]ation failure",
+        "distribution network analysis",
+        "blackout",
+        "switch gears",
+        "power outages",
+        "pole bending",
+        "electrical pole",
+        "lightning arresters? on distribution"
+      ],
+      "excludes": [
+        "motor",
+        "transformer oil",
+        "street ?light"
+      ]
+    },
+    {
+      "id": "outage-notification",
+      "title": "Customers unaware of power outages",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Consumers and utilities often learn about outages late. Automatic outage alerts improve response times and customer communication.",
+      "any": [
+        "outage",
+        "power failure"
+      ]
+    },
+    {
+      "id": "load-management",
+      "title": "Managing limited power with load shedding and prioritisation",
+      "categoryIds": [
+        "energy",
+        "buildings"
+      ],
+      "description": "When supply or backup capacity is limited, essential loads must keep running while non-critical loads are shed. Doing this manually is slow and error-prone.",
+      "any": [
+        "load shedding",
+        "load prioriti",
+        "load management",
+        "non ?critical loads",
+        "load control",
+        "isolation switch for noncritical",
+        "load sharing",
+        "peak load",
+        "peak and normal"
+      ]
+    },
+    {
+      "id": "power-quality",
+      "title": "Poor power quality: power factor, harmonics and voltage problems",
+      "categoryIds": [
+        "energy",
+        "industry"
+      ],
+      "description": "Low power factor, harmonics, voltage sags, phase imbalance and wrong phase sequence waste energy, raise bills and damage equipment, especially in industry.",
+      "any": [
+        "power factor",
+        "harmonic",
+        "power quality",
+        "voltage restorer",
+        "static compensator",
+        "voltage regulator",
+        "phase sequence",
+        "single phasing",
+        "phase balance",
+        "overvoltage",
+        "auto selection of any available phase",
+        "line rating",
+        "over ?voltage",
+        "under ?voltage",
+        "voltage profile",
+        "voltage regulation",
+        "auto-phase changer",
+        "capacitor banks",
+        "reactive power",
+        "voltage variation",
+        "load balance"
+      ]
+    },
+    {
+      "id": "energy-metering",
+      "title": "Fair, accurate electricity metering and billing",
+      "categoryIds": [
+        "energy",
+        "commerce",
+        "buildings"
+      ],
+      "description": "Shared meters in multi-tenant buildings, tampering, credit management and unclear consumption make electricity billing unfair or inaccurate.",
+      "any": [
+        "energy meter",
+        "submeter",
+        "electricity meter",
+        "prepa(id|yment).*(meter|energy|electric)",
+        "multi-tenant electricity",
+        "tariff",
+        "sharing (electricity )?units",
+        "energy billing",
+        "meter separator",
+        "pre-?paid meters",
+        "meters for electric bills",
+        "power meter billing",
+        "electric bills",
+        "renters and landlord",
+        "meter tampering",
+        "energy meter",
+        "tariff calculation",
+        "talking energy meter"
+      ],
+      "excludes": [
+        "water meter",
+        "water billing",
+        "water supply",
+        "water meter"
+      ]
+    },
+    {
+      "id": "backup-power",
+      "title": "Reliable backup power and source switching",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Grid interruptions force switching between grid, generator, solar and batteries. Slow or unsafe changeover disrupts sensitive loads such as hospitals and data centres.",
+      "any": [
+        "backup",
+        "changeover",
+        "power switching",
+        "three source",
+        "synchroni[sz]ation of generators",
+        "available phase",
+        "isolator reset",
+        "transfer switch",
+        "\\bups\\b",
+        "back ?up",
+        "three different sources",
+        "power break",
+        "switching of power supply",
+        "switching electronic circuit of solar and electrical",
+        "emergency power",
+        "emergency lighting"
+      ]
+    },
+    {
+      "id": "generator-fuel",
+      "title": "Fuel losses: consumption, theft, leakage and contamination",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Generator sites, fuel stations and transport fleets lose money through inefficient running, theft, leaks and contaminated fuel.",
+      "any": [
+        "generator.*fuel",
+        "fuel consumption",
+        "fuel and power outage",
+        "generator parameters",
+        "diesel fuel contamination",
+        "fuel storage tank",
+        "fuel leakage",
+        "oil leakage detection",
+        "petrol station",
+        "genset",
+        "heavy fuel oil",
+        "fuel level",
+        "fuel theft",
+        "alternator to the busbar",
+        "synchronous generator",
+        "fuel consumption rate"
+      ]
+    },
+    {
+      "id": "power-conversion",
+      "title": "Efficient power conversion for solar, batteries and drives",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Solar systems, batteries, motors and chargers depend on inverters and converters. Their efficiency, protection and control determine how well the whole system performs.",
+      "any": [
+        "inverter",
+        "converter",
+        "modulation technique",
+        "multilevel",
+        "welding machine",
+        "charging process",
+        "battery charger",
+        "storage battery"
+      ]
+    },
+    {
+      "id": "ev-charging",
+      "title": "Charging and managing electric vehicles",
+      "categoryIds": [
+        "energy",
+        "transportation"
+      ],
+      "description": "Electric bikes, tricycles and cars are growing in Tanzania, but charging infrastructure, battery management and charging billing are still limited.",
+      "any": [
+        "e-bike",
+        "electric bike",
+        "tricycle",
+        "e-motorcycle",
+        "\\bev charging",
+        "charging station",
+        "bajaj",
+        "rikshaw",
+        "tri-?ev",
+        "hybrid car",
+        "48v"
+      ]
+    },
+    {
+      "id": "electrical-safety",
+      "title": "Electrical installation safety",
+      "categoryIds": [
+        "safety-security",
+        "energy",
+        "buildings"
+      ],
+      "description": "Faulty wiring, fake cables, poor earthing, lightning surges and unsafe maintenance cause shocks, fires and equipment damage.",
+      "any": [
+        "earth leakage",
+        "electrical safety",
+        "lockout",
+        "electrical panels",
+        "voltage detector",
+        "fake electrical wires",
+        "purity of electrical cables",
+        "\\bmccb",
+        "surge arrester",
+        "earth resistance",
+        "grounding resistance",
+        "earth quality",
+        "circuit breaker control",
+        "home electrical safety",
+        "electrical wiring",
+        "electric fence"
+      ]
+    },
+    {
+      "id": "motor-maintenance",
+      "title": "Equipment and motor breakdowns",
+      "categoryIds": [
+        "industry",
+        "energy"
+      ],
+      "description": "Motors and industrial equipment fail from overload, vibration, overheating and phase problems. Without condition monitoring and planned maintenance, breakdowns cause costly downtime.",
+      "requires": [
+        "motor|machine|maintenance|equipment|drive"
+      ],
+      "any": [
+        "predictive maintenance",
+        "fault diagnosis",
+        "condition monitoring",
+        "protection",
+        "vibration",
+        "braking",
+        "single control circuit",
+        "maintenance scheduling",
+        "overload control",
+        "cooling system",
+        "maintenance scheduling",
+        "controlled dc servo",
+        "speed control",
+        "controller",
+        "bidirectional control",
+        "overheating",
+        "phase failure",
+        "test bench",
+        "rewound",
+        "protector",
+        "temperature monitoring of motor",
+        "electric drive",
+        "washing machine",
+        "tripping mechanism",
+        "induction motor"
+      ]
+    },
+    {
+      "id": "rural-electrification",
+      "title": "Bringing electricity to unserved villages, islands and schools",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Many villages, islands and rural institutions are far from the national grid. Extending lines, building mini-grids or using local generation each has different costs and technical limits.",
+      "any": [
+        "electrification",
+        "micro ?hydro power plant to supply",
+        "solar power light plant",
+        "mini-grid",
+        "micro-grid",
+        "rural home use"
+      ]
+    }
+  ]
+}
