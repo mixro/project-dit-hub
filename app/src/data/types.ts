@@ -19,8 +19,11 @@ export interface ProjectSummary {
   id: string;
   title: string;
   altTitles: string[];
-  year: number;
-  academicYear: string;
+  /** null: the document gives no single year (none stated, or a range such as 2019–2023). */
+  year: number | null;
+  /** As stated, e.g. "2025/2026" or "2019–2023"; null when not stated. */
+  academicYear: string | null;
+  /** "dit" only when the list's header names DIT; otherwise "unconfirmed". */
   institutionId: string;
   programmeId: string;
   programmeProvenance: ProgrammeProvenance;
@@ -114,7 +117,7 @@ export interface SourceInfo {
   id: string;
   documentName: string;
   institutionId: string;
-  departmentId: string;
+  departmentId: string | null;
   programmeId: string;
   programmeProvenance: ProgrammeProvenance;
   levelId: string | null;
@@ -122,10 +125,10 @@ export interface SourceInfo {
   level: string | null;
   yearProvenance: "recorded" | "inferred";
   cohort: string | null;
-  academicYear: string;
-  year: number;
+  academicYear: string | null;
+  year: number | null;
   event: string;
-  eventDate: string;
+  eventDate: string | null;
   notes: string;
   projectCount: number;
   missingSerialNumbers: number[];

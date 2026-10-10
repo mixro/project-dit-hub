@@ -5,6 +5,8 @@ import { useCore } from "../lib/core";
 import { compareStore, useCompare, MAX_COMPARE } from "../lib/compare";
 import { DecisionBadge } from "./Decision";
 import { ProgrammeBadge } from "./ProgrammeBadge";
+import { InstitutionBadge } from "./InstitutionBadge";
+import { yearText } from "../lib/format";
 import { Highlight } from "./Highlight";
 
 export const ProjectRow = memo(function ProjectRow({ project, query, onOpen }: { project: ProjectSummary; query?: string; onOpen?: () => void }) {
@@ -19,7 +21,8 @@ export const ProjectRow = memo(function ProjectRow({ project, query, onOpen }: {
         <span className="row-title"><Highlight text={project.title} query={query} /></span>
         <span className="row-meta">
           <ProgrammeBadge project={project} />
-          <span className="year">{project.year}</span>
+          <span className="year">{yearText(project)}</span>
+          {/* <InstitutionBadge project={project} /> */}
           <DecisionBadge decision={project.decision} />
           {problem && <span className="row-problem">{problem}</span>}
         </span>

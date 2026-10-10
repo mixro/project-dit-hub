@@ -16,7 +16,7 @@
 import type { CoreData, DataError, Manifest, Problem, ProjectDetail, ProjectSummary, Result, SearchModel, SourceInfo, Taxonomy } from "./types";
 import { filterValid, isManifest, isProblem, isProjectDetail, isProjectSummary } from "./validate";
 
-const SUPPORTED_SCHEMA = 2;
+const SUPPORTED_SCHEMA = 3;
 
 export interface DataClientOptions {
   baseUrl?: string; // e.g. `${import.meta.env.BASE_URL}data/` in Vite

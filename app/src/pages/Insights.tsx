@@ -33,9 +33,11 @@ export default function Insights() {
       xs.forEach((x) => m.set(x, (m.get(x) ?? 0) + 1));
       return [...m.entries()].sort((a, b) => b[1] - a[1]);
     };
-    const latest = Math.max(...ps.map((p) => p.year));
-    const recent = ps.filter((p) => p.year === latest);
-    const older = ps.filter((p) => p.year < latest);
+    // Trends use dated projects only; lists without a single year are left out.
+    const dated = ps.filter((p): p is typeof p & { year: number } => p.year !== null);
+    const latest = Math.max(...dated.map((p) => p.year));
+    const recent = dated.filter((p) => p.year === latest);
+    const older = dated.filter((p) => p.year < latest);
     const share = (set: typeof ps, id: string) => set.filter((p) => p.problemIds.includes(id)).length / Math.max(1, set.length);
     const rising = core.problems
       .filter((p) => p.projectCount >= 5)
@@ -43,7 +45,7 @@ export default function Insights() {
       .sort((a, b) => b.delta - a.delta);
     return {
       latest,
-      byYear: count(ps.map((p) => p.year)).sort((a, b) => a[0] - b[0]),
+      byYear: count(dated.map((p) => p.year)).sort((a, b) => a[0] - b[0]),
       problems: count(ps.flatMap((p) => p.problemIds)).slice(0, 10),
       tech: count(ps.flatMap((p) => p.technologyIds)).slice(0, 10),
       decisions: count(recent.map((p) => p.decision)),

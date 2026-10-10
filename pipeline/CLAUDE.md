@@ -4,7 +4,9 @@ Run: `python3 pipeline/src/build.py` from the repo root (requires `python-docx`)
 
 ## Where things live
 
-- `config/sources.json`: one entry per document: year, programme, department, level, event, column names (`"#0"` means a column by position; a list means alternative header names), default decision, notes, institutions, publishing flags.
+- `config/sources.json`: one entry per document: year, programme, department, level, event, column names (`"#0"` means a column by position; a list means alternative header names), default decision, notes, institutions, publishing flags. `format: "numbered-paragraphs"` reads "1. Title" paragraphs instead of a table. Institution is `dit` only when the header names DIT, else `unconfirmed`. `year` may be null (not stated or a range kept in `academicYear`).
+- `publishing.publishUnidentifiedProgramme` in `sources.json` (false): projects whose programme cannot be estimated are not published; add signals or an override to bring one back.
+- `config/excluded_projects.json`: project IDs kept out of public output because the title is not a project (name only, too vague, not engineering, placeholder). Add entries by hand with a reason; the build reports stale IDs.
 - `config/programmes.json`: the six DIT programmes (ID, code, label, department, aliases) and award levels.
 - `config/shared/`: rules every programme uses. `problems.json` (real-world problems: general description, never about a specific student's project, plus regex rules `any`, `requires`, `excludes`), `categories.json` (areas), `technologies.json` (`programmeIds` empty = all), `places.json`, `workTypes.json`, `corrections.json` (spelling fixes, acronym display, `keepWords`: compound words the glue-splitter must not split).
 - `config/programmes/<programmeId>/`: one programme's rules. `domains.json` (fields), `problems.json` (programme-specific problems), `corrections.json` (`stopwords` for similarity).

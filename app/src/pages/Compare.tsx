@@ -46,7 +46,7 @@ function CompareTable({ projects }: { projects: Project[] }) {
   const sharedTech = shared((p) => p.technologyIds);
 
   const rows: { label: string; render: (p: Project) => ReactNode }[] = [
-    { label: "Year", render: (p) => p.academicYear },
+    { label: "Year", render: (p) => p.academicYear ?? "Not recorded" },
     { label: "Decision", render: (p) => <DecisionBadge decision={p.decision} /> },
     { label: "Problem", render: (p) => <TagCell ids={p.problemIds} shared={sharedProblems} name={(id) => core.problemById.get(id)?.title ?? id} /> },
     { label: "Technologies", render: (p) => <TagCell ids={p.technologyIds} shared={sharedTech} name={(id) => core.label("technologies", id)} /> },

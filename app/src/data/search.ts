@@ -67,7 +67,7 @@ export class ProjectSearch {
         { text: labels(project.problemIds, problemTitle), weight: 2 },
         { text: labels(project.technologyIds, label), weight: 1.5 },
         { text: labels([...project.categoryIds, ...project.domainIds], label), weight: 1 },
-        { text: labels(project.placeIds, label) + " " + project.year, weight: 1 },
+        { text: labels(project.placeIds, label) + " " + (project.year ?? project.academicYear ?? ""), weight: 1 },
       ],
     }));
   }

@@ -16,9 +16,13 @@ export default function ProblemDetail({ id }: { id: string }) {
 
   const byYear = useMemo(() => {
     if (state.status !== "ready") return [];
-    const m = new Map<number, typeof state.data.projects>();
-    for (const p of state.data.projects) m.set(p.year, [...(m.get(p.year) ?? []), p]);
-    return [...m.entries()].sort((a, b) => a[0] - b[0]);
+    // Projects arrive oldest first, with undated ones last, so insertion order is the timeline order.
+    const m = new Map<string, typeof state.data.projects>();
+    for (const p of state.data.projects) {
+      const key = p.year !== null ? String(p.year) : "Year not recorded";
+      m.set(key, [...(m.get(key) ?? []), p]);
+    }
+    return [...m.entries()];
   }, [state]);
 
   if (state.status === "loading") return <PageSkeleton />;

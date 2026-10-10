@@ -65,7 +65,7 @@ export default function Home() {
 
       {unconfirmed > 0 && (
         <p className="notice">
-          {unconfirmed} of {core.sources.length} source lists may come from another university.{" "}
+          {unconfirmed} of {core.sources.length} source lists do not name DIT, so their projects are marked “Unconfirmed”. Some come from other institutions.{" "}
           <Link to="/about">Read about the data</Link>
         </p>
       )}

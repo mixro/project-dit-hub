@@ -48,8 +48,8 @@ Personal documents outside the repo: `HUB_RAW_DIR=~/hub-private/raw HUB_PRIVATE_
 
 ## Open questions (do not assume answers)
 
-- The 2017/18, 2018/19 and 2019/20 lists are probably from MUST (Mbeya), not DIT. Marked `institutionId: "unconfirmed"`. Do not relabel them without the user's confirmation. Same for the COE (BEng21) and ICT 2024/25 lists, which do not state an institution.
-- The UDSM portal list is processed but not published (`publish: false`) until the site can separate institutions. Whether to build that switcher now is open.
+- Institution rule (user, 2026-10-10): `dit` only when the document header names DIT; every other list, including UDSM and the probable MUST lists, is `unconfirmed` and shows an "Unconfirmed" badge. Any named institution goes in the source notes.
+- Whether "Project Titles 2019–2023" records real past projects (it reads like a themed idea list).
 - Full name of SLT; level of the ICT and UDSM lists (not stated, kept null).
 - Meaning of "(2014/2015)"-style labels in the 2020 list is unknown; they are preserved verbatim.
 - Whether DIT allows rejected titles to be public (`publishRejectedTitles` in `sources.json`).

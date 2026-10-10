@@ -20,6 +20,7 @@ function facet<K extends keyof ProjectSummary>(items: ProjectSummary[], key: K):
   const counts = new Map<string, number>();
   for (const p of items) {
     const v = p[key];
+    if (v === null) continue; // e.g. no single year: not a facet option
     for (const id of Array.isArray(v) ? v : [String(v)]) counts.set(id, (counts.get(id) ?? 0) + 1);
   }
   return [...counts].map(([id, count]) => ({ id, count })).sort((a, b) => b.count - a.count);
@@ -43,7 +44,7 @@ export function createProjectService(client: DataClient = dataClient) {
       type Group = "years" | "decisions" | "programmeIds" | "categoryIds" | "domainIds" | "technologyIds" | "problemIds";
       const passes = (p: ProjectSummary, skip?: Group) =>
         (!scores || scores.has(p.id)) &&
-        (skip === "years" || !q.years?.length || q.years.includes(p.year)) &&
+        (skip === "years" || !q.years?.length || (p.year !== null && q.years.includes(p.year))) &&
         (skip === "decisions" || !q.decisions?.length || q.decisions.includes(p.decision)) &&
         (skip === "programmeIds" || anyOf(q.programmeIds, [p.programmeId])) &&
         (skip === "categoryIds" || anyOf(q.categoryIds, p.categoryIds)) &&
@@ -59,9 +60,10 @@ export function createProjectService(client: DataClient = dataClient) {
       const sort = q.sort ?? (scores ? "relevance" : "newest");
       const sorted = [...matched].sort((a, b) => {
         if (sort === "relevance" && scores) return (scores.get(b.id) ?? 0) - (scores.get(a.id) ?? 0);
-        if (sort === "oldest") return a.year - b.year || a.title.localeCompare(b.title);
+        // Projects without a single year go last in both date orders.
+        if (sort === "oldest") return (a.year ?? Infinity) - (b.year ?? Infinity) || a.title.localeCompare(b.title);
         if (sort === "title") return a.title.localeCompare(b.title);
-        return b.year - a.year || a.title.localeCompare(b.title);
+        return (b.year ?? -Infinity) - (a.year ?? -Infinity) || a.title.localeCompare(b.title);
       });
 
       const pageSize = q.pageSize ?? 24;
@@ -112,7 +114,7 @@ export function createProjectService(client: DataClient = dataClient) {
       if (!problem) return { ok: false, error: { kind: "not-found", message: "Problem not found", retryable: false } };
       const projects = core.value.projects
         .filter((p) => p.problemIds.includes(id))
-        .sort((a, b) => a.year - b.year || a.title.localeCompare(b.title));
+        .sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity) || a.title.localeCompare(b.title));
       return { ok: true, value: { problem, projects } };
     },
 

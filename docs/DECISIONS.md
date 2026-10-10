@@ -13,6 +13,29 @@ Template:
 
 ---
 
+## 2026-10-10: Projects without an identified programme are not published
+**Context:** the user asked to remove all 130 projects listed under "Programme not identified".
+**Decision:** new flag `publishing.publishUnidentifiedProgramme: false` in `sources.json`. Projects from `programmeId: "infer"` sources whose programme could not be estimated from the title (no fallback) are left out of every public file; the "Programme not identified" filter option disappears. Removed: UDSM 73, "Project Titles 2019–2023" 57. The build prints the count per source.
+**Alternatives:** list the 130 IDs in `excluded_projects.json` (rejected: future lists would need the same manual step).
+**Consequences:** 2,063 projects published. Better programme signals (`config/programmes/*/signals.json`) or `programme_overrides.json` bring a project back.
+
+## 2026-10-10: Remove titles that are not project titles
+**Context:** after publishing UDSM, the user asked to remove titles that do not read as an engineering project (e.g. "Afya Yangu"); most were in "Programme not identified".
+**Decision:** a reviewed list, `pipeline/config/excluded_projects.json` (project ID, title, reason), keeps 44 titles out of every public file, similarity list and search: 26 app names with no description, 9 too vague, 6 health or social campaign topics, 3 placeholders or duplicates ("W", "Test Project", a "Title: …" repeat). All are from the UDSM list. Titles that name a device or system stay, even if short. The build reports the count and any IDs that no longer match.
+**Alternatives:** an automatic rule (word count, non-English words) (rejected: would also drop real short titles such as "Rain Alarm" and "Dual Axis Solar Tracker").
+**Consequences:** 2,193 projects published. The excluded titles still teach the word-splitter vocabulary (exclusion is by project ID, which exists only after that step); no visible effect.
+
+## 2026-10-10: All institutions published; DIT only when the header names DIT; nine new lists
+**Context:** the user added nine `.docx` files to `raw/` and asked to include every list, even from other institutions such as UDSM, showing anything not confirmed as DIT as "Unconfirmed".
+**Decision:**
+- Public institution has two values only: `dit` when the document header names DIT, otherwise `unconfirmed` (the build rejects any other value). A named other institution goes in the source notes. This replaces the 2026-10-09 rule that a stated other institution (UDSM) is recorded as itself.
+- UDSM list published (`unconfirmed`). New sources: EE BENG18 approved 2020/21, ETE BENG22 assessment 2025/26 (scores never extracted; two rows per group project merged), EE titles 2023/24 (numbered paragraphs, new `format: "numbered-paragraphs"`), EE OD23 (year not stated), 2014/15 and 2016/17 lists (programme estimated, EE fallback; MUST evidence in notes), "Project Titles" (nothing stated) and "Project Titles 2019–2023" (range, no single year). Only the new ETE 2024/25 Word file names DIT; it duplicates the published ETE 2024/25 list (67/67 titles), so it is processed but `publish: false`.
+- Projects may have no single year: schema 3, `year` and `academicYear` nullable; undated projects sort last, are not year-filter options and are left out of year trends.
+- "Unconfirmed" badge (text, dashed warn border) on project rows, idea-check matches, similar projects and the project page. Event labels come from `taxonomy.json` instead of a copy in `ProjectDetail.tsx`. New events: mini presentation, project assessment.
+- Extraction skips header rows repeated inside one table. 31 correct compound words or product names added to `keepWords` (e.g. barcode, gateway, microgrid, travelled). Problem rules extended and a shared `food-quality` problem added.
+**Alternatives:** keep UDSM unpublished until an institution switcher exists (rejected by the user); record each institution separately (rejected: user wants one "Unconfirmed" label); publish both ETE 2024/25 files (rejected: every project twice).
+**Consequences:** 2,237 projects (was 1,007); existing project IDs unchanged. Unclassified: EE 4%, ETE 17%, COE 64%, unassigned 55%. First load ~203 KB gzipped (was ~148 KB; budget ~120 KB): the project index is now 104 KB. "Project Titles 2019–2023" looks like a themed idea list rather than a record of past projects; needs the user's confirmation.
+
 ## 2026-10-09: Theme switch (dark default, light mode) and collapsible problem areas
 **Context:** the user asked to keep the existing dark look, add a light mode with a switch beside the menu icon, and make the problem categories collapsible.
 **Decision:** dark is the default for every visitor; a sun/moon button in the top bar switches to light, remembered on the device (`hub.theme.v1`) and applied before first paint by an inline script in `index.html`, so there is no flash. The light palette keeps the documented brand colours (paper #FBFBF9, ink #172130, green #0B6E4F) and adds soft card shadows and a faint green glow behind the home hero. The Problems page groups areas into collapsible sections: the largest open by default, "Expand all / Collapse all", and every matching area open while filtering. New analytics event `theme_changed`.

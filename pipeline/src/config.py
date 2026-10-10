@@ -49,6 +49,7 @@ class Config:
     shared: dict
     programmes: dict[str, ProgrammeRules]
     overrides: dict[str, str] = field(default_factory=dict)  # projectId -> programmeId
+    excluded: dict[str, dict] = field(default_factory=dict)  # projectId -> {title, reason}: not a project title
 
     @property
     def sources(self) -> list[dict]:
@@ -110,7 +111,11 @@ def load_config(root: Path) -> Config:
             signals=_optional(d / "signals.json", "signals"),
         )
     overrides = _read(root / "programme_overrides.json").get("overrides", {}) if (root / "programme_overrides.json").exists() else {}
-    cfg = Config(sources_cfg, catalogue, shared, programmes, overrides)
+    excluded_cfg = _read(root / "excluded_projects.json") if (root / "excluded_projects.json").exists() else {"reasons": {}, "excluded": {}}
+    for project_id, e in excluded_cfg["excluded"].items():
+        if e.get("reason") not in excluded_cfg["reasons"]:
+            raise ConfigError(f"excluded_projects.json, '{project_id}': reason '{e.get('reason')}' is not one of: {', '.join(excluded_cfg['reasons'])}.")
+    cfg = Config(sources_cfg, catalogue, shared, programmes, overrides, excluded_cfg["excluded"])
     _validate(cfg, root)
     return cfg
 
@@ -127,6 +132,9 @@ def _validate(cfg: Config, root: Path) -> None:
     progs = {p["id"]: p for p in cfg.catalogue["programmes"]}
     levels = {lv["id"] for lv in cfg.catalogue["levels"]}
     institutions = {i["id"] for i in cfg.sources_cfg["institutions"]}
+    # Public rule: DIT only when the document header names DIT; everything else is "unconfirmed".
+    if institutions != {"dit", "unconfirmed"}:
+        raise ConfigError("sources.json institutions must be exactly 'dit' and 'unconfirmed'. Record any other named institution in the source's notes.")
     for d in (root / "programmes").iterdir() if (root / "programmes").exists() else []:
         if d.is_dir() and d.name not in progs:
             raise ConfigError(f"Folder config/programmes/{d.name} does not match any programme ID in programmes.json.")
@@ -151,8 +159,10 @@ def _validate(cfg: Config, root: Path) -> None:
             raise ConfigError(f"{where}: levelId '{s.get('levelId')}' is not in programmes.json levels ({', '.join(sorted(levels))}); use null if the document does not state it.")
         if s.get("institutionId") not in institutions:
             raise ConfigError(f"{where}: institutionId '{s.get('institutionId')}' is not listed under institutions.")
-        if (s.get("year") is None) != (s.get("academicYear") is None):
-            raise ConfigError(f"{where}: year and academicYear must both be set or both be null.")
+        if s.get("year") is not None and s.get("academicYear") is None:
+            raise ConfigError(f"{where}: a source with a year needs academicYear too.")
+        if s.get("format", "table") not in ("table", "numbered-paragraphs"):
+            raise ConfigError(f"{where}: format must be 'table' or 'numbered-paragraphs'.")
     for project_id, pid in cfg.overrides.items():
         if pid not in progs:
             raise ConfigError(f"programme_overrides.json: '{project_id}' -> '{pid}' is not a programme in programmes.json.")

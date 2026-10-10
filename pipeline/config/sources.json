@@ -201,7 +201,7 @@
       "id": "udsm-fyp-portal",
       "file": "UDSM_FYP_portal_titles_NOT_DIT.docx",
       "layout": "title-list-v1",
-      "institutionId": "udsm",
+      "institutionId": "unconfirmed",
       "departmentId": null,
       "programmeId": "infer",
       "levelId": null,
@@ -211,7 +211,6 @@
       "year": null,
       "event": "title-list",
       "eventDate": null,
-      "publish": false,
       "defaultDecision": {
         "value": "unknown",
         "provenance": "inferred",
@@ -221,27 +220,278 @@
         "serial": "S.NO",
         "title": "TITLE"
       },
-      "notes": "Export of the University of Dar es Salaam FYP portal (stated in the source), not DIT. Programme estimated per title; year and level not recorded. Not published until the site can separate institutions."
+      "notes": "Export of an FYP portal that the source states belongs to the University of Dar es Salaam. Shown as institution not confirmed: only lists whose header names DIT are shown as DIT. Programme estimated per title; year and level not recorded."
+    },
+    {
+      "id": "ee-beng18-approved-2021",
+      "file": "BENG18EE_Titles_2020-2021.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "from-source-name",
+      "levelId": "beng",
+      "level": "BEng (from cohort name BENG 18EE)",
+      "cohort": "BENG 18 EE",
+      "academicYear": "2020/2021",
+      "year": 2021,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "accepted",
+        "provenance": "recorded",
+        "reason": "Header reads 'Approved Project Titles'."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Approved Project Title"
+      },
+      "notes": "Header reads '2020-2021 BENG 18EE TITLES, Approved Project Titles'. Institution not named in the header. No names or registration numbers in the document."
+    },
+    {
+      "id": "ete-beng22-assessment-2026",
+      "file": "BENG22ETE_External_Presentation_Assessment.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electronics-telecommunication",
+      "programmeId": "electronics-telecommunication-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor of Engineering (NTA Level 8)",
+      "cohort": "BENG 22 ETE",
+      "academicYear": "2025/2026",
+      "year": 2026,
+      "yearProvenance": "recorded",
+      "event": "project-assessment",
+      "mergeGroupTitles": true,
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "accepted",
+        "provenance": "inferred",
+        "reason": "Assessed at project realisation, so the title had been approved earlier."
+      },
+      "columns": {
+        "serial": "S/NO",
+        "regNo": "REG. NUMBER",
+        "name": "FULL NAME",
+        "title": "PROJECT TITLE"
+      },
+      "notes": "Header states the Department of Electronics and Telecommunication Engineering, Bachelor of Engineering 2025/2026, NTA Level 8, project realisation assessment sheet. Institution not named in the header. Assessment scores are never extracted."
+    },
+    {
+      "id": "ete-2025-title-defense-word",
+      "file": "BEng_Title_Defending_2024-2025.docx",
+      "layout": "title-list-v1",
+      "institutionId": "dit",
+      "departmentId": "electronics-telecommunication",
+      "programmeId": "electronics-telecommunication-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor of Engineering",
+      "cohort": null,
+      "academicYear": "2024/2025",
+      "year": 2025,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "publish": false,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Processed for checking only."
+      },
+      "columns": {
+        "serial": "S. No",
+        "regNo": "Reg. No",
+        "name": "Name",
+        "title": "Title"
+      },
+      "notes": "Header states DIT, Department of Electronics and Telecommunication Engineering, BEng Title Defending 2024/2025. Same 67 titles as ete-2025-title-defense (the PDF conversion already published), so it is processed but not published, to avoid listing each project twice. Supervisor and comments columns are never extracted."
+    },
+    {
+      "id": "ee-2024-title-list",
+      "file": "List of Electrical projects titles.docx",
+      "format": "numbered-paragraphs",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "from-source-name",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": "2023/2024",
+      "year": 2024,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "title": "(numbered paragraphs)"
+      },
+      "notes": "Numbered list headed 'List of Electrical Projects titles 2023/2024'. Institution and level not stated. No names or registration numbers."
+    },
+    {
+      "id": "ee-od23-title-list",
+      "file": "OD23EE_Titles.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "from-source-name",
+      "levelId": "od",
+      "level": "Ordinary Diploma (from cohort name OD23EE)",
+      "cohort": "OD23 EE",
+      "academicYear": null,
+      "year": null,
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "serial": "S/N",
+        "name": "Name",
+        "title": "Title"
+      },
+      "notes": "Headed 'OD23EE Project Titles'. Year and institution not stated; the year is not guessed from the cohort name."
+    },
+    {
+      "id": "titles-2015",
+      "file": "Project Titles 2014-15.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": null,
+      "programmeId": "infer",
+      "fallbackProgrammeId": "electrical-engineering",
+      "levelId": "beng",
+      "level": "NTA Level 8",
+      "cohort": null,
+      "academicYear": "2014/2015",
+      "year": 2015,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "serial": "S/N",
+        "regNo": "ADM NO",
+        "name": "NAME",
+        "title": "TITLES"
+      },
+      "notes": "Headed 'Project titles NTA Level 8, academic year 2014/2015'. Programme not stated, so it is estimated per title (Electrical Engineering when no signal, like the 2017-2020 lists). Titles mention MUST and Mbeya several times; institution not named in the header."
+    },
+    {
+      "id": "mini-presentation-2017",
+      "file": "Project Titles 2016-17.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": null,
+      "programmeId": "infer",
+      "fallbackProgrammeId": "electrical-engineering",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": "2016/2017",
+      "year": 2017,
+      "yearProvenance": "recorded",
+      "event": "mini-presentation",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Presentation schedule; no decisions recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "regNo": [
+          "REG. NO",
+          "REG.NO"
+        ],
+        "name": "NAME",
+        "title": "TITLE"
+      },
+      "notes": "Headed 'Project min presentation: 2016/17', in three groups held in the High Voltage, Electrical Machines and Electrical Drives rooms. Programme and level not stated, so the programme is estimated per title (Electrical Engineering when no signal). Titles mention Mbeya and MUST; institution not named in the header. Supervisors column is never extracted."
+    },
+    {
+      "id": "project-titles-undated",
+      "file": "Project_Titles.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": null,
+      "programmeId": "infer",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": null,
+      "year": null,
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title"
+      },
+      "notes": "Headed only 'Project Titles'. Institution, programme, level and year not stated; programme estimated per title."
+    },
+    {
+      "id": "project-titles-2019-2023",
+      "file": "Project_Titles_2019-2023.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": null,
+      "programmeId": "infer",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": "2019–2023",
+      "year": null,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Title list without decisions."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title"
+      },
+      "notes": "Headed 'Project Titles from 2019–2023'; the year of each title is not given, so projects have no single year. Institution, programme and level not stated; programme estimated per title."
     }
   ],
   "institutions": [
     {
       "id": "dit",
-      "label": "Dar es Salaam Institute of Technology"
-    },
-    {
-      "id": "udsm",
-      "label": "University of Dar es Salaam"
+      "label": "Dar es Salaam Institute of Technology",
+      "note": "Only lists whose header names DIT."
     },
     {
       "id": "unconfirmed",
       "label": "Institution not confirmed",
-      "note": "Three documents (2017/18, 2018/19, 2019/20) contain strong evidence of being from MUST (Mbeya University of Science and Technology). Confirm before public launch."
+      "note": "The list's header does not name DIT. Includes a list that states the University of Dar es Salaam and lists with evidence of MUST (Mbeya University of Science and Technology)."
     }
   ],
   "publishing": {
     "publishRejectedTitles": true,
     "publishSubmissionLinks": true,
-    "_note": "Both flags need DIT confirmation before a public launch."
+    "publishUnidentifiedProgramme": false,
+    "_note": "publishRejectedTitles and publishSubmissionLinks need DIT confirmation before a public launch. publishUnidentifiedProgramme false (user, 2026-10-10): projects whose programme could not be estimated from the title are left out."
   }
 }

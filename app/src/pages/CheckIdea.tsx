@@ -8,6 +8,8 @@ import { ErrorPanel } from "../components/States";
 import { useCore, useDocumentTitle } from "../lib/core";
 import { Link } from "../lib/router";
 import { track } from "../lib/analytics";
+import { InstitutionBadge } from "../components/InstitutionBadge";
+import { yearText } from "../lib/format";
 
 const KEY = "hub.idea.v1";
 const BAND = { "closely-related": "Closely related", related: "Related", "loosely-related": "Loosely related" } as const;
@@ -69,7 +71,7 @@ export default function CheckIdea() {
                   <li key={m.project.id}>
                     <span className={`band band-${m.band}`}>{BAND[m.band]}</span>
                     <Link to={`/projects/${m.project.id}`}>{m.project.title}</Link>
-                    <span className="similar-meta"><ProgrammeBadge project={m.project} /> {m.project.year}, <DecisionBadge decision={m.project.decision} /></span>
+                    <span className="similar-meta"><ProgrammeBadge project={m.project} /> {yearText(m.project)}, <DecisionBadge decision={m.project.decision} /></span>
                     <span className="why">
                       Why: {[
                         m.sharedProblemIds.length ? `same problem (${m.sharedProblemIds.map((x) => core.problemById.get(x)?.title ?? x).join(", ")})` : "",

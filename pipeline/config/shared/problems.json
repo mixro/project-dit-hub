@@ -25,7 +25,11 @@
         "power management",
         "running without load",
         "energy losses",
-        "displays current, power and voltage"
+        "displays current, power and voltage",
+        "panel meter",
+        "energy usage",
+        "energy management",
+        "energy dashboard"
       ]
     },
     {
@@ -69,7 +73,25 @@
         "generator for home",
         "diesel-solar",
         "mobisol",
-        "footstep power"
+        "footstep power",
+        "solar pv system",
+        "solar power plant",
+        "wind turbine",
+        "wind energy",
+        "wind farm",
+        "biogas",
+        "gasification",
+        "solar thermal",
+        "micro ?turbine",
+        "solar panel clean",
+        "maximum power point",
+        "solar (power )?tracker",
+        "renewable energy",
+        "micro-generator",
+        "solar charge controller",
+        "solar water heat",
+        "grid integrated solar",
+        "solar energy kit"
       ]
     },
     {
@@ -128,7 +150,12 @@
         "water system leakages",
         "water leakage",
         "pipeline",
-        "water theft"
+        "water theft",
+        "water selling",
+        "distribution of water",
+        "water control",
+        "water management system",
+        "smart water bottle"
       ],
       "excludes": [
         "fuel",
@@ -210,7 +237,10 @@
         "aflatoxin",
         "refrigerat",
         "grains store",
-        "drying lines"
+        "drying lines",
+        "grain storage",
+        "tobako baking",
+        "tobacco"
       ]
     },
     {
@@ -237,7 +267,15 @@
         "chicks yard",
         "egg incubator",
         "home incubator",
-        "poultry farming"
+        "poultry farming",
+        "fish (farm|feed|pond|catch)",
+        "fish feeder",
+        "fishing",
+        "livestock",
+        "animal food",
+        "brooding",
+        "number of fish",
+        "saline leg bath"
       ]
     },
     {
@@ -265,7 +303,10 @@
         "trespassing animals",
         "cattle",
         "repellent",
-        "scaring"
+        "scaring",
+        "elephant",
+        "poaching",
+        "fly-bone"
       ]
     },
     {
@@ -288,7 +329,11 @@
         "weeds",
         "spray pump|sprayer|fumigation",
         "grass cutter",
-        "aquaponics"
+        "aquaponics",
+        "plant diseases",
+        "seed planting",
+        "small-scale farmers",
+        "garden"
       ]
     },
     {
@@ -347,7 +392,34 @@
         "hoist for paralytic",
         "premature bab",
         "heart rate",
-        "incubator by using solar"
+        "incubator by using solar",
+        "stethoscope",
+        "seizure",
+        "jaundice",
+        "bilirubin",
+        "neonatal",
+        "infant warmer",
+        "respiratory",
+        "oxygen purity",
+        "drug dispens",
+        "medication",
+        "prosthetic",
+        "hearing aid",
+        "audio ?meter",
+        "mortuary",
+        "\\bmri\\b",
+        "suction machine",
+        "therapy device",
+        "missed doses",
+        "fall detection",
+        "syndrome",
+        "healthcare",
+        "heart and lung",
+        "daily needs assistance",
+        "healthy monitoring",
+        "remote health monitoring",
+        "neonatal icu",
+        "child safety in"
       ]
     },
     {
@@ -414,7 +486,22 @@
         "driver fatigue",
         "seatbelt|seat belt",
         "railway gate",
-        "pedestrian cross"
+        "pedestrian cross",
+        "drowsiness",
+        "collision",
+        "lane departure",
+        "airbag",
+        "cruise control",
+        "braking system",
+        "road hazard",
+        "tire pressure",
+        "driver behavio",
+        "unconscious driver",
+        "sharp corners",
+        "brake pad",
+        "wiper",
+        "headlamp",
+        "service time for vehicles"
       ]
     },
     {
@@ -463,7 +550,12 @@
         "vehicle starting",
         "vehicle tracking",
         "fuel theft",
-        "motorcycle"
+        "motorcycle",
+        "stolen vehicles",
+        "vehicle diagnost",
+        "car diagnostic",
+        "fuel monitoring and management system for vehicles",
+        "fuel efficiency monitoring"
       ]
     },
     {
@@ -494,7 +586,18 @@
         "route cost",
         "marine",
         "fishermen",
-        "buses"
+        "buses",
+        "bus rapid transit",
+        "\\bbrt\\b",
+        "route optimi",
+        "public transport",
+        "bus departure",
+        "cargo monitoring",
+        "logistics",
+        "load monitoring system for trucks",
+        "bike lock",
+        "number of vehicles entering",
+        "vehicle counter"
       ]
     },
     {
@@ -534,7 +637,20 @@
         "door opener",
         "object identification",
         "metal detector",
-        "library.*security|security system that will detect"
+        "library.*security|security system that will detect",
+        "panic button",
+        "spy robot",
+        "bombs?\\b",
+        "missing children",
+        "access control",
+        "personal identification",
+        "forgotten items",
+        "foreign object debris",
+        "metal detection",
+        "domestic violence",
+        "shelf locking",
+        "letter box",
+        "personal safety"
       ],
       "excludes": [
         "transformer oil",
@@ -652,7 +768,18 @@
         "home appliances",
         "appliances",
         "lighting during",
-        "guest house"
+        "guest house",
+        "lighting control",
+        "light(ing)? system",
+        "smart house",
+        "home appliance",
+        "brightness regulation",
+        "clothes retracting",
+        "baby bed",
+        "theater doors",
+        "anchor light",
+        "dusk-dawn",
+        "motion-sensing relay"
       ]
     },
     {
@@ -667,7 +794,14 @@
       "any": [
         "stove",
         "cooker",
-        "cooking"
+        "cooking",
+        "coffee maker",
+        "ice cream maker",
+        "food dehydrator",
+        "meal prep",
+        "food preparation",
+        "recipe",
+        "spice dispenser"
       ]
     },
     {
@@ -691,7 +825,14 @@
         "post-consumer paper",
         "incinerator",
         "trash",
-        "eats pollution"
+        "eats pollution",
+        "waste (collection|sorting|segregation|separation|disposal|tracking|compactor|reduction|dumping|tracker|containers)",
+        "land ?fill",
+        "e-waste",
+        "electronic waste",
+        "hazardous waste",
+        "food waste",
+        "construction waste"
       ]
     },
     {
@@ -708,7 +849,11 @@
         "noise",
         "fumes",
         "odou?r",
-        "pm ?2\\.5"
+        "pm ?2\\.5",
+        "emission",
+        "air purifier",
+        "pollution",
+        "dust-free"
       ]
     },
     {
@@ -726,7 +871,10 @@
         "emergency response",
         "rain alarm",
         "possibility of raining",
-        "forest fire"
+        "forest fire",
+        "landslide",
+        "natural disaster",
+        "early warning"
       ]
     },
     {
@@ -777,7 +925,39 @@
         "packing system",
         "electrolyte mixer",
         "sugar estate",
-        "coil winding"
+        "coil winding",
+        "production line",
+        "assembly line",
+        "filler machine",
+        "label?ler",
+        "crates",
+        "steam pressure",
+        "dispensing and mixing",
+        "material handling",
+        "robotic arm",
+        "industrial (automation|equipment|process|pumps|ovens|iot|robot|security|operations|measurement|drone|data)",
+        "factor(y|ies)",
+        "manufactur",
+        "machine vision",
+        "quality control",
+        "palm oil press",
+        "sugar cane",
+        "mixing and stirring",
+        "guided vehicle",
+        "sewing machine",
+        "\\bcnc\\b",
+        "drilling machine",
+        "gauze cutting",
+        "poles treatment",
+        "spent grain",
+        "bottle\\(?s?\\)? entering",
+        "fluid dispensing",
+        "compressor",
+        "parts sorting",
+        "tool management",
+        "supply chain",
+        "machinery",
+        "joystick-controlled"
       ]
     },
     {
@@ -861,7 +1041,20 @@
         "clock control",
         "coin counting",
         "volume of sound",
-        "library"
+        "library",
+        "notice board",
+        "timetable",
+        "school bell",
+        "activity scheduling",
+        "attendance",
+        "venue monitoring",
+        "digital literacy",
+        "board cleaning",
+        "candidate",
+        "equipment tracking",
+        "vote counting",
+        "digital signage",
+        "cinema hall"
       ]
     },
     {
@@ -879,7 +1072,10 @@
         "telecommunication sites",
         "outdoor bts",
         "airtel sites",
-        "fm radio"
+        "fm radio",
+        "rf interference",
+        "\\b4g\\b",
+        "walkie"
       ]
     },
     {
@@ -913,6 +1109,35 @@
         "phone detector",
         "mobile phone detection",
         "cell phone in examination"
+      ]
+    },
+    {
+      "id": "food-quality",
+      "title": "Spoiled, adulterated or unsafe food and drink",
+      "categoryIds": [
+        "agriculture",
+        "healthcare"
+      ],
+      "description": "Food and drink can spoil, be adulterated or vary in quality before it reaches people. Quick, affordable checks help sellers and buyers catch problems early.",
+      "any": [
+        "spoilage",
+        "freshness",
+        "food (safety|quality|allergen)",
+        "food allergies",
+        "adulterat",
+        "allergen",
+        "honey quality",
+        "\\bph (monitoring|meter|improvement)",
+        "water ph\\b",
+        "liquid soap",
+        "beverages?",
+        "fermentation",
+        "food storage",
+        "quality for local",
+        "nutrition",
+        "food labelling",
+        "food pairing",
+        "food quality"
       ]
     }
   ]

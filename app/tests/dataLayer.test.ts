@@ -46,7 +46,8 @@ if (water.ok) {
 }
 
 const prob = await svc.getProblem("irrigation");
-check("problem evolution sorted by year", prob.ok && prob.value.projects.every((p, i, a) => i === 0 || a[i - 1].year <= p.year), prob.ok ? `${prob.value.projects.length} projects` : "");
+const yearOrLast = (y: number | null) => y ?? Infinity; // projects without a single year come last
+check("problem evolution sorted by year", prob.ok && prob.value.projects.every((p, i, a) => i === 0 || yearOrLast(a[i - 1].year) <= yearOrLast(p.year)), prob.ok ? `${prob.value.projects.length} projects` : "");
 
 const idea = await svc.checkIdea("solar powered irrigation pump controlled by soil moisture sensors");
 check("idea check finds related work", idea.ok && idea.value.matches.length > 0, idea.ok ? idea.value.summary : "");
@@ -77,7 +78,8 @@ if (core.ok) {
   const badProg = projects.filter(p =>
     !progs.has(p.programmeId) || (p.levelId !== null && !levels.has(p.levelId)) ||
     !["recorded", "from-source-name", "inferred-from-title"].includes(p.programmeProvenance) ||
-    (p.programmeProvenance === "inferred-from-title") !== (p.programmeConfidence !== undefined));
+    // No confidence only when no programme could be estimated ("unassigned").
+    (p.programmeProvenance === "inferred-from-title") !== (p.programmeConfidence !== undefined || p.programmeId === "unassigned"));
   check("every project has a known programme, level and programme provenance", badProg.length === 0, `${badProg.length} invalid`);
 
   const ee = ["ee-2026-title-defense", "bachelor-2020-final-presentation", "tentative-2018", "titles-2019"];
@@ -101,8 +103,15 @@ if (core.ok) {
   }
   check("similar projects are split into same and other programmes", splitOk, `${sample.length} projects checked`);
 
-  check("unpublished sources (UDSM) are absent from public data",
-        !sources.some(s => s.id === "udsm-fyp-portal") && !projects.some(p => p.institutionId === "udsm" || p.sourceId === "udsm-fyp-portal"));
+  check("unpublished sources (duplicate ETE list) are absent from public data",
+        !sources.some(s => s.id === "ete-2025-title-defense-word") && !projects.some(p => p.sourceId === "ete-2025-title-defense-word"));
+
+  check("institution is DIT or unconfirmed only, and UDSM shows as unconfirmed",
+        projects.every(p => p.institutionId === "dit" || p.institutionId === "unconfirmed") &&
+        projects.some(p => p.sourceId === "udsm-fyp-portal") && projects.filter(p => p.sourceId === "udsm-fyp-portal").every(p => p.institutionId === "unconfirmed"));
+
+  check("projects without a single year load (year null, range kept)",
+        projects.some(p => p.year === null && p.academicYear === "2019–2023") && projects.some(p => p.year === null && p.academicYear === null));
 
   const ict = projects.filter(p => p.sourceId === "ict-2025-title-list");
   const coe = projects.filter(p => p.sourceId === "coe-beng21-title-list");

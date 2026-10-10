@@ -25,8 +25,8 @@ export default function About() {
       <ul className="sources">
         {core.sources.map((s) => (
           <li key={s.id}>
-            <strong>{s.academicYear}</strong>: {s.documentName}, {s.projectCount} projects.
-            {s.institutionId === "unconfirmed" && <span className="flag"> Institution not confirmed.</span>}
+            <strong>{s.academicYear ?? "Year not recorded"}</strong>: {s.documentName}, {s.projectCount} projects.
+            {s.institutionId === "unconfirmed" && <span className="flag"> Institution not confirmed: the header does not name DIT.</span>}
             <span className="muted small"> {s.notes}</span>
           </li>
         ))}
@@ -41,13 +41,13 @@ export default function About() {
       <h2>Similarity scores</h2>
       <p>“Closely related” means the titles share important words and tags. It is not an originality or plagiarism check. A related project can still leave room for a new contribution.</p>
 
-      <h2>For test sessions</h2>
+      {/* <h2>For test sessions</h2>
       <p>This device has recorded {events} usage events (searches, filters and pages opened). They never leave the device unless you download them.</p>
       <div className="row-actions">
         <button className="btn-outline" onClick={download} disabled={!events}>Download session log</button>
         <button className="btn-text" onClick={() => { clearEvents(); setEvents(0); }} disabled={!events}>Clear log</button>
       </div>
-      <p className="muted small">Data version {core.manifest.datasetVersion}, built {new Date(core.manifest.generatedAt).toLocaleDateString()}.</p>
+      <p className="muted small">Data version {core.manifest.datasetVersion}, built {new Date(core.manifest.generatedAt).toLocaleDateString()}.</p> */}
     </div>
   );
 }

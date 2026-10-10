@@ -9,6 +9,8 @@ import { useCore, useDocumentTitle } from "../lib/core";
 import { Link } from "../lib/router";
 import { compareStore, useCompare, MAX_COMPARE } from "../lib/compare";
 import { track } from "../lib/analytics";
+import { InstitutionBadge } from "../components/InstitutionBadge";
+import { yearText } from "../lib/format";
 
 const ROLE: Record<TitleVersion["role"], string> = {
   proposed: "Proposed title",
@@ -23,12 +25,6 @@ const BAND: Record<SimilarProject["band"], string> = {
   "closely-related": "Closely related",
   related: "Related",
   "loosely-related": "Loosely related",
-};
-const EVENT_LABEL: Record<string, string> = {
-  "title-defense": "Title defence",
-  "final-presentation": "Final presentation",
-  "tentative-titles": "Tentative title list",
-  "title-list": "Title list",
 };
 
 export default function ProjectDetail({ id }: { id: string }) {
@@ -61,12 +57,12 @@ function ProjectView({ project: p }: { project: Project }) {
       <dl className="facts">
         <div><dt>Programme</dt><dd>{core.programmeById.get(p.programmeId)?.label ?? "Not identified"}{p.programmeProvenance === "inferred-from-title" && <span className="muted small"> (estimated from the title)</span>}</dd></div>
         <div><dt>Level</dt><dd>{p.levelId ? core.label("levels", p.levelId) : <span className="muted">Not recorded</span>}</dd></div>
-        <div><dt>Year</dt><dd>{p.academicYear}</dd></div>
+        <div><dt>Year</dt><dd>{p.academicYear ?? <span className="muted">Not recorded</span>}</dd></div>
         <div><dt>Decision</dt><dd><DecisionBadge decision={d.decision} inferred={d.decisionProvenance === "inferred"} /></dd></div>
-        <div><dt>Listed in</dt><dd>{EVENT_LABEL[p.event] ?? p.event}{source?.cohort ? `, ${source.cohort}` : ""}</dd></div>
+        <div><dt>Listed in</dt><dd>{core.label("events", p.event)}{source?.cohort ? `, ${source.cohort}` : ""}</dd></div>
         <div>
           <dt>Institution</dt>
-          <dd>{unconfirmed ? <>Not confirmed <Link to="/about" className="small">why?</Link></> : core.label("institutions", p.institutionId)}</dd>
+          <dd>{unconfirmed ? <><InstitutionBadge project={p} /> <Link to="/about" className="small">why?</Link></> : core.label("institutions", p.institutionId)}</dd>
         </div>
       </dl>
 
@@ -116,7 +112,7 @@ function ProjectView({ project: p }: { project: Project }) {
                   <span className={`band band-${s.band}`}>{BAND[s.band]}</span>
                   <Link to={`/projects/${s.id}`} onClick={() => track("similar_project_clicked", { from: p.id, to: s.id, band: s.band })}>{o.title}</Link>
                   <span className="similar-meta">
-                    <ProgrammeBadge project={o} /> {o.year}, <DecisionBadge decision={o.decision} />
+                    <ProgrammeBadge project={o} /> {yearText(o)}, <DecisionBadge decision={o.decision} />
                   </span>
                   {(s.reasons.sharedTerms.length > 0 || shared.length > 0) && (
                     <span className="why">

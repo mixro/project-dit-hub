@@ -6,6 +6,7 @@ what the document says, plus its location (table, row) for traceability.
 """
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import docx
@@ -31,10 +32,31 @@ def _find_header(table, title_header: str) -> tuple[int, dict[str, int], int]:
     raise ValueError(f"Header row with '{title_header}' not found")
 
 
+NUMBERED = re.compile(r"^\s*(\d{1,4})\s*[.)]\s*(\S.*)$")
+
+
+def _extract_numbered_paragraphs(document, source: dict) -> tuple[list[dict], list[dict]]:
+    """Lists written as '1. Title' paragraphs instead of a table (sources.json "format")."""
+    rows = []
+    for p_idx, para in enumerate(document.paragraphs):
+        m = NUMBERED.match(para.text)
+        if not m:
+            continue  # headings and blank lines
+        rows.append({
+            "sourceId": source["id"],
+            "location": {"table": None, "row": p_idx},
+            "serial": m.group(1), "regNo": "", "name": "", "title": m.group(2),
+            "remarks": "", "newTitle": "", "extraCells": [],
+        })
+    return rows, []
+
+
 def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]:
     """Return (rows, issues) for one source document."""
     path = raw_dir / source["file"]
     document = docx.Document(str(path))
+    if source.get("format") == "numbered-paragraphs":
+        return _extract_numbered_paragraphs(document, source)
     cols = source["columns"]
     rows, issues = [], []
 
@@ -64,6 +86,9 @@ def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]
             cells = _unique_cells(row)
             if not any(c.strip() for c in cells):
                 continue  # blank separator rows
+            if " ".join(col(cells, "title").split()).upper() == cols["title"].upper():
+                issues.append({"type": "repeated-header-skipped", "table": t_idx, "row": r_idx})
+                continue  # header repeated for the next group in the same table
             rows.append({
                 "sourceId": source["id"],
                 "location": {"table": t_idx, "row": r_idx},

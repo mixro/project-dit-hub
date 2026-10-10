@@ -36,7 +36,7 @@ CONFIG = ROOT / "pipeline" / "config"
 RAW = Path(os.environ.get("HUB_RAW_DIR", ROOT / "raw")).expanduser()
 PRIVATE = Path(os.environ.get("HUB_PRIVATE_DIR", ROOT / "private")).expanduser()
 PUBLIC, REPORTS = ROOT / "output" / "public", ROOT / "reports"
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 DECISIONS = [
     {"id": "accepted", "label": "Accepted"},
@@ -51,6 +51,8 @@ EVENTS = [
     {"id": "final-presentation", "label": "Final presentation"},
     {"id": "tentative-titles", "label": "Tentative titles"},
     {"id": "title-list", "label": "Title list"},
+    {"id": "mini-presentation", "label": "Project mini presentation"},
+    {"id": "project-assessment", "label": "Project assessment"},
 ]
 
 
@@ -161,6 +163,12 @@ def main() -> int:
                                        and sources[s["sourceId"]]["programmeId"] != "infer"])
     unpublished = [s for s in subs if not published(s)]
     subs = [s for s in subs if published(s)]
+    # Titles reviewed as not being a project (config/excluded_projects.json) stay out of every public file.
+    excluded = [s for s in subs if s["id"] in cfg.excluded]
+    subs = [s for s in subs if s["id"] not in cfg.excluded]
+    # Programme could not be estimated from the title: left out unless the publishing flag allows it.
+    unidentified = [] if publishing.get("publishUnidentifiedProgramme", True) else [s for s in subs if s["programmeId"] == UNASSIGNED]
+    subs = [s for s in subs if s not in unidentified]
 
     # Titles from the same row belong to the same student (second proposals,
     # alternatives). Link them without exposing who the student is.
@@ -262,7 +270,7 @@ def main() -> int:
             "categoryIds": p["categoryIds"],
             "programmeId": p.get("programmeId"),  # null = can arise in any programme
             "projectCount": len(projects),
-            "projectCountByYear": dict(sorted(Counter(x["year"] for x in projects).items())),
+            "projectCountByYear": dict(sorted(Counter(x["year"] for x in projects if x["year"] is not None).items())),
             "topTechnologyIds": [t for t, _ in tech.most_common(6)],
             "decisionCounts": dict(Counter(x["decision"] for x in projects)),
         })
@@ -347,7 +355,7 @@ def main() -> int:
             "projects": len(summaries),
             "problems": sum(1 for p in problems_out if p["projectCount"]),
             "sources": len(sources_out),
-            "years": sorted({p["year"] for p in summaries}),
+            "years": sorted({p["year"] for p in summaries if p["year"] is not None}),
         },
         "files": {
             "index": "projects.index.json",
@@ -385,6 +393,10 @@ def main() -> int:
         },
         "unpublishedSources": {sid: {"projects": n, "unclassified": sum(1 for s in unpublished if s["sourceId"] == sid and not s["derived"]["problemIds"])}
                                for sid, n in Counter(s["sourceId"] for s in unpublished).items()},
+        "unidentifiedProgrammeLeftOut": dict(Counter(s["sourceId"] for s in unidentified)),
+        "excludedProjects": {"count": len(excluded), "byReason": dict(Counter(cfg.excluded[s["id"]]["reason"] for s in excluded)),
+                             # Entries that match no project any more (title or source changed): review and remove.
+                             "staleIds": sorted(set(cfg.excluded) - {s["id"] for s in excluded})},
         "privacyViolations": violations,
     }
     REPORTS.mkdir(exist_ok=True)
@@ -406,6 +418,9 @@ def main() -> int:
     for sid, dist in report["programmeInference"]["bySource"].items():
         print(f"  {sid:<19} : {dist}")
     print(f"not published       : {report['unpublishedSources']}")
+    print(f"no programme, out   : {len(unidentified)} {report['unidentifiedProgrammeLeftOut']}")
+    print(f"excluded titles     : {report['excludedProjects']['count']} {report['excludedProjects']['byReason']}"
+          + (f"  STALE IDS: {report['excludedProjects']['staleIds']}" if report['excludedProjects']['staleIds'] else ""))
     print(f"issues              : {dict(Counter(i['type'] for i in issues))}")
     print(f"public files        : " + ", ".join(f"{k} ({v['bytes']//1024} KB)" for k, v in entries.items()))
     print(f"dataset version     : {dataset_version}")

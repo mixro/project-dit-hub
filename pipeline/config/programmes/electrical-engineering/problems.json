@@ -67,7 +67,12 @@
         "power outages",
         "pole bending",
         "electrical pole",
-        "lightning arresters? on distribution"
+        "lightning arresters? on distribution",
+        "broken conductor",
+        "temporary fault",
+        "distribution feeder",
+        "tilted .*pole",
+        "overhead lines"
       ],
       "excludes": [
         "motor",
@@ -136,7 +141,16 @@
         "capacitor banks",
         "reactive power",
         "voltage variation",
-        "load balance"
+        "load balance",
+        "voltage sag",
+        "sag voltage",
+        "voltage drop",
+        "var compensator",
+        "load balancing",
+        "voltage monitoring",
+        "low voltage cases",
+        "phase shifting",
+        "3-phase controller"
       ]
     },
     {
@@ -166,7 +180,9 @@
         "meter tampering",
         "energy meter",
         "tariff calculation",
-        "talking energy meter"
+        "talking energy meter",
+        "electricity billing",
+        "bill sms"
       ],
       "excludes": [
         "water meter",
@@ -198,7 +214,14 @@
         "switching of power supply",
         "switching electronic circuit of solar and electrical",
         "emergency power",
-        "emergency lighting"
+        "emergency lighting",
+        "power supply control from",
+        "auxill?iary power",
+        "different sources",
+        "emergency solar power supply",
+        "generator testing",
+        "two generators",
+        "power supply from"
       ]
     },
     {
@@ -224,7 +247,12 @@
         "fuel theft",
         "alternator to the busbar",
         "synchronous generator",
-        "fuel consumption rate"
+        "fuel consumption rate",
+        "refilling fuel",
+        "diesel generator",
+        "gas engine",
+        "adulterated fuel",
+        "fuel meter"
       ]
     },
     {
@@ -242,7 +270,25 @@
         "welding machine",
         "charging process",
         "battery charger",
-        "storage battery"
+        "storage battery",
+        "power supply design",
+        "dc power supply",
+        "\\bhvdc\\b",
+        "supply from 9v",
+        "5v dc",
+        "battery charg",
+        "phone charger",
+        "mobile charger",
+        "usb power",
+        "battery health",
+        "battery management",
+        "battery swapping",
+        "wireless (power|charging)",
+        "motor driver",
+        "relay driver",
+        "recharge vehicles battery",
+        "liquid less generator",
+        "power switch"
       ]
     },
     {
@@ -264,7 +310,9 @@
         "rikshaw",
         "tri-?ev",
         "hybrid car",
-        "48v"
+        "48v",
+        "electric vehicle",
+        "electric scooter"
       ]
     },
     {
@@ -292,7 +340,15 @@
         "circuit breaker control",
         "home electrical safety",
         "electrical wiring",
-        "electric fence"
+        "electric fence",
+        "short circuit",
+        "cable quality",
+        "electrical sockets",
+        "electric hazard",
+        "non-contact a\\.?c voltage",
+        "fault and condition monitoring system for 33kv",
+        "faults detection using microcontroller",
+        "monitoring and controlling fault"
       ]
     },
     {
@@ -331,7 +387,10 @@
         "electric drive",
         "washing machine",
         "tripping mechanism",
-        "induction motor"
+        "induction motor",
+        "windings",
+        "shaft vibration",
+        "phase selector for wind turbine"
       ]
     },
     {
@@ -347,7 +406,10 @@
         "solar power light plant",
         "mini-grid",
         "micro-grid",
-        "rural home use"
+        "rural home use",
+        "electrify",
+        "solar power hybrid to be deployed",
+        "integrated solar and wind energy solution for rural"
       ]
     }
   ]

@@ -19,7 +19,7 @@ Status: approved direction; programme list confirmed 2026-10-09. Place at `docs/
 - **All 752 existing projects are EE.** Set `programmeId: "electrical-engineering"` on all four existing sources. This settles the programme only; the institution of the 2017/18, 2018/19 and 2019/20 lists stays `unconfirmed` until the user says otherwise.
 - **Workflow:** the user adds Word documents directly in the repo; Claude Code reads and processes them (see section 9). Raw data is never shown on the website.
 - **Programme assignment (changed 2026-10-09):** when a document does not state its programme, assign each project to the best-fitting programme by analysing its title (section 10). Every assignment records how it was made, and inferred ones are labelled on the site. A programme stated by the document or the user always wins.
-- **Institution (changed 2026-10-09):** when a document does not state its institution, process it anyway with `institutionId: "unconfirmed"`. Only a document that states DIT, or that the user confirms, gets `"dit"`. A document that states another institution (e.g. the UDSM portal export) records that institution, not "unconfirmed".
+- **Institution (changed 2026-10-09):** when a document does not state its institution, process it anyway with `institutionId: "unconfirmed"`. Only a document that states DIT, or that the user confirms, gets `"dit"`. A document that states another institution (e.g. the UDSM portal export) records that institution, not "unconfirmed". **Changed 2026-10-10:** every non-DIT list is `unconfirmed`, including UDSM; the named institution goes in the source notes (see DECISIONS.md).
 
 ---
 

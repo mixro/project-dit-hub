@@ -14,7 +14,7 @@ export function isProjectSummary(v: unknown): v is ProjectSummary {
   if (!isObj(v)) return false;
   return (
     isStr(v.id) && isStr(v.title) && v.title.length > 0 && isStrArr(v.altTitles) &&
-    isNum(v.year) && isStr(v.academicYear) && isStr(v.institutionId) && isStr(v.programmeId) && (isStr(v.levelId) || v.levelId === null) &&
+    (isNum(v.year) || v.year === null) && (isStr(v.academicYear) || v.academicYear === null) && isStr(v.institutionId) && isStr(v.programmeId) && (isStr(v.levelId) || v.levelId === null) &&
     isStr(v.event) && isStr(v.decision) && isStrArr(v.problemIds) && isStrArr(v.categoryIds) &&
     isStrArr(v.domainIds) && isStrArr(v.technologyIds) && isStrArr(v.placeIds) && isStr(v.sourceId)
   );
