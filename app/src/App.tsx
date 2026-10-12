@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, useEffect, type ReactNode } from "react";
+import { Component, createElement, lazy, Suspense, useEffect, type ComponentType, type ReactNode } from "react";
 import { Layout } from "./components/Layout";
 import { Empty, PageSkeleton } from "./components/States";
 import { CoreProvider } from "./lib/core";
@@ -7,15 +7,34 @@ import { track } from "./lib/analytics";
 import { dataClient } from "./data/dataClient";
 import Home from "./pages/Home";
 
-// Home ships in the main bundle; every other page downloads only when visited.
-const Projects = lazy(() => import("./pages/Projects"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const Problems = lazy(() => import("./pages/Problems"));
-const ProblemDetail = lazy(() => import("./pages/ProblemDetail"));
-const CheckIdea = lazy(() => import("./pages/CheckIdea"));
-const Compare = lazy(() => import("./pages/Compare"));
-const Insights = lazy(() => import("./pages/Insights"));
-const About = lazy(() => import("./pages/About"));
+// Home ships in the main bundle; every other page is a separate chunk, fetched on first
+// visit or ahead of time (preloadPages) so a tab switch never waits on a download.
+// React.lazy shows its fallback for one render on first use even when the code is already here;
+// lazyPage renders the page directly once loaded. That keeps the short loading screen from
+// appearing, which on Android Chrome re-shows the address bar and shifts the fixed bottom nav.
+function lazyPage<P extends object>(load: () => Promise<{ default: ComponentType<P> }>) {
+  let loaded: ComponentType<P> | null = null;
+  const preload = () => load().then((m) => { loaded = m.default; return m; });
+  const Lazy = lazy(preload);
+  const Page = (props: P) => (loaded ? createElement(loaded, props) : createElement(Lazy as unknown as ComponentType<P>, props));
+  return Object.assign(Page, { preload });
+}
+
+const Projects = lazyPage(() => import("./pages/Projects"));
+const ProjectDetail = lazyPage(() => import("./pages/ProjectDetail"));
+const Problems = lazyPage(() => import("./pages/Problems"));
+const ProblemDetail = lazyPage(() => import("./pages/ProblemDetail"));
+const CheckIdea = lazyPage(() => import("./pages/CheckIdea"));
+const Compare = lazyPage(() => import("./pages/Compare"));
+const Insights = lazyPage(() => import("./pages/Insights"));
+const About = lazyPage(() => import("./pages/About"));
+
+/** Bottom-nav pages first, then the rest. */
+const preloadPages = () => {
+  Promise.all([Projects, Problems, CheckIdea, Insights].map((p) => p.preload()))
+    .then(() => [ProjectDetail, ProblemDetail, Compare, About].forEach((p) => p.preload()))
+    .catch(() => {});
+};
 
 function route(path: string): ReactNode {
   if (path === "/") return <Home />;
@@ -61,6 +80,8 @@ export default function App() {
   // so opening a project later feels instant even on a slow connection.
   useEffect(() => {
     const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback;
+    // Page code is tiny (1-3 KB each), so it is fetched even when data prefetch is skipped below.
+    if (idle) idle(preloadPages); else setTimeout(preloadPages, 1500);
     const start = () => dataClient.prefetchAllDetails();
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
     // Students often pay per megabyte: skip prefetch on data-saver or slow connections.

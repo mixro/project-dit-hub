@@ -137,7 +137,7 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
 .footer { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 20px; padding-bottom: 24px; border-top: 1px solid var(--rule); font-size: var(--fs-sm); }
 
 /* ---------- states ---------- */
-.skeleton { padding-top: 8px; }
+.skeleton { padding-top: 8px; min-height: 100vh; } /* at least a screen tall, so the page never becomes unscrollable while loading (Android Chrome would re-show its address bar and shift the bottom nav) */
 .sk { background: linear-gradient(90deg, var(--rule) 0%, var(--surface) 50%, var(--rule) 100%); background-size: 200% 100%; border-radius: var(--radius-sm); animation: shimmer 1.4s infinite linear; }
 .sk-title { height: 30px; width: 60%; margin-bottom: 20px; }
 .sk-row { height: 58px; margin-bottom: 10px; }
