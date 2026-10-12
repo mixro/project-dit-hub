@@ -34,7 +34,7 @@ export function SearchBox({ initial = "", placeholder = "Search problems, techno
 
   return (
     <form role="search" className={`search${large ? " search-large" : ""}`} onSubmit={submit}>
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" className="search-icon">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" className="search-icon">
         <path fill="currentColor" d="M10 4a6 6 0 1 0 3.9 10.6l4.2 4.2 1.4-1.4-4.2-4.2A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" />
       </svg>
       <input

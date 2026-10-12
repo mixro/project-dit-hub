@@ -162,13 +162,60 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
 .search-sticky { position: sticky; top: calc(56px + env(safe-area-inset-top, 0px)); z-index: 10; background: var(--paper); padding: 8px 0 12px; margin-top: -8px; }
 
 /* ---------- home ---------- */
+/* Centred hero: count pill, two-line headline, search with the button inside the box,
+   example chips, then the idea card. Phone first; wider rules in the media queries below. */
 .home { background: var(--hero-wash) top center / 100% 460px no-repeat; }
-.hero { padding: 20px 0 8px; max-width: 720px; }
-.hero h1 { font-size: var(--fs-2xl); font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 12px; }
-.examples { margin-top: 12px; color: var(--ink-2); font-size: var(--fs-sm); }
-.idea-cta { display: flex; flex-direction: column; gap: 2px; margin: 24px 0 36px; padding: 16px 18px; max-width: 720px; border: 1.5px solid var(--accent); border-radius: var(--radius); background: var(--accent-soft); color: var(--ink); text-decoration: none; }
-.idea-cta strong { color: var(--accent); font-size: var(--fs-md); }
-.idea-cta:hover { color: var(--ink); background: color-mix(in srgb, var(--accent-soft) 70%, var(--accent) 8%); }
+.hero { max-width: 640px; margin: 0 auto; padding: 22px 0 0; text-align: center; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px; margin: 0 0 18px; padding: 0 12px; min-height: 27px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); font-size: 0.75rem; font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.hero-pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.hero h1 { font-size: 2.375rem; font-weight: 750; letter-spacing: -0.035em; line-height: 1.12; margin: 0 0 14px; }
+.hero h1 > span { display: block; } /* the break always falls after "do", as in the design */
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lead-c { display: block; }
+.hero .lead { max-width: 17.25rem; margin: 0 auto 22px; font-size: 0.9375rem; line-height: 1.7; }
+
+/* Search: one box holding the icon, the field and the button (button drops below on phones). */
+.hero .search {
+  flex-wrap: wrap; gap: 6px; padding: 6px; text-align: left;
+  background: var(--surface); border: 2px solid var(--rule); border-radius: 12px; box-shadow: var(--shadow-1);
+}
+.hero .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.hero .search input,
+.hero .search input:focus { flex: 1 1 100%; height: 48px; padding: 0 40px 0 38px; border: 0; background: none; box-shadow: none; font-size: 0.9375rem; }
+.hero .search-icon { left: 18px; top: 20px; width: 18px; height: 18px; }
+.hero .search-clear, .hero .search:has(.search-go) .search-clear { top: 13px; right: 10px; }
+.hero .search-go { flex: 1 1 100%; height: 46px; min-height: 46px; padding: 0 22px; border-radius: 9px; font-size: 0.9375rem; }
+
+.examples { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 6px; margin: 16px 0 0; color: var(--ink-2); font-size: 0.8125rem; }
+.examples-label { margin-right: 4px; }
+.example-chip {
+  display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px;
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--surface);
+  color: var(--ink); font-weight: 400; text-decoration: none; transition: border-color 0.15s, color 0.15s;
+}
+.example-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Idea card: icon, text and an outlined call to action; the whole card is the link. */
+.idea-cta {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px 14px;
+  max-width: 640px; margin: 36px auto 56px; padding: 16px;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow-1);
+  color: var(--ink); text-decoration: none; transition: border-color 0.15s;
+}
+.idea-cta:hover { color: var(--ink); border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); }
+.idea-cta-icon { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); }
+.idea-cta-text { display: contents; }
+.idea-cta-text strong { font-size: 1rem; font-weight: 700; }
+.idea-cta-text > span { grid-column: 1 / -1; color: var(--ink-2); font-size: 0.8125rem; line-height: 1.55; }
+.idea-cta-btn {
+  grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px;
+  border: 1px solid var(--accent); border-radius: 9px; color: var(--accent); font-size: 0.8125rem; font-weight: 600; white-space: nowrap;
+}
+.idea-cta:hover .idea-cta-btn { background: var(--accent-soft); }
 
 /* Problems as an equal-size card grid, ordered by project count. */
 .index { margin-top: 8px; }
@@ -378,7 +425,16 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
 @media (min-width: 640px) {
   .compare-legend, .compare-stack { display: none; }
   .table-scroll { display: block; }
-  .hero h1 { font-size: 2.875rem; }
+  /* Home: search button back inside the row; idea card in one row. */
+  .hero .search { flex-wrap: nowrap; padding: 8px 8px 8px 6px; }
+  .hero .search input, .hero .search input:focus { flex: 1 1 auto; height: 44px; font-size: 1rem; }
+  .hero .search-icon { top: auto; }
+  .hero .search-clear, .hero .search:has(.search-go) .search-clear { top: auto; right: 116px; }
+  .hero .search-go { flex: 0 0 auto; width: 100px; height: 44px; min-height: 44px; padding: 0; }
+  .idea-cta { grid-template-columns: auto 1fr auto; gap: 16px; padding: 18px 20px; }
+  .idea-cta-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .idea-cta-text > span { grid-column: auto; }
+  .idea-cta-btn { grid-column: auto; min-height: 40px; }
   .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .insight-grid { grid-template-columns: 1fr 1fr; }
   .tray { left: auto; right: 24px; width: 420px; }
@@ -399,10 +455,15 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
   .sheet-backdrop.menu-backdrop { display: block; }
   .search-sticky { top: 56px; }
 
-  /* Home: centred column above a full-width problem grid. */
-  .hero { margin: 0 auto; padding-top: 32px; text-align: center; }
-  .hero .lead { margin-left: auto; margin-right: auto; }
-  .idea-cta { margin: 28px auto 48px; align-items: center; text-align: center; }
+  /* Home: larger hero, centred column above a full-width problem grid. */
+  .hero { padding-top: 40px; }
+  .hero-pill { margin-bottom: 26px; min-height: 28px; }
+  .hero h1 { font-size: 3.75rem; line-height: 1.1; margin-bottom: 20px; }
+  .hero .lead-a { display: block; }
+  .hero .lead-c { display: inline; }
+  .hero .lead { max-width: 30rem; margin-bottom: 32px; font-size: 1.0625rem; }
+  .examples { margin-top: 20px; }
+  .idea-cta { margin: 64px auto 96px; }
   .index > h2, .index > .muted { text-align: center; }
   .home .notice { max-width: 720px; margin-left: auto; margin-right: auto; }
 }
