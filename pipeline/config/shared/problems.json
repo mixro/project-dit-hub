@@ -29,7 +29,8 @@
         "panel meter",
         "energy usage",
         "energy management",
-        "energy dashboard"
+        "energy dashboard",
+        "energy man[ae]?gement"
       ]
     },
     {
@@ -91,7 +92,8 @@
         "solar charge controller",
         "solar water heat",
         "grid integrated solar",
-        "solar energy kit"
+        "solar energy kit",
+        "rain ?drop electrical generation"
       ]
     },
     {
@@ -155,7 +157,8 @@
         "distribution of water",
         "water control",
         "water management system",
-        "smart water bottle"
+        "smart water bottle",
+        "water channel"
       ],
       "excludes": [
         "fuel",
@@ -219,7 +222,12 @@
         "grey water",
         "hygiene",
         "sanitary",
-        "toilet"
+        "toilet",
+        "waste ?water",
+        "sewer",
+        "stabili[sz]ation ponds",
+        "faecal sludge",
+        "turbidity"
       ]
     },
     {
@@ -240,7 +248,9 @@
         "drying lines",
         "grain storage",
         "tobako baking",
-        "tobacco"
+        "tobacco",
+        "food dehydration",
+        "\\bcocoa\\b"
       ]
     },
     {
@@ -306,7 +316,9 @@
         "scaring",
         "elephant",
         "poaching",
-        "fly-bone"
+        "fly-bone",
+        "from animals",
+        "\\bdoves?\\b"
       ]
     },
     {
@@ -333,7 +345,27 @@
         "plant diseases",
         "seed planting",
         "small-scale farmers",
-        "garden"
+        "garden",
+        "fungal diseases",
+        "tomato plant",
+        "fertili[sz]ation",
+        "crop protection"
+      ],
+      "excludes": [
+        "stabili[sz]",
+        "subgrade",
+        "road construction",
+        "soil properties",
+        "expansive",
+        "cbr",
+        "clay liners?",
+        "shear strength",
+        "borrow pit",
+        "engineering properties of soil",
+        "base course",
+        "termite hill",
+        "cementitious",
+        "concrete"
       ]
     },
     {
@@ -419,7 +451,9 @@
         "healthy monitoring",
         "remote health monitoring",
         "neonatal icu",
-        "child safety in"
+        "child safety in",
+        "vital signs",
+        "child monitoring bracelet"
       ]
     },
     {
@@ -445,7 +479,10 @@
         "albinism",
         "visual impaired",
         "physically challenged",
-        "blindness"
+        "blindness",
+        "\\bdumb\\b",
+        "\\bdeaf\\b",
+        "hand talk"
       ]
     },
     {
@@ -501,7 +538,8 @@
         "brake pad",
         "wiper",
         "headlamp",
-        "service time for vehicles"
+        "service time for vehicles",
+        "trafic"
       ]
     },
     {
@@ -555,7 +593,10 @@
         "vehicle diagnost",
         "car diagnostic",
         "fuel monitoring and management system for vehicles",
-        "fuel efficiency monitoring"
+        "fuel efficiency monitoring",
+        "tire inflation",
+        "engine and gear ?box",
+        "car doors?"
       ]
     },
     {
@@ -597,7 +638,11 @@
         "load monitoring system for trucks",
         "bike lock",
         "number of vehicles entering",
-        "vehicle counter"
+        "vehicle counter",
+        "traf+ic jams?",
+        "vehicles inspection",
+        "road construction and repair",
+        "scooter student sharing"
       ]
     },
     {
@@ -687,7 +732,9 @@
         "fumes",
         "gas cylinder",
         "smoke",
-        "fire fighting"
+        "fire fighting",
+        "hazardous gas",
+        "hazard detection"
       ]
     },
     {
@@ -724,7 +771,14 @@
         "factory worker",
         "safety of workers",
         "excessive dust",
-        "mining workers"
+        "mining workers",
+        "occupational health",
+        "health and safety",
+        "healthy and safety",
+        "safety polic",
+        "safety practices",
+        "emergency preparedness",
+        "construction sites?"
       ]
     },
     {
@@ -779,7 +833,9 @@
         "theater doors",
         "anchor light",
         "dusk-dawn",
-        "motion-sensing relay"
+        "motion-sensing relay",
+        "light brightness",
+        "brightness control"
       ]
     },
     {
@@ -832,7 +888,10 @@
         "electronic waste",
         "hazardous waste",
         "food waste",
-        "construction waste"
+        "construction waste",
+        "solid waste",
+        "garbage",
+        "waste chemical"
       ]
     },
     {
@@ -853,7 +912,8 @@
         "emission",
         "air purifier",
         "pollution",
-        "dust-free"
+        "dust-free",
+        "emm?ission"
       ]
     },
     {
@@ -957,7 +1017,25 @@
         "tool management",
         "supply chain",
         "machinery",
-        "joystick-controlled"
+        "joystick-controlled",
+        "oil production",
+        "brewing",
+        "inventory management system for electrical",
+        "quantity estimation",
+        "insulation defect",
+        "induction capseal",
+        "induction heating",
+        "copper melting",
+        "overflow grain",
+        "salt unpacking",
+        "\\bpvc\\b",
+        "grinding machine",
+        "tipping system",
+        "mixer machine",
+        "window cleaning",
+        "sweeping machine",
+        "gas ?skid",
+        "gas condensat"
       ]
     },
     {
@@ -995,7 +1073,8 @@
         "\\bcoin\\b",
         "smart trolley",
         "shopping mall",
-        "expiry date"
+        "expiry date",
+        "filling station"
       ]
     },
     {
@@ -1054,7 +1133,9 @@
         "equipment tracking",
         "vote counting",
         "digital signage",
-        "cinema hall"
+        "cinema hall",
+        "v[ae]nue monitoring",
+        "goals counting"
       ]
     },
     {
@@ -1075,7 +1156,9 @@
         "fm radio",
         "rf interference",
         "\\b4g\\b",
-        "walkie"
+        "walkie",
+        "antenna",
+        "broadcasting"
       ]
     },
     {
@@ -1108,7 +1191,8 @@
         "audio muting",
         "phone detector",
         "mobile phone detection",
-        "cell phone in examination"
+        "cell phone in examination",
+        "signal disruptor"
       ]
     },
     {
@@ -1137,7 +1221,10 @@
         "nutrition",
         "food labelling",
         "food pairing",
-        "food quality"
+        "food quality",
+        "leftovers? food",
+        "hotness of food",
+        "ferm[ae]ntation"
       ]
     }
   ]

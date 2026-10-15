@@ -1,0 +1,106 @@
+{
+  "_comment": "Fields (engineering sub-disciplines) of Civil Engineering. Domain IDs must be unique across all programmes.",
+  "domains": [
+    {
+      "id": "structural-engineering",
+      "label": "Structural Engineering",
+      "patterns": [
+        "structural",
+        "storey",
+        "building",
+        "bridge",
+        "reinforced",
+        "\\brcc\\b",
+        "box girder",
+        "prestressed",
+        "steel",
+        "water tank"
+      ]
+    },
+    {
+      "id": "building-materials-engineering",
+      "label": "Building Materials",
+      "patterns": [
+        "concrete",
+        "sandcrete",
+        "brick",
+        "blocks?\\b",
+        "aggregate",
+        "cement",
+        "pozzolan",
+        "mortar",
+        "curing"
+      ]
+    },
+    {
+      "id": "geotechnical-engineering",
+      "label": "Geotechnical Engineering",
+      "patterns": [
+        "\\bsoils?\\b",
+        "subgrade",
+        "sub ?base",
+        "\\bcbr\\b",
+        "stabili[sz]",
+        "clay",
+        "foundation",
+        "borrow pit",
+        "compaction"
+      ]
+    },
+    {
+      "id": "transportation-engineering",
+      "label": "Transportation & Highway Engineering",
+      "patterns": [
+        "traffic",
+        "\\broads?\\b",
+        "pavement",
+        "asphalt",
+        "\\bhma\\b",
+        "intersection",
+        "parking",
+        "\\bbrt\\b",
+        "pedestrian",
+        "junction",
+        "round ?about",
+        "flyover",
+        "bitumin"
+      ]
+    },
+    {
+      "id": "water-resources-engineering",
+      "label": "Water Resources & Environmental Engineering",
+      "patterns": [
+        "water",
+        "irrigation",
+        "drainage",
+        "flood",
+        "sewer",
+        "sewage",
+        "sludge",
+        "rainfall",
+        "hydraulic",
+        "canal",
+        "solid waste"
+      ]
+    },
+    {
+      "id": "construction-management",
+      "label": "Construction Management",
+      "patterns": [
+        "construction (industry|projects?|sites?)",
+        "contractors?",
+        "overrun",
+        "delays?\\b",
+        "payment",
+        "health and safety",
+        "healthy and safety",
+        "safety polic",
+        "quality (control|assurance|management)",
+        "project management",
+        "labour",
+        "lean construction",
+        "productivity"
+      ]
+    }
+  ]
+}

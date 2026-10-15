@@ -13,6 +13,14 @@ Template:
 
 ---
 
+## 2026-10-16: Four new lists (BEE 2023/24, three BENG22 Civil lists); Civil Engineering rules
+**Context:** the user added four `.docx` files to `raw/` and asked to process them.
+**Decision:**
+- `bee-beng20-mini-presentation-2024`: header names DIT, Electrical Engineering Department, 2023/24, 1st & 2nd mini presentation, BENG 20 BEE → `dit`, EE, 143 projects (8 empty rows skipped).
+- `ce-beng22-structural-titles`, `ce-beng22-transportation-titles`, `ce-beng22-water-construction-titles`: "End of semester II – BENG22CE project assessment, proposed project titles" per group → Civil Engineering (stated), BEng (from cohort name), `unconfirmed` (header does not name DIT), year not stated and not guessed. 241 projects.
+- First Civil Engineering rule set: `config/programmes/civil-engineering/` problems (building structures, bridges, building materials, weak soils, road pavements, traffic congestion, water scarcity, urban flooding, construction project delivery), fields (structural, materials, geotechnical, transportation, water resources, construction management) and similarity stopwords. Shared sanitation, worker safety and waste management extended; farm "crop and soil" now excludes road/geotechnical soil wording. EE rules extended for the BEE titles. `keepWords` + GROUNDWATER, MULTIPURPOSE, PASSPORT, MULTIFACTORS, OVERRIDE (stopped new wrong splits in existing titles).
+**Consequences:** 2,447 projects; existing IDs and titles unchanged; 9 existing projects gained a tag. Unclassified: EE 52 (3.5%), CE 2 (1%), new lists 1–2% each. Project index now ~115 KB gzipped (first-load budget issue grows).
+
 ## 2026-10-10: Projects without an identified programme are not published
 **Context:** the user asked to remove all 130 projects listed under "Programme not identified".
 **Decision:** new flag `publishing.publishUnidentifiedProgramme: false` in `sources.json`. Projects from `programmeId: "infer"` sources whose programme could not be estimated from the title (no fallback) are left out of every public file; the "Programme not identified" filter option disappears. Removed: UDSM 73, "Project Titles 2019–2023" 57. The build prints the count per source.

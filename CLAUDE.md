@@ -49,6 +49,7 @@ Personal documents outside the repo: `HUB_RAW_DIR=~/hub-private/raw HUB_PRIVATE_
 ## Open questions (do not assume answers)
 
 - Institution rule (user, 2026-10-10): `dit` only when the document header names DIT; every other list, including UDSM and the probable MUST lists, is `unconfirmed` and shows an "Unconfirmed" badge. Any named institution goes in the source notes.
+- Year of the three BENG22CE Civil lists and the OD23EE list (not stated; kept null).
 - Whether "Project Titles 2019–2023" records real past projects (it reads like a themed idea list).
 - Full name of SLT; level of the ICT and UDSM lists (not stated, kept null).
 - Meaning of "(2014/2015)"-style labels in the 2020 list is unknown; they are preserved verbatim.

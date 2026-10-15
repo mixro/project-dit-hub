@@ -21,6 +21,8 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ✅ All institutions published (2026-10-10): DIT only when the header names DIT, everything else "Unconfirmed" (badge). 9 new lists; 2,237 projects; UDSM published; schema 3 (projects without a single year)
 - ✅ 44 non-project titles (app names, vague or campaign topics, placeholders) excluded via `pipeline/config/excluded_projects.json`; 2,193 projects (2026-10-10)
 - ✅ Projects with no identified programme left out (`publishUnidentifiedProgramme: false`): 130 removed, 2,063 published (2026-10-10)
+- ✅ 2026-10-16: BEE 2023/24 (DIT) and three BENG22 Civil lists added; first Civil Engineering rules; 2,447 projects
+- ❓ Year of the BENG22CE Civil lists (not stated)
 - ❓ Confirm "Project Titles 2019–2023" (300 titles) is a record of real past projects, not a themed idea list
 - 🔜 Rules for software titles: COE 64% and unassigned 55% unclassified (UDSM, ICT, COE lists)
 

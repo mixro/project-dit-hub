@@ -1,0 +1,264 @@
+{
+  "_comment": "Civil Engineering problems (real-world problems, never one student's project). IDs must be unique across all problem files.",
+  "problems": [
+    {
+      "id": "building-structures",
+      "title": "Safe, affordable buildings for growing towns",
+      "categoryIds": [
+        "buildings"
+      ],
+      "description": "Schools, hostels, offices, hospitals and homes in fast-growing towns need multi-storey buildings that are safe, economical and built to code. Poor design and ageing structures lead to defects, costly repairs and collapse risk.",
+      "any": [
+        "structural design",
+        "storey",
+        "storeys",
+        "multi ?storey",
+        "multistorey",
+        "\\bg ?\\+? ?[0-9]\\b",
+        "hostel",
+        "apartment",
+        "office (block|building)",
+        "class ?room",
+        "dormitory|domitory",
+        "academic (block|building)",
+        "warehouse",
+        "hotel building",
+        "residential building",
+        "commercial building",
+        "building deterioration",
+        "structural defects",
+        "timber design",
+        "residential buildings"
+      ],
+      "excludes": [
+        "overrun",
+        "delay",
+        "late payment",
+        "rework",
+        "abandonment",
+        "solid waste",
+        "health",
+        "safety",
+        "maintenance and repair"
+      ]
+    },
+    {
+      "id": "bridges-crossings",
+      "title": "Bridges and safe crossings over rivers and roads",
+      "categoryIds": [
+        "transportation"
+      ],
+      "description": "Rivers, valleys and busy roads cut communities off from markets, schools and hospitals, especially in the rainy season. Durable, affordable bridges and pedestrian crossings keep people and goods moving safely.",
+      "any": [
+        "bridge",
+        "flyover",
+        "box girder",
+        "underground pedestrian",
+        "culvert"
+      ]
+    },
+    {
+      "id": "building-materials",
+      "title": "Costly or poor-quality building materials",
+      "categoryIds": [
+        "buildings",
+        "environment"
+      ],
+      "description": "Cement, sand and aggregates are expensive and their quality varies by source, which weakens concrete, blocks and bricks. Local and waste materials can cut cost and environmental impact if their strength and durability are proven.",
+      "any": [
+        "concrete",
+        "sandcrete",
+        "bricks?\\b",
+        "building blocks",
+        "earth blocks",
+        "aggregates?",
+        "mortar",
+        "pozzolan",
+        "cementitious",
+        "cement replacement",
+        "replacement of (ordinary )?portland cement",
+        "sand quality",
+        "local sands",
+        "curing",
+        "steel (micro)?fib(er|re)s",
+        "pumice in making"
+      ],
+      "excludes": [
+        "structural design",
+        "design of",
+        "designing",
+        "analysis and design",
+        "pavement design",
+        "bridge",
+        "water tank",
+        "construction projects",
+        "construction sites",
+        "stabili[sz]",
+        "soil",
+        "asphalt",
+        "\\bhma\\b",
+        "stone ?mastic"
+      ]
+    },
+    {
+      "id": "weak-soils",
+      "title": "Weak and expansive soils under roads and buildings",
+      "categoryIds": [
+        "transportation",
+        "buildings"
+      ],
+      "description": "Black cotton and other expansive or weak soils swell, shrink and lose strength when wet, cracking roads and foundations. Stabilising them cheaply, often with local or waste materials, extends the life of what is built on them.",
+      "any": [
+        "\\bsoils?\\b",
+        "stabili[sz](ation|ed|er|ing)",
+        "subgrade",
+        "sub ?base",
+        "base course",
+        "\\bcbr\\b",
+        "borrow pit",
+        "clay liners?",
+        "black cotton",
+        "expansive",
+        "termite hill",
+        "hydraulic conductivity",
+        "shear strength",
+        "granular wearing course",
+        "granular layers"
+      ],
+      "excludes": [
+        "waste water stabili[sz]ation",
+        "wastewater stabili[sz]ation",
+        "stabili[sz]ation ponds"
+      ]
+    },
+    {
+      "id": "road-pavements",
+      "title": "Roads that fail early and cost too much to maintain",
+      "categoryIds": [
+        "transportation"
+      ],
+      "description": "Many roads rut, crack and pothole long before their design life because of poor materials, drainage and heavy loads. Better pavement design, materials and maintenance planning lower the cost of keeping roads usable.",
+      "any": [
+        "pavement",
+        "asphalt",
+        "\\bhma\\b",
+        "bitumin",
+        "marshall",
+        "road construction",
+        "road geometr",
+        "geometric sufficiency",
+        "rehabilitation design",
+        "wearing course",
+        "rutting",
+        "life cycle cost",
+        "road defects",
+        "compaction energy",
+        "road drainage",
+        "side drainage",
+        "drainage system effectiveness on flexible pavement",
+        "pavement failure",
+        "road characteristics"
+      ]
+    },
+    {
+      "id": "traffic-congestion",
+      "title": "Traffic congestion and unsafe junctions in cities",
+      "categoryIds": [
+        "transportation"
+      ],
+      "description": "Growing cities face long queues at junctions, poor parking and mixed traffic that slows buses and endangers pedestrians. Better junction design, signals, parking and public transport priority keep traffic moving safely.",
+      "any": [
+        "traffic",
+        "intersection",
+        "round ?about",
+        "rotary",
+        "parking",
+        "\\bbrt\\b",
+        "signali[sz]ed",
+        "road capacity",
+        "street vending",
+        "park and ride",
+        "congestion",
+        "pedestrian facilities",
+        "junction",
+        "motorcycle crashes",
+        "road accidents",
+        "road safety"
+      ]
+    },
+    {
+      "id": "water-scarcity",
+      "title": "Water scarcity and unreliable supply",
+      "categoryIds": [
+        "water"
+      ],
+      "description": "Villages, schools and fast-growing towns often lack a reliable water source, and supply networks lose much of what they carry. Harvesting rainwater, finding groundwater and designing efficient supply systems close the gap.",
+      "any": [
+        "rain ?water harvesting",
+        "ground ?water",
+        "recharge zones",
+        "rainfall trends",
+        "water scarcity",
+        "water loss",
+        "water supply (system|scheme)",
+        "first flush",
+        "storage water tank",
+        "water tank"
+      ]
+    },
+    {
+      "id": "urban-flooding",
+      "title": "Flooding and poor storm water drainage",
+      "categoryIds": [
+        "water",
+        "environment"
+      ],
+      "description": "Heavy rain overwhelms blocked or undersized drains, flooding streets, homes and roads. Hydraulic modelling and well-designed drainage and flood control structures reduce damage and disease.",
+      "any": [
+        "storm ?water",
+        "drainage system",
+        "drainage systems",
+        "flood",
+        "runoff",
+        "inundation",
+        "hec ?ras",
+        "drainage for"
+      ],
+      "excludes": [
+        "flexible pavement",
+        "road drainage",
+        "side drainage",
+        "road geometry"
+      ]
+    },
+    {
+      "id": "construction-project-delivery",
+      "title": "Construction projects that run late and over budget",
+      "categoryIds": [
+        "buildings",
+        "industry"
+      ],
+      "description": "Building and road projects often finish late, cost more than planned or are abandoned, because of late payments, poor planning, rework and skill shortages. Better project, cost and quality management protects public money.",
+      "any": [
+        "overrun",
+        "delays?\\b",
+        "late payment",
+        "payment delays",
+        "rework",
+        "quality (control|assurance|management)",
+        "project management",
+        "time management",
+        "cost management",
+        "lean construction",
+        "joint venture",
+        "skilled labour",
+        "productivity",
+        "abandonment",
+        "force account",
+        "contractors?",
+        "maintenance and repair schedules",
+        "over ?run"
+      ]
+    }
+  ]
+}

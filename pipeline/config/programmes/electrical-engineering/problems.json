@@ -72,7 +72,12 @@
         "temporary fault",
         "distribution feeder",
         "tilted .*pole",
-        "overhead lines"
+        "overhead lines",
+        "fault searching",
+        "feeder isolators",
+        "types? of faults",
+        "clearance area for high voltage",
+        "high voltage power lines"
       ],
       "excludes": [
         "motor",
@@ -150,7 +155,12 @@
         "voltage monitoring",
         "low voltage cases",
         "phase shifting",
-        "3-phase controller"
+        "3-phase controller",
+        "stab?ili[sz]er",
+        "voltage control",
+        "busbar",
+        "line over ?loading",
+        "stab(i)?li[sz]er"
       ]
     },
     {
@@ -182,7 +192,9 @@
         "tariff calculation",
         "talking energy meter",
         "electricity billing",
-        "bill sms"
+        "bill sms",
+        "separate meter",
+        "common load meter"
       ],
       "excludes": [
         "water meter",
@@ -348,7 +360,8 @@
         "non-contact a\\.?c voltage",
         "fault and condition monitoring system for 33kv",
         "faults detection using microcontroller",
-        "monitoring and controlling fault"
+        "monitoring and controlling fault",
+        "overheat controller"
       ]
     },
     {
