@@ -7,8 +7,8 @@ export default function Problems() {
   useDocumentTitle("Problems");
   const core = useCore();
   const [filter, setFilter] = useState("");
-  // Categories collapse to keep the page scannable; null = default (only the largest open).
-  const [open, setOpen] = useState<Set<string> | null>(null);
+  // Categories collapse to keep the page scannable; all start closed.
+  const [open, setOpen] = useState<Set<string>>(() => new Set());
   const filtering = filter.trim() !== "";
   const years = core.manifest.counts.years;
 
@@ -27,10 +27,10 @@ export default function Problems() {
       .sort((a, b) => b.projects - a.projects);
   }, [core, filter]);
 
-  const isOpen = (cat: string) => (open ? open.has(cat) : cat === groups[0]?.cat);
+  const isOpen = (cat: string) => open.has(cat);
   const allOpen = groups.length > 0 && groups.every((g) => isOpen(g.cat));
   const toggle = (cat: string) => {
-    const next = new Set(open ?? (groups[0] ? [groups[0].cat] : []));
+    const next = new Set(open);
     if (next.has(cat)) next.delete(cat); else next.add(cat);
     setOpen(next);
   };
