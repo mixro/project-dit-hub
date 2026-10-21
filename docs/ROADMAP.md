@@ -27,7 +27,7 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - 🔜 Rules for software titles: COE 64% and unassigned 55% unclassified (UDSM, ICT, COE lists)
 
 ## Phase 2: Student testing 🔜
-- 🔜 Deploy to Netlify (base directory `app`) at https://instiwise-project-hub.netlify.app. The address lives in `app/.env.production`, `public/robots.txt` and `public/sitemap.xml`; update all three if the domain changes
+- 🔜 Deploy to Netlify (base directory `app`) at https://instiwise.micepdev.com/. The address lives in `app/.env.production`, `public/robots.txt`, `public/sitemap.xml`, `public/mySitemap.txt` and `index.html` (canonical link, JSON-LD); update all of them if the domain changes
 - 🔜 Student testing kit: task scripts, observation sheet, session-log analysis script
 - 🔜 Run 5–8 sessions; record findings in `docs/DECISIONS.md`
 - 💭 Commit the Playwright browser checks as `app/tests/e2e`
