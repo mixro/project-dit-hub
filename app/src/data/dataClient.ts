@@ -5,9 +5,11 @@
 //     fetches JSON in the background, so data size never slows the first paint.
 //  2. manifest.json is fetched first. Its datasetVersion is appended to every URL,
 //     so browsers never mix old and new files after a redeploy.
-//  3. Only the small index (~200 KB) is needed for the first screen. Project
-//     details are split per source document and loaded when a project opens.
-//  4. Every request has a timeout and retries with backoff on network errors.
+//  3. Only the index is needed for the first screen (projects.index.json: ~1.27 MB raw,
+//     ~120 KB gzip, ~85 KB Brotli as of 2026-10). Project details are split per source
+//     document and loaded when a project opens.
+//  4. Every request has a timeout and retries with backoff on network errors. A timeout or
+//     dropped connection while the body downloads is retried too; only unparseable JSON is final.
 //  5. Every record is validated. Bad records are skipped and counted.
 //  6. Failures return Result values the UI can show with a retry button,
 //     instead of exceptions thrown during render.
@@ -40,7 +42,8 @@ export class DataClient {
 
   constructor(opts: DataClientOptions = {}) {
     this.baseUrl = (opts.baseUrl ?? "/data/").replace(/\/?$/, "/");
-    this.timeoutMs = opts.timeoutMs ?? 10_000;
+    // Covers the whole request, body download included; generous for slow mobile networks.
+    this.timeoutMs = opts.timeoutMs ?? 30_000;
     this.retries = opts.retries ?? 2;
     this.fetchImpl = opts.fetchImpl ?? ((...args) => fetch(...args));
   }
@@ -66,11 +69,16 @@ export class DataClient {
           if (!last.retryable) return { ok: false, error: last };
           continue;
         }
+        let value: unknown;
         try {
-          return { ok: true, value: await res.json() };
-        } catch {
-          return { ok: false, error: err("invalid-data", `${file} is not valid JSON`, false) };
+          value = await res.json();
+        } catch (e) {
+          // Only a parse error means the file itself is bad. The timer firing while the body
+          // downloads (AbortError) or a dropped connection (TypeError) is retryable: rethrow it.
+          if (e instanceof SyntaxError) return { ok: false, error: err("invalid-data", `${file} is not valid JSON`, false) };
+          throw e;
         }
+        return { ok: true, value };
       } catch (e) {
         last = (e as Error).name === "AbortError"
           ? err("timeout", `${file} took longer than ${this.timeoutMs / 1000}s`, true)

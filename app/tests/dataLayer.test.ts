@@ -8,7 +8,23 @@ const DIR = new URL("../../output/public/", import.meta.url);
 let pass = 0, fail = 0;
 const check = (name: string, cond: boolean, info = "") => { cond ? pass++ : fail++; console.log(`${cond ? "PASS" : "FAIL"} ${name}${info ? "  — " + info : ""}`); };
 
-function fileFetch(opts: { failFirst?: number; corrupt?: boolean; hang?: string } = {}): typeof fetch {
+/** bodyFail: the response headers arrive (HTTP 200) but reading the body of `file` fails `times` times:
+ *  "abort" stalls mid-body until the client's timeout aborts it, "drop" loses the connection mid-body,
+ *  "malformed" sends a body that is not JSON. */
+type BodyFail = { file: string; mode: "abort" | "drop" | "malformed"; times: number; seen?: number };
+
+function failingBody(mode: "abort" | "drop", signal: AbortSignal | null | undefined, text: string): ReadableStream<Uint8Array> {
+  const half = new TextEncoder().encode(text.slice(0, text.length >> 1));
+  return new ReadableStream({
+    start(c) {
+      c.enqueue(half);
+      if (mode === "drop") { c.error(new TypeError("network connection lost")); return; }
+      signal?.addEventListener("abort", () => c.error(new DOMException("This operation was aborted", "AbortError")));
+    },
+  });
+}
+
+function fileFetch(opts: { failFirst?: number; corrupt?: boolean; hang?: string; bodyFail?: BodyFail } = {}): typeof fetch {
   let failures = opts.failFirst ?? 0;
   return (async (input: RequestInfo | URL, init?: RequestInit) => {
     const file = String(input).split("/").pop()!.split("?")[0];
@@ -20,6 +36,11 @@ function fileFetch(opts: { failFirst?: number; corrupt?: boolean; hang?: string 
       let body = readFileSync(new URL(file, DIR), "utf8");
       if (opts.corrupt && file === "projects.index.json") {
         const arr = JSON.parse(body); arr[0] = { id: 42 }; arr[1].title = ""; body = JSON.stringify(arr);
+      }
+      const bf = opts.bodyFail;
+      if (bf && file === bf.file && (bf.seen = (bf.seen ?? 0) + 1) <= bf.times) {
+        if (bf.mode === "malformed") return new Response(body.slice(0, 200) + "<html>", { status: 200 });
+        return new Response(failingBody(bf.mode, init?.signal, body), { status: 200 });
       }
       return new Response(body, { status: 200 });
     } catch { return new Response("", { status: 404 }); }
@@ -136,6 +157,26 @@ check("bad records skipped, app still loads", r2.ok && r2.value.skippedRecords =
 const slow = new DataClient({ fetchImpl: fileFetch({ hang: "manifest.json" }), timeoutMs: 200, retries: 1 });
 const r3 = await slow.loadCore();
 check("timeout returns error instead of hanging", !r3.ok && r3.error.kind === "timeout" && r3.error.retryable, !r3.ok ? r3.error.message : "");
+
+// A body cut off while downloading is a slow or broken connection, not a damaged file:
+// it must come back as a retryable timeout/network error and succeed on retry (production bug, 2026-10).
+const abortOnce: BodyFail = { file: "projects.index.json", mode: "abort", times: 1 };
+const r5 = await new DataClient({ fetchImpl: fileFetch({ bodyFail: abortOnce }), timeoutMs: 200, retries: 2 }).loadCore();
+check("timeout during body download is retried, then loads", r5.ok && abortOnce.seen === 2, `index requested ${abortOnce.seen}x`);
+
+const r6 = await new DataClient({ fetchImpl: fileFetch({ bodyFail: { file: "projects.index.json", mode: "abort", times: 9 } }), timeoutMs: 200, retries: 1 }).loadCore();
+check("timeout during body download -> retryable 'timeout', never 'invalid-data'", !r6.ok && r6.error.kind === "timeout" && r6.error.retryable, !r6.ok ? `${r6.error.kind}: ${r6.error.message}` : "");
+
+const dropOnce: BodyFail = { file: "taxonomy.json", mode: "drop", times: 1 };
+const r7 = await new DataClient({ fetchImpl: fileFetch({ bodyFail: dropOnce }), retries: 2 }).loadCore();
+check("dropped connection during body download is retried, then loads", r7.ok && dropOnce.seen === 2, `taxonomy requested ${dropOnce.seen}x`);
+
+const r8 = await new DataClient({ fetchImpl: fileFetch({ bodyFail: { file: "taxonomy.json", mode: "drop", times: 9 } }), retries: 1 }).loadCore();
+check("dropped connection during body download -> retryable 'network', never 'invalid-data'", !r8.ok && r8.error.kind === "network" && r8.error.retryable, !r8.ok ? `${r8.error.kind}: ${r8.error.message}` : "");
+
+const malformed: BodyFail = { file: "projects.index.json", mode: "malformed", times: 9 };
+const r9 = await new DataClient({ fetchImpl: fileFetch({ bodyFail: malformed }), retries: 2 }).loadCore();
+check("malformed JSON body -> 'invalid-data', not retried", !r9.ok && r9.error.kind === "invalid-data" && !r9.error.retryable && malformed.seen === 1, !r9.ok ? `${r9.error.kind}, requested ${malformed.seen}x` : "");
 
 const missing = createProjectService(new DataClient({ fetchImpl: fileFetch() }));
 const r4 = await missing.getProject("does-not-exist");
