@@ -59,13 +59,24 @@ def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]
         return _extract_numbered_paragraphs(document, source)
     cols = source["columns"]
     rows, issues = [], []
+    # "tables": [first, last] reads only that range (one section of a multi-section document).
+    first, last = source.get("tables", [0, len(document.tables) - 1])
+    # "wrappedRows": a long name or title continues on the next row with an empty registration
+    # number, and tables after the first repeat no header (one list split across tables).
+    wrapped = source.get("wrappedRows", False)
+    section_header = None
 
     for t_idx, table in enumerate(document.tables):
+        if not first <= t_idx <= last:
+            continue
         try:
             header_idx, header_map, n_cols = _find_header(table, cols["title"])
+            section_header = (header_map, n_cols)
         except ValueError:
-            issues.append({"type": "table-skipped", "table": t_idx, "detail": "no title header"})
-            continue
+            if not (wrapped and section_header):
+                issues.append({"type": "table-skipped", "table": t_idx, "detail": "no title header"})
+                continue
+            header_idx, (header_map, n_cols) = -1, section_header
 
         def col(cells, key):
             """Column spec: a header name, a list of alternative header names,
@@ -89,6 +100,14 @@ def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]
             if " ".join(col(cells, "title").split()).upper() == cols["title"].upper():
                 issues.append({"type": "repeated-header-skipped", "table": t_idx, "row": r_idx})
                 continue  # header repeated for the next group in the same table
+            if wrapped:
+                if not col(cells, "regNo").strip() and rows:
+                    prev = rows[-1]
+                    for key in ("name", "title"):
+                        prev[key] = f"{prev[key]} {' '.join(col(cells, key).split())}".strip()
+                    issues.append({"type": "wrapped-row-joined", "table": t_idx, "row": r_idx})
+                    continue
+                cells = [" ".join(c.split()) for c in cells]  # wrapped text is one title, not alternatives
             rows.append({
                 "sourceId": source["id"],
                 "location": {"table": t_idx, "row": r_idx},

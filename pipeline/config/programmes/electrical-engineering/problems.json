@@ -194,7 +194,8 @@
         "electricity billing",
         "bill sms",
         "separate meter",
-        "common load meter"
+        "common load meter",
+        "\\b1?luku\\b"
       ],
       "excludes": [
         "water meter",
@@ -403,7 +404,8 @@
         "induction motor",
         "windings",
         "shaft vibration",
-        "phase selector for wind turbine"
+        "phase selector for wind turbine",
+        "overheat"
       ]
     },
     {

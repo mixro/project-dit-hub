@@ -13,6 +13,15 @@ Template:
 
 ---
 
+## 2026-10-22: Arusha Technical College 2017/18 list; Biomedical Engineering programme
+**Context:** the user added `2017 TITLES-1.docx` to `raw/`.
+**Decision:**
+- Header: Arusha Technical College, Electrical Engineering Department, NTA Level 6 (Ordinary Diploma), 2017/2018 → `unconfirmed`, level `od`, year 2018. Three sections in one document become three sources (`atc-od-2018-biomedical`, `-electrical`, `-ete`) via a new `tables` range option.
+- New extractor option `wrappedRows`: a row with an empty registration number continues the previous row (wrapped name/title), and later tables of a section reuse its header. Status cells ("Postponed", "Detained", also "Deferred", "Absent") are placeholders, not titles. Identical titles in a section are group projects (`mergeGroupTitles`).
+- Programme catalogue + `biomedical-engineering` (code BME, department `electrical` as stated by this document). No title signals yet, so inference never estimates BME.
+- Rules extended for these titles; `keepWords` + WORKFLOW, COSTLESS, BLACKBOARD, MULTIMETER.
+**Consequences:** 148 projects added (BME 29, EE 81, ETE 38), 2,595 total; existing IDs and titles unchanged, 11 existing projects gained a tag. Unclassified in the new sources: 2 of 148.
+
 ## 2026-10-16: Four new lists (BEE 2023/24, three BENG22 Civil lists); Civil Engineering rules
 **Context:** the user added four `.docx` files to `raw/` and asked to process them.
 **Decision:**

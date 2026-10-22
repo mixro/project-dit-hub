@@ -1,5 +1,5 @@
 {
-  "_comment": "DIT programmes (codes confirmed 2026-10-09) and award levels. Programme IDs are permanent (they appear in URLs); labels can change. Only programmes with at least one published project are published. SLT's full name is not yet confirmed. aliases map programme names as written in documents to an ID. Rules per programme live in programmes/<id>/.",
+  "_comment": "Programmes: the six DIT programmes (codes confirmed 2026-10-09) plus Biomedical Engineering (stated by the Arusha Technical College 2017/18 list, where it sits in the Electrical Engineering Department; added 2026-10-22) and award levels. Programme IDs are permanent (they appear in URLs); labels can change. Only programmes with at least one published project are published. SLT's full name is not yet confirmed. aliases map programme names as written in documents to an ID. Rules per programme live in programmes/<id>/.",
   "levels": [
     {
       "id": "od",
@@ -80,6 +80,17 @@
         "SLT",
         "LABORATORY",
         "SCIENCE AND LABORATORY TECHNOLOGY"
+      ]
+    },
+    {
+      "id": "biomedical-engineering",
+      "code": "BME",
+      "label": "Biomedical Engineering",
+      "departmentId": "electrical",
+      "aliases": [
+        "BME",
+        "BIOMEDICAL",
+        "BIOMEDICAL ENGINEERING"
       ]
     }
   ],

@@ -587,6 +587,108 @@
         "title": "PROPOSED PROJECT TITLE"
       },
       "notes": "Headed 'End of semester II – BENG22CE project assessment, proposed project titles – Civil/Water/Construction Management Eng. group'. Institution and year not stated; the year is not guessed from the cohort name."
+    },
+    {
+      "id": "atc-od-2018-biomedical",
+      "file": "2017 TITLES-1.docx",
+      "tables": [
+        0,
+        1
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "biomedical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "od",
+      "level": "NTA Level 6 (Ordinary Diploma)",
+      "cohort": null,
+      "academicYear": "2017/2018",
+      "year": 2018,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "wrappedRows": true,
+      "mergeGroupTitles": true,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Project list without decisions."
+      },
+      "columns": {
+        "regNo": "Registration No.",
+        "name": "Name",
+        "title": "Title"
+      },
+      "notes": "Headed 'Arusha Technical College, Electrical Engineering Department, NTA Level 6 project list, year of study 2017/2018', with Biomedical, Electrical and Electronics and Telecommunication sections. Institution is not DIT (shown as not confirmed). Long names and titles wrap onto the next row and are joined; 'Postponed' and 'Detained' rows are not titles and are skipped. Identical titles from different students are merged as group projects. This source: Biomedical Engineering section (tables 1-2)."
+    },
+    {
+      "id": "atc-od-2018-electrical",
+      "file": "2017 TITLES-1.docx",
+      "tables": [
+        2,
+        8
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "od",
+      "level": "NTA Level 6 (Ordinary Diploma)",
+      "cohort": null,
+      "academicYear": "2017/2018",
+      "year": 2018,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "wrappedRows": true,
+      "mergeGroupTitles": true,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Project list without decisions."
+      },
+      "columns": {
+        "regNo": "Registration No.",
+        "name": "Name",
+        "title": "Title"
+      },
+      "notes": "Headed 'Arusha Technical College, Electrical Engineering Department, NTA Level 6 project list, year of study 2017/2018', with Biomedical, Electrical and Electronics and Telecommunication sections. Institution is not DIT (shown as not confirmed). Long names and titles wrap onto the next row and are joined; 'Postponed' and 'Detained' rows are not titles and are skipped. Identical titles from different students are merged as group projects. This source: Electrical Engineering section (tables 3-9)."
+    },
+    {
+      "id": "atc-od-2018-ete",
+      "file": "2017 TITLES-1.docx",
+      "tables": [
+        9,
+        11
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electronics-telecommunication",
+      "programmeId": "electronics-telecommunication-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "od",
+      "level": "NTA Level 6 (Ordinary Diploma)",
+      "cohort": null,
+      "academicYear": "2017/2018",
+      "year": 2018,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "wrappedRows": true,
+      "mergeGroupTitles": true,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Project list without decisions."
+      },
+      "columns": {
+        "regNo": "Registration No.",
+        "name": "Name",
+        "title": "Title"
+      },
+      "notes": "Headed 'Arusha Technical College, Electrical Engineering Department, NTA Level 6 project list, year of study 2017/2018', with Biomedical, Electrical and Electronics and Telecommunication sections. Institution is not DIT (shown as not confirmed). Long names and titles wrap onto the next row and are joined; 'Postponed' and 'Detained' rows are not titles and are skipped. Identical titles from different students are merged as group projects. This source: Electronics and Telecommunication Engineering section (tables 10-12)."
     }
   ],
   "institutions": [

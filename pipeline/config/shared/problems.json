@@ -30,7 +30,9 @@
         "energy usage",
         "energy management",
         "energy dashboard",
-        "energy man[ae]?gement"
+        "energy man[ae]?gement",
+        "energy audit",
+        "power controller"
       ]
     },
     {
@@ -93,7 +95,9 @@
         "solar water heat",
         "grid integrated solar",
         "solar energy kit",
-        "rain ?drop electrical generation"
+        "rain ?drop electrical generation",
+        "solar panel parameter",
+        "steam power generator"
       ]
     },
     {
@@ -158,7 +162,9 @@
         "water control",
         "water management system",
         "smart water bottle",
-        "water channel"
+        "water channel",
+        "water level indicator",
+        "pump switcher"
       ],
       "excludes": [
         "fuel",
@@ -285,7 +291,9 @@
         "animal food",
         "brooding",
         "number of fish",
-        "saline leg bath"
+        "saline leg bath",
+        "veterinary",
+        "fish caller"
       ]
     },
     {
@@ -349,7 +357,8 @@
         "fungal diseases",
         "tomato plant",
         "fertili[sz]ation",
-        "crop protection"
+        "crop protection",
+        "green house"
       ],
       "excludes": [
         "stabili[sz]",
@@ -453,7 +462,21 @@
         "neonatal icu",
         "child safety in",
         "vital signs",
-        "child monitoring bracelet"
+        "child monitoring bracelet",
+        "health monitoring device",
+        "human health monitoring",
+        "health and fitness",
+        "asthma",
+        "muscle stimulation",
+        "first aid",
+        "urine",
+        "thermal scanning",
+        "phototherapy",
+        "spirometer",
+        "radiant warmer",
+        "therapeutic",
+        "apnea",
+        "vitiligo"
       ]
     },
     {
@@ -482,7 +505,8 @@
         "blindness",
         "\\bdumb\\b",
         "\\bdeaf\\b",
-        "hand talk"
+        "hand talk",
+        "voice to words"
       ]
     },
     {
@@ -596,7 +620,8 @@
         "fuel efficiency monitoring",
         "tire inflation",
         "engine and gear ?box",
-        "car doors?"
+        "car doors?",
+        "motor ?bike"
       ]
     },
     {
@@ -695,7 +720,9 @@
         "domestic violence",
         "shelf locking",
         "letter box",
-        "personal safety"
+        "personal safety",
+        "security access",
+        "visitors identification"
       ],
       "excludes": [
         "transformer oil",
@@ -734,7 +761,8 @@
         "smoke",
         "fire fighting",
         "hazardous gas",
-        "hazard detection"
+        "hazard detection",
+        "gas monitoring"
       ]
     },
     {
@@ -835,7 +863,12 @@
         "dusk-dawn",
         "motion-sensing relay",
         "light brightness",
-        "brightness control"
+        "brightness control",
+        "two way switch",
+        "lamp dimmer",
+        "cloth(es)? line",
+        "load sensing seats",
+        "floor cleaner"
       ]
     },
     {
@@ -913,7 +946,8 @@
         "air purifier",
         "pollution",
         "dust-free",
-        "emm?ission"
+        "emm?ission",
+        "environmental monitor"
       ]
     },
     {
@@ -934,7 +968,8 @@
         "forest fire",
         "landslide",
         "natural disaster",
-        "early warning"
+        "early warning",
+        "weather station"
       ]
     },
     {
@@ -1035,7 +1070,12 @@
         "window cleaning",
         "sweeping machine",
         "gas ?skid",
-        "gas condensat"
+        "gas condensat",
+        "obstacle avoidance robot",
+        "pcb exposure",
+        "\\bic tester",
+        "weigh(t)?ing bridge",
+        "industrial temperature"
       ]
     },
     {
@@ -1052,7 +1092,8 @@
         "for learning",
         "demonstration panel",
         "training model",
-        "testing kit"
+        "testing kit",
+        "multi ?meter"
       ]
     },
     {
@@ -1074,7 +1115,8 @@
         "smart trolley",
         "shopping mall",
         "expiry date",
-        "filling station"
+        "filling station",
+        "food ordering"
       ]
     },
     {
@@ -1135,7 +1177,9 @@
         "digital signage",
         "cinema hall",
         "v[ae]nue monitoring",
-        "goals counting"
+        "goals counting",
+        "black ?board cleaner",
+        "project management database"
       ]
     },
     {
@@ -1158,7 +1202,11 @@
         "\\b4g\\b",
         "walkie",
         "antenna",
-        "broadcasting"
+        "broadcasting",
+        "wireless com(munication|\\.)",
+        "voice over wireless",
+        "\\bvowlan\\b",
+        "dish position"
       ]
     },
     {
