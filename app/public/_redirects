@@ -1,5 +1,5 @@
-# Force redirect from Netlify subdomain to custom domain
-https://instiwise-projects.netlify.app/* https://instiwise.micepdev.com/:splat 301!
+# Force redirect default Netlify subdomain to primary domain
+https://instiwise-project-hub.netlify.app/* https://instiwise.micepdev.com/:splat 301!
 
-# Fallback route for your SPA
+# SPA fallback
 /* /index.html 200
