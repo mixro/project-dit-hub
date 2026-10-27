@@ -97,7 +97,13 @@
         "solar energy kit",
         "rain ?drop electrical generation",
         "solar panel parameter",
-        "steam power generator"
+        "steam power generator",
+        "hydrogen production",
+        "pv micro ?grid",
+        "sand battery",
+        "wind solar hybrid",
+        "multiple pv",
+        "photovoltaic"
       ]
     },
     {
@@ -164,7 +170,8 @@
         "smart water bottle",
         "water channel",
         "water level indicator",
-        "pump switcher"
+        "pump switcher",
+        "dual water flow"
       ],
       "excludes": [
         "fuel",
@@ -293,7 +300,13 @@
         "number of fish",
         "saline leg bath",
         "veterinary",
-        "fish caller"
+        "fish caller",
+        "estrus",
+        "dairy",
+        "honey ?bee",
+        "bee venom",
+        "\\beggs\\b",
+        "ruminants"
       ]
     },
     {
@@ -358,7 +371,11 @@
         "tomato plant",
         "fertili[sz]ation",
         "crop protection",
-        "green house"
+        "green house",
+        "\\bweeds?\\b",
+        "seeding machine",
+        "hygroponic",
+        "organic manure"
       ],
       "excludes": [
         "stabili[sz]",
@@ -399,7 +416,10 @@
         "cashew",
         "groundnuts vending",
         "coffee burner",
-        "sunflower"
+        "sunflower",
+        "fruit sorting",
+        "mangoes",
+        "sorting out ripe"
       ]
     },
     {
@@ -476,7 +496,12 @@
         "radiant warmer",
         "therapeutic",
         "apnea",
-        "vitiligo"
+        "vitiligo",
+        "drip rate",
+        "phonocardiograph",
+        "body fat",
+        "impedence analy[sz]er",
+        "rural clinics"
       ]
     },
     {
@@ -563,7 +588,9 @@
         "wiper",
         "headlamp",
         "service time for vehicles",
-        "trafic"
+        "trafic",
+        "road crossing assistance",
+        "child location"
       ]
     },
     {
@@ -621,7 +648,8 @@
         "tire inflation",
         "engine and gear ?box",
         "car doors?",
-        "motor ?bike"
+        "motor ?bike",
+        "vehicle black box"
       ]
     },
     {
@@ -667,7 +695,8 @@
         "traf+ic jams?",
         "vehicles inspection",
         "road construction and repair",
-        "scooter student sharing"
+        "scooter student sharing",
+        "ferries"
       ]
     },
     {
@@ -722,7 +751,11 @@
         "letter box",
         "personal safety",
         "security access",
-        "visitors identification"
+        "visitors identification",
+        "custody management",
+        "geofencing",
+        "intrusion signature",
+        "\\buavs?\\b"
       ],
       "excludes": [
         "transformer oil",
@@ -806,7 +839,8 @@
         "safety polic",
         "safety practices",
         "emergency preparedness",
-        "construction sites?"
+        "construction sites?",
+        "maritime safety"
       ]
     },
     {
@@ -924,7 +958,11 @@
         "construction waste",
         "solid waste",
         "garbage",
-        "waste chemical"
+        "waste chemical",
+        "e ?-?waste",
+        "plastic sorting",
+        "dumping facility",
+        "dampsite"
       ]
     },
     {
@@ -947,7 +985,8 @@
         "pollution",
         "dust-free",
         "emm?ission",
-        "environmental monitor"
+        "environmental monitor",
+        "sisal dust"
       ]
     },
     {
@@ -969,7 +1008,8 @@
         "landslide",
         "natural disaster",
         "early warning",
-        "weather station"
+        "weather station",
+        "weather forecast"
       ]
     },
     {
@@ -1075,7 +1115,27 @@
         "pcb exposure",
         "\\bic tester",
         "weigh(t)?ing bridge",
-        "industrial temperature"
+        "industrial temperature",
+        "ingredient metering",
+        "bakery",
+        "flatbread",
+        "baking",
+        "overhead crane",
+        "line-following robot",
+        "material transport",
+        "wire cutting",
+        "stone crushing",
+        "brick production",
+        "varnish ovens",
+        "ink removal",
+        "smart iron",
+        "pipe ?- ?climbing",
+        "thickness inspection",
+        "tailoring",
+        "foot dimensioning",
+        "high-pressure leaks",
+        "food distribution system",
+        "order notification system for restaurants"
       ]
     },
     {
@@ -1179,7 +1239,10 @@
         "v[ae]nue monitoring",
         "goals counting",
         "black ?board cleaner",
-        "project management database"
+        "project management database",
+        "venue display",
+        "indoor navigation",
+        "micro location"
       ]
     },
     {
@@ -1206,7 +1269,9 @@
         "wireless com(munication|\\.)",
         "voice over wireless",
         "\\bvowlan\\b",
-        "dish position"
+        "dish position",
+        "wideband",
+        "\\buwb\\b"
       ]
     },
     {

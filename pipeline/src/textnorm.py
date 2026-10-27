@@ -10,6 +10,8 @@ import unicodedata
 
 QUOTE_CHARS = "\"'“”‘’`"
 ANNOTATION_RE = re.compile(r"\(\s*(?:\d{4}\s*/\s*\d{2,4}\s*,?\s*)+\)")
+# A trailing "(NEW)" marks a replaced topic in some lists; kept as an annotation, not part of the title.
+NEW_MARK_RE = re.compile(r"\(\s*new\s*\)\s*$", re.IGNORECASE)
 WS_RE = re.compile(r"\s+")
 ZERO_WIDTH_RE = re.compile(r"[\u200b\u200c\u200d\ufeff]")
 LABEL_PREFIX_RE = re.compile(r"^\s*project\s+title\s*:\s*", re.IGNORECASE)
@@ -128,7 +130,10 @@ def extract_annotations(text: str) -> tuple[str, list[str]]:
     unconfirmed, so they are preserved verbatim rather than interpreted."""
     found = [m.group(0).strip("() ") for m in ANNOTATION_RE.finditer(text)]
     stripped = ANNOTATION_RE.sub("", text)
-    return WS_RE.sub(" ", stripped).strip(" .,;:"), found
+    if NEW_MARK_RE.search(stripped):
+        found.append("NEW")
+        stripped = NEW_MARK_RE.sub("", stripped)
+    return WS_RE.sub(" ", stripped).strip(" .,;:" + QUOTE_CHARS), found
 
 
 class Corrector:

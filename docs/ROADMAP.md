@@ -23,6 +23,8 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ✅ Projects with no identified programme left out (`publishUnidentifiedProgramme: false`): 130 removed, 2,063 published (2026-10-10)
 - ✅ 2026-10-16: BEE 2023/24 (DIT) and three BENG22 Civil lists added; first Civil Engineering rules; 2,447 projects
 - ❓ Year of the BENG22CE Civil lists (not stated)
+- ✅ 2026-10-27: MUST Electrical and Power Engineering topics 2026/27 (300); three duplicate BENG22CE files recorded, not published; 2,895 projects
+- 💭 Stricter glue-splitter (each new list adds wrong splits of real words; reviewed by hand so far)
 - ✅ 2026-10-22: Arusha Technical College NTA Level 6 list 2017/18 (Biomedical, EE, ETE); Biomedical Engineering added to the programme catalogue; 2,595 projects
 - ❓ Confirm "Project Titles 2019–2023" (300 titles) is a record of real past projects, not a themed idea list
 - 🔜 Rules for software titles: COE 64% and unassigned 55% unclassified (UDSM, ICT, COE lists)

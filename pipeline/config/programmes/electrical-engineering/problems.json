@@ -77,7 +77,16 @@
         "feeder isolators",
         "types? of faults",
         "clearance area for high voltage",
-        "high voltage power lines"
+        "high voltage power lines",
+        "faults? analysis",
+        "earth fault",
+        "high impedance fault",
+        "protection relays?",
+        "relaying",
+        "distribution poles",
+        "line construction",
+        "transformer lines",
+        "multi- ?fuse"
       ],
       "excludes": [
         "motor",
@@ -160,7 +169,16 @@
         "voltage control",
         "busbar",
         "line over ?loading",
-        "stab(i)?li[sz]er"
+        "stab(i)?li[sz]er",
+        "\\bd?-?facts?\\b",
+        "static synchronous",
+        "\\bupfc\\b",
+        "flicker",
+        "voltage disturbance",
+        "ferroresonance",
+        "pf stabili",
+        "compensation system",
+        "compensator"
       ]
     },
     {
@@ -195,7 +213,9 @@
         "bill sms",
         "separate meter",
         "common load meter",
-        "\\b1?luku\\b"
+        "\\b1?luku\\b",
+        "operational cost recording",
+        "smart socket"
       ],
       "excludes": [
         "water meter",
@@ -234,7 +254,10 @@
         "emergency solar power supply",
         "generator testing",
         "two generators",
-        "power supply from"
+        "power supply from",
+        "synchroni[sz]ation kit",
+        "multi ?- ?generator",
+        "\\bats\\b"
       ]
     },
     {
@@ -301,7 +324,17 @@
         "relay driver",
         "recharge vehicles battery",
         "liquid less generator",
-        "power switch"
+        "power switch",
+        "bio-battery",
+        "battery state",
+        "battery re ?use",
+        "lithium ion",
+        "boost conver",
+        "coc?kc?roft",
+        "high-voltage generation",
+        "switch mode",
+        "wireless energy transfer",
+        "power regulator"
       ]
     },
     {
@@ -405,7 +438,14 @@
         "windings",
         "shaft vibration",
         "phase selector for wind turbine",
-        "overheat"
+        "overheat",
+        "permanent magnet",
+        "predictive maint",
+        "sequence detection",
+        "star delta",
+        "de-energi[sz]ed motor",
+        "bearing heating",
+        "self assessment for maint"
       ]
     },
     {
@@ -424,7 +464,40 @@
         "rural home use",
         "electrify",
         "solar power hybrid to be deployed",
-        "integrated solar and wind energy solution for rural"
+        "integrated solar and wind energy solution for rural",
+        "mini solar substation",
+        "smart microgrid for"
+      ]
+    },
+    {
+      "id": "grid-planning-operation",
+      "title": "Planning and operating grids as demand and renewables grow",
+      "categoryIds": [
+        "energy"
+      ],
+      "description": "Utilities must decide where to add generation, how to dispatch it cheaply and how to keep voltage and frequency stable as demand rises and more solar and wind connect. Forecasting, optimisation and better monitoring help them plan and run the grid reliably.",
+      "any": [
+        "economic dispatch",
+        "optimal placement",
+        "distributed generators?",
+        "state estimation",
+        "demand forecasting",
+        "demand management",
+        "bus distribution system",
+        "load time schedul",
+        "reliability centered maintenance",
+        "asset management",
+        "power system stability",
+        "dynamic stability",
+        "islanding",
+        "critical clearing time",
+        "synthetic inertia",
+        "droop control",
+        "power flow",
+        "voltage stability",
+        "substation monitoring",
+        "data logging system for [a-z ]*substation",
+        "natural gas power plant"
       ]
     }
   ]

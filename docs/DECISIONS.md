@@ -13,6 +13,15 @@ Template:
 
 ---
 
+## 2026-10-27: MUST Electrical and Power Engineering topics 2026/27; three duplicate Civil files
+**Context:** the user added new files to `raw/`.
+**Decision:**
+- `STUDENTS_GROUPED_BY_SUPERVISOR_WITH_PROJECT_TOPICS_2026-2027.docx` → source `must-ee-2027-supervisor-topics`: Mbeya University of Science and Technology, Department of Electrical and Power Engineering, 2026/27, 300 students in 22 supervisor tables. `unconfirmed` (not DIT), EE (stated), level not stated. Supervisor names are never extracted.
+- A trailing "(NEW)" (25 titles) is moved out of the title into the project's annotations (`textnorm.NEW_MARK_RE`). Registration numbers of 14 digits are valid (MUST format).
+- New EE problem `grid-planning-operation` (dispatch, placement of generation, state estimation, stability, forecasting); EE and shared rules extended. `keepWords` + 20 words the splitter broke (FORMATION → "for mat ion", TAXATION, ATTRACTION, HEADPHONE, FLYBACK…); spelling fix IMPLEMENTANTION.
+- `Structural_/Transportation_/WATER_GROUP_Civil_Dept_BENG22CE.docx` repeat the published BENG22CE lists (all titles identical); recorded under `sources.json` → `duplicateFiles`, not published.
+**Consequences:** 2,895 projects; existing IDs unchanged, one existing title corrected ("intransmission" → "in transmission"), 9 existing projects gained a tag. MUST unclassified: 3 of 300. The glue-splitter keeps breaking real words as the vocabulary grows; each new list needs its split list reviewed (or a stricter splitter, not yet decided).
+
 ## 2026-10-22: Arusha Technical College 2017/18 list; Biomedical Engineering programme
 **Context:** the user added `2017 TITLES-1.docx` to `raw/`.
 **Decision:**

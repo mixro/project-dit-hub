@@ -689,6 +689,52 @@
         "title": "Title"
       },
       "notes": "Headed 'Arusha Technical College, Electrical Engineering Department, NTA Level 6 project list, year of study 2017/2018', with Biomedical, Electrical and Electronics and Telecommunication sections. Institution is not DIT (shown as not confirmed). Long names and titles wrap onto the next row and are joined; 'Postponed' and 'Detained' rows are not titles and are skipped. Identical titles from different students are merged as group projects. This source: Electronics and Telecommunication Engineering section (tables 10-12)."
+    },
+    {
+      "id": "must-ee-2027-supervisor-topics",
+      "file": "STUDENTS_GROUPED_BY_SUPERVISOR_WITH_PROJECT_TOPICS_2026-2027.docx",
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "electrical",
+      "programmeId": "electrical-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": null,
+      "level": null,
+      "cohort": null,
+      "academicYear": "2026/2027",
+      "year": 2027,
+      "yearProvenance": "recorded",
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Topics assigned to supervisors; no decisions recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "regNo": "REGISTRATION NO.",
+        "name": "STUDENT NAME",
+        "title": "PROJECT TOPIC"
+      },
+      "notes": "Headed 'Mbeya University of Science and Technology, Department of Electrical and Power Engineering, students grouped by supervisor with project topics, 2026/2027' (300 students, 22 supervisors, one table per supervisor). Not DIT, so shown as institution not confirmed. Level not stated. Supervisor names are never extracted."
+    }
+  ],
+  "duplicateFiles": [
+    {
+      "file": "Structural_Civil_Dept_BENG22CE.docx",
+      "duplicateOf": "ce-beng22-structural-titles",
+      "note": "Same 96 students and titles as BENG22CE_Structural_Project_Titles.docx (95 identical, 1 differs only by a truncated last word); same header, no institution or year. Split over 3 tables. Checked 2026-10-26."
+    },
+    {
+      "file": "Transportation_Civil_Dept_BENG22CE.docx",
+      "duplicateOf": "ce-beng22-transportation-titles",
+      "note": "Same 70 titles as BENG22CE_Transportation_Project_Titles.docx; same header, no institution or year. Checked 2026-10-26."
+    },
+    {
+      "file": "WATER_GROUP_Civil_Dept_BENG22CE.docx",
+      "duplicateOf": "ce-beng22-water-construction-titles",
+      "note": "Same 75 titles as BENG22CE_Water_Construction_Mgt_Project_Titles.docx; same header, no institution or year. Checked 2026-10-26."
     }
   ],
   "institutions": [
@@ -708,5 +754,6 @@
     "publishSubmissionLinks": true,
     "publishUnidentifiedProgramme": false,
     "_note": "publishRejectedTitles and publishSubmissionLinks need DIT confirmation before a public launch. publishUnidentifiedProgramme false (user, 2026-10-10): projects whose programme could not be estimated from the title are left out."
-  }
+  },
+  "_duplicateFilesNote": "duplicateFiles: documents in raw/ that repeat a published source. Not extracted or published; listed so they are not processed twice."
 }

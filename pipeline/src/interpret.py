@@ -16,7 +16,7 @@ import re
 
 from textnorm import PLACEHOLDER_RE, clean_cell, extract_annotations, remove_repeated_sentence, split_alternatives, tokens
 
-REG_RE = re.compile(r"^\d{9,13}$")
+REG_RE = re.compile(r"^\d{9,14}$")  # MUST uses 14 digits
 
 RECORDED, INFERRED = "recorded", "inferred"
 
