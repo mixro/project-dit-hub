@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-# Raw dataset files are for the app, not for search results.
-Disallow: /data/
+# Raw dataset files are for the app, not for search results: ammendment: allow for google indexing
+Allow: /data/
 
 Sitemap: https://instiwise.micepdev.com/sitemap.xml
