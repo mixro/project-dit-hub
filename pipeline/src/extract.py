@@ -63,7 +63,9 @@ def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]
     first, last = source.get("tables", [0, len(document.tables) - 1])
     # "wrappedRows": a long name or title continues on the next row with an empty registration
     # number, and tables after the first repeat no header (one list split across tables).
+    # "continueTables": only the second part (later tables reuse the header, rows are never joined).
     wrapped = source.get("wrappedRows", False)
+    continue_tables = wrapped or source.get("continueTables", False)
     section_header = None
 
     for t_idx, table in enumerate(document.tables):
@@ -73,7 +75,7 @@ def extract_source(raw_dir: Path, source: dict) -> tuple[list[dict], list[dict]]
             header_idx, header_map, n_cols = _find_header(table, cols["title"])
             section_header = (header_map, n_cols)
         except ValueError:
-            if not (wrapped and section_header):
+            if not (continue_tables and section_header):
                 issues.append({"type": "table-skipped", "table": t_idx, "detail": "no title header"})
                 continue
             header_idx, (header_map, n_cols) = -1, section_header

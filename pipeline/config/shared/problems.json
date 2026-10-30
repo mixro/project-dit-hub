@@ -136,7 +136,10 @@
         "hard water",
         "ion exchange",
         "conductivity",
-        "water treatment"
+        "water treatment",
+        "desi?lination",
+        "oil skimming",
+        "decarbonation"
       ]
     },
     {
@@ -171,7 +174,12 @@
         "water channel",
         "water level indicator",
         "pump switcher",
-        "dual water flow"
+        "dual water flow",
+        "ram pump",
+        "reciprocating pump",
+        "centrifug(i)?al pump",
+        "dead head pump",
+        "centrifig(i)?ual pump"
       ],
       "excludes": [
         "fuel",
@@ -263,7 +271,10 @@
         "tobako baking",
         "tobacco",
         "food dehydration",
-        "\\bcocoa\\b"
+        "\\bcocoa\\b",
+        "\\bdrier\\b",
+        "fridge",
+        "\bice (block|making)"
       ]
     },
     {
@@ -306,7 +317,9 @@
         "honey ?bee",
         "bee venom",
         "\\beggs\\b",
-        "ruminants"
+        "ruminants",
+        "\\bpet (feeder|trailer)\\b",
+        "plucker"
       ]
     },
     {
@@ -339,7 +352,8 @@
         "poaching",
         "fly-bone",
         "from animals",
-        "\\bdoves?\\b"
+        "\\bdoves?\\b",
+        "animal crossing"
       ]
     },
     {
@@ -413,13 +427,69 @@
         "seed extractor",
         "seaweed harvesting",
         "feather removal",
-        "cashew",
         "groundnuts vending",
         "coffee burner",
         "sunflower",
         "fruit sorting",
         "mangoes",
-        "sorting out ripe"
+        "sorting out ripe",
+        "\\bshell(ing|er)\\b",
+        "\\bthresh(ing|er)\\b",
+        "\\bpeel(ing|er)\\b",
+        "juicer",
+        "juice (making|extract)",
+        "oil (making|pressing|extraction|extracting|expeller|processing)",
+        "\\bpulp(er|ing)\\b",
+        "(grain|maize|millet|cereal) (milling|mill|grinding)",
+        "flour mill",
+        "\\bslic(ing|er)\\b",
+        "\\bchipp(ing|er)\\b",
+        "\\bgrat(ing|er)\\b",
+        "butter making",
+        "\\bdough\\b",
+        "\\broast(ing|er)\\b",
+        "cassava (leaves|grating|chipping|peeling|grinding)",
+        "coffee (pulp|shell|hull|roast)",
+        "sugarcane (peel|juice|crush)",
+        "feed (mix|pellet)",
+        "pellet making",
+        "seed extract",
+        "winnow",
+        "kernel",
+        "baobab",
+        "decorticat",
+        "palm (oil|fruit|nut|kernel)",
+        "coconut (oil|deshell|dehusk|breaking|scraping|husk)",
+        "avo(c)?ado oil",
+        "fib(re|er) extract",
+        "noodles",
+        "vegetable (dicer|washing)",
+        "fruits? (and root vegetables )?washing",
+        "egg breaker",
+        "forage chop",
+        "tea blending",
+        "food (ingredient|igridien)",
+        "dry food",
+        "dehusk",
+        "deshell",
+        "dehull",
+        "grain (cleaning|loading|grading)",
+        "cashew",
+        "sesame",
+        "groundnut|peanut",
+        "honey extract",
+        "fish scale",
+        "packaging machine",
+        "rice grading",
+        "honey ex(t)?ract",
+        "rice (sorting|grading|polishing)",
+        "peanut butter",
+        "groundnuts? (packing|packaging)",
+        "cashew nut",
+        "wine juice",
+        "grains? weighing",
+        "pellets? making",
+        "vegetables? storage"
       ]
     },
     {
@@ -501,7 +571,10 @@
         "phonocardiograph",
         "body fat",
         "impedence analy[sz]er",
-        "rural clinics"
+        "rural clinics",
+        "dialysis",
+        "massage",
+        "exoskeleton"
       ]
     },
     {
@@ -521,7 +594,7 @@
         "physically disabled",
         "wheelchair",
         "mobility-impaired",
-        "aging",
+        "\\baging\\b",
         "special needs",
         "cognitive impairment",
         "albinism",
@@ -795,7 +868,9 @@
         "fire fighting",
         "hazardous gas",
         "hazard detection",
-        "gas monitoring"
+        "gas monitoring",
+        "natural gas",
+        "fume extract"
       ]
     },
     {
@@ -924,7 +999,8 @@
         "meal prep",
         "food preparation",
         "recipe",
-        "spice dispenser"
+        "spice dispenser",
+        "briquet"
       ]
     },
     {
@@ -962,7 +1038,17 @@
         "e ?-?waste",
         "plastic sorting",
         "dumping facility",
-        "dampsite"
+        "dampsite",
+        "waste plastic",
+        "plastic (fibers|waste|materials)",
+        "swarf",
+        "compacting machine",
+        "shredder",
+        "plastic- ?sand",
+        "glass bottles? (breaking|crushing)",
+        "(fuel|diesel) production",
+        "paper shredding",
+        "can crushing"
       ]
     },
     {
@@ -1072,7 +1158,6 @@
         "robotic arm",
         "industrial (automation|equipment|process|pumps|ovens|iot|robot|security|operations|measurement|drone|data)",
         "factor(y|ies)",
-        "manufactur",
         "machine vision",
         "quality control",
         "palm oil press",
@@ -1135,7 +1220,9 @@
         "foot dimensioning",
         "high-pressure leaks",
         "food distribution system",
-        "order notification system for restaurants"
+        "order notification system for restaurants",
+        "(for|in) manufacturing",
+        "manufacturing (industr|process|plant)"
       ]
     },
     {
@@ -1153,7 +1240,11 @@
         "demonstration panel",
         "training model",
         "testing kit",
-        "multi ?meter"
+        "multi ?meter",
+        "teaching model",
+        "test(ing)? rig",
+        "levitation model",
+        "for dit student learning"
       ]
     },
     {

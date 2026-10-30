@@ -1,0 +1,210 @@
+{
+  "_comment": "Mechanical Engineering problems (real-world problems, never one student's project). IDs must be unique across all problem files.",
+  "problems": [
+    {
+      "id": "workshop-machine-tools",
+      "title": "Small workshops lack affordable machine tools",
+      "categoryIds": [
+        "industry"
+      ],
+      "description": "Local fabricators and small workshops still bend, cut, thread and press metal, wood and pipe by hand because imported machine tools are expensive. Simple, locally made machines raise output, accuracy and safety.",
+      "any": [
+        "pipe (bending|cutting)",
+        "bending machine",
+        "cutting machine",
+        "threading",
+        "threding",
+        "lathe",
+        "hacksaw",
+        "planer",
+        "sheet metal",
+        "rolling machine",
+        "punching",
+        "pressing machine",
+        "hydraulic press",
+        "tensile test",
+        "nut tighting|nut tightening",
+        "wire mesh",
+        "chalk making",
+        "scroll",
+        "twisting machine",
+        "embossing",
+        "stirrup",
+        "welding",
+        "drilling",
+        "grinder",
+        "spot weld",
+        "jig",
+        "vice",
+        "forging",
+        "bench",
+        "engraving",
+        "extrud(er|ing)",
+        "mou?ld(ing)? machine|\\bmou?ld for",
+        "rivet",
+        "metal working",
+        "woodworking",
+        "log (splitter|hauler)",
+        "paper (binding|board)",
+        "crushing machine",
+        "3d print",
+        "\\bdie\\b",
+        "spring assist",
+        "wire (net|withdrawal)",
+        "conduit",
+        "mounting and dismounting",
+        "broom handle",
+        "nuts? tightening",
+        "paper making",
+        "exhaust gas turbine"
+      ]
+    },
+    {
+      "id": "farm-mechanisation",
+      "title": "Manual farm work limits small farmers' output",
+      "categoryIds": [
+        "agriculture"
+      ],
+      "description": "Most small farmers plant, weed and prepare land by hand, which limits how much they can grow and how fast. Low-cost, locally made machines for planting, weeding and field work raise yields and reduce drudgery.",
+      "any": [
+        "planter",
+        "sowing",
+        "planting machine",
+        "seed(ing)? (drill|machine)",
+        "weeding",
+        "weeder",
+        "harvest(er|ing machine)",
+        "hole digging",
+        "lawn mower",
+        "grass cut",
+        "tiller",
+        "plough|plow",
+        "sprayer",
+        "fertili[sz]ing",
+        "levelling",
+        "agricultural machine",
+        "small scale farming",
+        "holes? dig(g)?ing"
+      ]
+    },
+    {
+      "id": "lifting-handling",
+      "title": "Heavy lifting and loading done by hand",
+      "categoryIds": [
+        "industry",
+        "safety-security"
+      ],
+      "description": "Goods, equipment and materials are often lifted, loaded and carried by hand, which is slow and causes injuries. Simple lifts, trolleys, hoists and loaders make handling safer and faster.",
+      "any": [
+        "lift(ing)?\\b",
+        "scissor lift",
+        "trolley",
+        "loading machine",
+        "hoist",
+        "\\bjack\\b",
+        "stair climbing",
+        "crane",
+        "forklift",
+        "barrel handling",
+        "box transfer",
+        "pick and place",
+        "degree of freedom",
+        "gate co[cn]trol",
+        "opening and closing"
+      ]
+    },
+    {
+      "id": "construction-equipment",
+      "title": "Slow, labour-intensive building work",
+      "categoryIds": [
+        "buildings",
+        "industry"
+      ],
+      "description": "Bricks, blocks and pavers are made by hand and sites are mixed, plastered and cleared manually, which is slow, costly and tiring. Simple construction machines raise output and quality for small builders.",
+      "any": [
+        "plastering",
+        "paver|paving",
+        "bricks? (making|machine)|brick machine",
+        "block making",
+        "concrete mixing",
+        "wall skimming",
+        "clay mixing",
+        "tiles removal",
+        "tunnell?ing",
+        "sand grading|trommel",
+        "roof cleaning",
+        "drainage cleaner",
+        "dust suppression"
+      ]
+    },
+    {
+      "id": "vehicle-maintenance",
+      "title": "Vehicle and machine maintenance done with improvised tools",
+      "categoryIds": [
+        "transportation",
+        "industry"
+      ],
+      "description": "Garages and transport operators often service tyres, brakes, engines and rolling stock with improvised tools, which is slow and unsafe. Purpose-built service equipment makes maintenance faster, safer and more reliable.",
+      "any": [
+        "tyre|tire",
+        "fuel injection",
+        "brake line",
+        "\\bstrut\\b",
+        "lube oil",
+        "car paint",
+        "valve refacing",
+        "gear ?box puller",
+        "rolling stocks?",
+        "jet engine",
+        "engine test",
+        "electric scooter"
+      ]
+    },
+    {
+      "id": "manual-cleaning",
+      "title": "Cleaning done by hand in homes, workplaces and public spaces",
+      "categoryIds": [
+        "buildings",
+        "environment"
+      ],
+      "description": "Floors, dishes, clothes, shoes and public spaces are mostly cleaned by hand, which takes time and exposes workers to dirt and chemicals. Low-cost cleaning machines save labour and water.",
+      "any": [
+        "cleaning machine",
+        "washing machine",
+        "mopping",
+        "shoe shine|shoe sole",
+        "dust cleaning",
+        "beach cleaning",
+        "leaves cleaning",
+        "plate cleaning",
+        "bottle cleaning",
+        "clothes washing",
+        "fog maker",
+        "road and wa"
+      ]
+    },
+    {
+      "id": "small-scale-production",
+      "title": "Small producers lack affordable processing machines",
+      "categoryIds": [
+        "industry"
+      ],
+      "description": "Small factories and home businesses mix, fill, cap and package products by hand, limiting how much they can sell. Affordable, locally made production machines help them grow.",
+      "any": [
+        "soap mixing",
+        "paint mixer",
+        "non woven bags",
+        "bottle filling",
+        "capper|capping",
+        "ice crushing",
+        "snacks warming",
+        "solar oven",
+        "heat exchanger",
+        "blending machine",
+        "mixing machine",
+        "cereal grinding",
+        "bott?le filling"
+      ]
+    }
+  ]
+}

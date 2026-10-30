@@ -1,0 +1,113 @@
+{
+  "_comment": "Fields (engineering sub-disciplines) of Mechanical Engineering. Domain IDs must be unique across all programmes.",
+  "domains": [
+    {
+      "id": "machine-design-manufacturing",
+      "label": "Machine Design & Manufacturing",
+      "patterns": [
+        "machine",
+        "manufactur",
+        "fabricat",
+        "lathe",
+        "welding",
+        "cutting",
+        "bending",
+        "press"
+      ]
+    },
+    {
+      "id": "agricultural-machinery",
+      "label": "Agricultural & Food Processing Machinery",
+      "patterns": [
+        "maize",
+        "grain",
+        "rice",
+        "paddy",
+        "coffee",
+        "cashew",
+        "sesame",
+        "groundnut",
+        "peanut",
+        "cassava",
+        "juice",
+        "oil (making|pressing|extraction)",
+        "shell",
+        "husk",
+        "thresh",
+        "peel",
+        "planter",
+        "sowing",
+        "harvest",
+        "feed",
+        "honey",
+        "fish",
+        "sugarcane",
+        "tomato",
+        "coconut",
+        "millet",
+        "flour"
+      ]
+    },
+    {
+      "id": "thermal-energy-systems",
+      "label": "Thermal & Energy Systems",
+      "patterns": [
+        "stove",
+        "oven",
+        "dryer|drying",
+        "boiler",
+        "turbine",
+        "solar",
+        "biogas",
+        "refrigerat",
+        "heat",
+        "briquet",
+        "cooling",
+        "incubator",
+        "steam"
+      ]
+    },
+    {
+      "id": "automotive-engineering",
+      "label": "Automotive Engineering",
+      "patterns": [
+        "vehicle",
+        "engine",
+        "\\bcar\\b",
+        "tyres?|tires?",
+        "brake",
+        "motorcycle",
+        "suspension",
+        "gear ?box"
+      ]
+    },
+    {
+      "id": "materials-recycling",
+      "label": "Materials & Recycling",
+      "patterns": [
+        "plastic",
+        "recycl",
+        "waste",
+        "swarf",
+        "scrap",
+        "compact",
+        "shredder",
+        "tiles?"
+      ]
+    },
+    {
+      "id": "mechatronics-robotics",
+      "label": "Mechatronics & Robotics",
+      "patterns": [
+        "robot",
+        "manipulator",
+        "automatic",
+        "automated",
+        "arduino",
+        "sensor",
+        "\\bplc\\b",
+        "remote controlled"
+      ]
+    }
+  ]
+}

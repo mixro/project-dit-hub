@@ -1,6 +1,8 @@
 {
   "_comment": "Corrections are applied to an UPPERCASE working copy using whole-word regex. Every applied correction is recorded on the record, and the original text is never modified.",
   "spelling": {
+    "DESIGNAND": "DESIGN AND",
+    "DRINKIN": "DRINKING",
     "IMPLEMENTANTION": "IMPLEMENTATION",
     "AGRICURTURE": "AGRICULTURE",
     "PESTISIDE": "PESTICIDE",
@@ -300,6 +302,9 @@
     "without"
   ],
   "keepWords": [
+    "WOODWORK",
+    "MICROFIBERS",
+    "ROUNDABOUT",
     "ATTRACTION",
     "BIOELECTRICAL",
     "BIOFERTILIZER",

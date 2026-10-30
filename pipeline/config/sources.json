@@ -718,6 +718,33 @@
         "title": "PROJECT TOPIC"
       },
       "notes": "Headed 'Mbeya University of Science and Technology, Department of Electrical and Power Engineering, students grouped by supervisor with project topics, 2026/2027' (300 students, 22 supervisors, one table per supervisor). Not DIT, so shown as institution not confirmed. Level not stated. Supervisor names are never extracted."
+    },
+    {
+      "id": "me-beng-titles-database",
+      "file": "BENG ME PROJECT TITLES DATABASE.docx",
+      "layout": "title-list-v1",
+      "continueTables": true,
+      "institutionId": "unconfirmed",
+      "departmentId": "mechanical",
+      "programmeId": "mechanical-engineering",
+      "programmeProvenance": "from-source-name",
+      "levelId": "beng",
+      "level": "BEng (from heading 'BENG ME')",
+      "cohort": null,
+      "academicYear": null,
+      "year": null,
+      "event": "title-list",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "accepted",
+        "provenance": "inferred",
+        "reason": "Status column says DONE for every project (completed), so the title had been approved."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "PROJECT TITLE"
+      },
+      "notes": "Headed only 'BENG ME PROJECT TITLES DATABASE': 415 numbered projects in 16 tables (header on the first only), status DONE for all. Institution and years not stated; three titles mention DIT, but the heading does not. Notes to the student inside titles, e.g. '(come to explain)', are kept as annotations, not as part of the title. Two rows have no title. No names or registration numbers."
     }
   ],
   "duplicateFiles": [

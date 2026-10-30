@@ -13,6 +13,15 @@ Template:
 
 ---
 
+## 2026-10-30: BEng Mechanical Engineering titles database; first Mechanical Engineering rules
+**Context:** the user added `BENG ME PROJECT TITLES DATABASE.docx`.
+**Decision:**
+- Source `me-beng-titles-database`: heading only "BENG ME PROJECT TITLES DATABASE" → Mechanical Engineering (from heading), BEng, `unconfirmed`, year not stated. 415 numbered rows over 16 tables (header on the first only: new extractor option `continueTables`, header reuse without row joining). Status DONE for all → decision `accepted`, inferred. 2 empty rows skipped, 7 repeated titles merged → 406 projects.
+- Notes to the student inside titles ("(come to explain)") move to annotations (`textnorm.NOTE_RE`).
+- First Mechanical rules (`config/programmes/mechanical-engineering/`): problems workshop machine tools, farm mechanisation, lifting and handling, construction equipment, vehicle maintenance, manual cleaning, small-scale production; six fields; similarity stopwords. Shared agro-processing extended with word-bounded machine phrases.
+- Fixed over-broad shared patterns: `manufactur` (2026-10-10) tagged every "design and manufacture of…" title as industrial automation; `aging` in assistive tech matched "packaging"/"managing" (7 existing projects lose a wrong tag); `ice block`, `compacting` narrowed. `keepWords` + WOODWORK, MICROFIBERS, ROUNDABOUT; spelling DESIGNAND, DRINKIN.
+**Consequences:** 3,301 projects; existing IDs unchanged; 3 existing titles corrected (e.g. "Coral Lime Stone" → "Limestone"); 14 existing projects' tags corrected. ME unclassified: 2 of 406.
+
 ## 2026-10-27: MUST Electrical and Power Engineering topics 2026/27; three duplicate Civil files
 **Context:** the user added new files to `raw/`.
 **Decision:**
