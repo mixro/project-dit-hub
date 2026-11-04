@@ -13,6 +13,12 @@ Template:
 
 ---
 
+## 2026-11-04: Lighter session context and a graphify knowledge graph
+**Context:** CLAUDE.md auto-loaded SPEC, ROADMAP and DECISIONS (~62 KB, ~15k tokens) at the start of every Claude Code session, and DECISIONS grows with every list.
+**Decision:** remove the `@` imports; CLAUDE.md now has a table of which doc to read for which need. Add graphify (Graphify-Labs/graphify) so Claude Code can query a knowledge graph of the code and docs instead of reading many files.
+**Privacy:** `.graphifyignore` replaces `.gitignore` for graphify, so it repeats the personal-data exclusions (`raw/`, `private/`, `*.docx`, `*.xlsx`, `*.pdf`) and excludes generated data (`output/`, `app/public/data/`, `reports/`). `graphify-out/` is not committed.
+**Consequences:** session start drops to ~6 KB. Claude Code must open ROADMAP/DECISIONS itself when a task needs history.
+
 ## 2026-10-30: BEng Mechanical Engineering titles database; first Mechanical Engineering rules
 **Context:** the user added `BENG ME PROJECT TITLES DATABASE.docx`.
 **Decision:**

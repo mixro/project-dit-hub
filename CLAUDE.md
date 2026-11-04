@@ -2,10 +2,24 @@
 
 A web platform that helps final-year engineering students at DIT (Dar es Salaam Institute of Technology) discover past projects, explore the real problems behind them, and check whether their own idea has already been done. Philosophy: help students understand problems, existing solutions and gaps, not copy titles.
 
-**Current stage: Phase 1 done (frontend-only prototype). Next: Phase 2, testing with real students.**
-Full original requirements: @docs/SPEC.md (read it when a request touches product scope).
-Roadmap and what's next: @docs/ROADMAP.md
-Decisions already made, and why: @docs/DECISIONS.md
+**Current stage: Phase 1 done (frontend-only prototype), multi-programme data in progress (3,301 projects, 25 source lists). Next: Phase 2, testing with real students.**
+
+## Where the history lives (read on demand, not every session)
+
+These files are deliberately NOT auto-loaded, to keep sessions cheap. Open only what the task needs:
+
+| Need | Read |
+|---|---|
+| What's done, what's next, open items | `docs/ROADMAP.md` |
+| Why something is the way it is; before changing direction | `docs/DECISIONS.md` (newest first; search it, don't read it all) |
+| Product scope questions | `docs/SPEC.md` |
+| Programmes, institutions, programme inference | `docs/design/MULTI_PROGRAMME_DESIGN.md` |
+| Adding a document | `pipeline/CLAUDE.md` |
+| Where is X / what calls Y / how A relates to B | the graphify knowledge graph (below) before grepping |
+
+## Knowledge graph (graphify)
+
+If `graphify-out/graph.json` exists, use `graphify query "<question>"`, `graphify path A B` or `graphify explain <node>` to locate code and decisions before broad searches or reading many files. Edges tagged `INFERRED` or `AMBIGUOUS` are guesses: confirm in the source file before acting. `.graphifyignore` replaces `.gitignore` for graphify, so it must keep excluding `raw/`, `private/`, `*.docx`, `*.xlsx` and `*.pdf`; never remove those lines. The graph is rebuilt by a git hook; after `git pull`, run `graphify update .`.
 
 ## Repository map
 

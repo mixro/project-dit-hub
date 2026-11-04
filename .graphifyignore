@@ -1,0 +1,25 @@
+# graphify reads THIS file INSTEAD OF .gitignore in this folder (not in addition),
+# so everything in .gitignore that matters is repeated here.
+
+# --- Personal data: must never be indexed (names, registration numbers) ---
+raw/
+private/
+*.docx
+*.xlsx
+*.pdf
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- Generated or vendored: large, noisy, rebuilt from source ---
+output/
+app/public/data/
+reports/
+app/dist/
+node_modules/
+__pycache__/
+graphify-out/
+app/package-lock.json
+app/public/*.xml
+app/public/*.txt
+*.png
+*.ico

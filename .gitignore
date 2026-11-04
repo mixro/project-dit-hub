@@ -8,3 +8,6 @@ node_modules/
 .claude/settings.local.json
 CLAUDE.local.md
 app/dist/
+
+# graphify knowledge graph (rebuilt locally by the git hook)
+graphify-out/
