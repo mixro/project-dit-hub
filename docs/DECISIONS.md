@@ -17,6 +17,7 @@ Template:
 **Context:** CLAUDE.md auto-loaded SPEC, ROADMAP and DECISIONS (~62 KB, ~15k tokens) at the start of every Claude Code session, and DECISIONS grows with every list.
 **Decision:** remove the `@` imports; CLAUDE.md now has a table of which doc to read for which need. Add graphify (Graphify-Labs/graphify) so Claude Code can query a knowledge graph of the code and docs instead of reading many files.
 **Privacy:** `.graphifyignore` replaces `.gitignore` for graphify, so it repeats the personal-data exclusions (`raw/`, `private/`, `*.docx`, `*.xlsx`, `*.pdf`) and excludes generated data (`output/`, `app/public/data/`, `reports/`). `graphify-out/` is not committed.
+**Also:** `pipeline/src/report_summary.py` replaces reading `reports/quality-report.json` (218 KB, ~55k tokens; summary 1.7–5 KB). `.claude/settings.json` blocks the Read tool on `output/`, `app/public/data/`, `reports/` and the lock file; scripts can still read them. `pipeline/CLAUDE.md` no longer says "never infer programme" (contradicted design section 10).
 **Consequences:** session start drops to ~6 KB. Claude Code must open ROADMAP/DECISIONS itself when a task needs history.
 
 ## 2026-10-30: BEng Mechanical Engineering titles database; first Mechanical Engineering rules

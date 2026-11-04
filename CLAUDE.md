@@ -27,7 +27,7 @@ If `graphify-out/graph.json` exists, use `graphify query "<question>"`, `graphif
 - `docs/design/MULTI_PROGRAMME_DESIGN.md`: how several programmes (EE, ME, ETE, CE, COE, SLT) and institutions are handled; implemented in phases.
 - `app/`: React 19 + Vite + TypeScript website. See `app/CLAUDE.md` and `app/README.md`.
 - `output/public/`: generated public dataset (also copied to `app/public/data/`). Never edit by hand; regenerate.
-- `reports/quality-report.json`: data issues to review (unclassified titles, gaps, duplicates).
+- `reports/quality-report.json`: data issues (200+ KB). Never open it or the JSON in `output/` / `app/public/data/` directly (reading is blocked); use `python3 pipeline/src/report_summary.py [--source <id>] [--sample 20]`, or a short script that prints only what you need.
 - `docs/`: spec, roadmap, decision log.
 - `raw/`, `private/`: PERSONAL DATA. Git-ignored. Preferably kept outside the repo (see below).
 
@@ -35,6 +35,7 @@ If `graphify-out/graph.json` exists, use `graphify query "<question>"`, `graphif
 
 ```bash
 python3 pipeline/src/build.py          # rebuild data (needs: pip install python-docx)
+python3 pipeline/src/report_summary.py --source <id> --sample 20   # data quality, compact
 cd app && npm install                  # first time
 cd app && npm run dev                  # local site
 cd app && npm run build                # type-check + production build (must pass)
@@ -53,8 +54,9 @@ Personal documents outside the repo: `HUB_RAW_DIR=~/hub-private/raw HUB_PRIVATE_
 
 ## How to work on this project
 
+- **Keep context small**: run builds and tests with output trimmed (e.g. `| tail -30`); search with grep/graphify before opening files; read only the lines you need from large files.
 - **Before coding**, restate the change, list the files you'll touch, and flag any conflict with the rules above or with `docs/DECISIONS.md`.
-- **Data problems** (wrong tag, typo, unclassified title): fix `pipeline/config/*.json`, rebuild, check `reports/quality-report.json`. Change Python only for structural problems.
+- **Data problems** (wrong tag, typo, unclassified title): fix `pipeline/config/*.json`, rebuild, check `python3 pipeline/src/report_summary.py`. Change Python only for structural problems.
 - **New document layout**: add an entry to `pipeline/config/sources.json`; only add a layout branch in `interpret.py` if the columns truly differ.
 - **Definition of done**: `python3 pipeline/src/build.py` prints `privacy check: passed`; `npm run build` and `npm run test:data` pass; UI changes checked at 390 px (phone) and 1280 px widths.
 - **After any amendment** the user approves: add an entry to `docs/DECISIONS.md` and update `docs/ROADMAP.md`. Keep this file short; put detail in `docs/`.

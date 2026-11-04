@@ -4,7 +4,12 @@
       "Edit(./raw/**)",
       "Edit(./private/**)",
       "Write(./raw/**)",
-      "Write(./private/**)"
+      "Write(./private/**)",
+      "Read(./output/**)",
+      "Read(./app/public/data/**)",
+      "Read(./reports/**)",
+      "Read(./app/package-lock.json)",
+      "Read(./graphify-out/graph.json)"
     ]
   }
 }

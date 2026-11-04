@@ -20,16 +20,16 @@ Run: `python3 pipeline/src/build.py` from the repo root (requires `python-docx`)
 - Regex in config must also work in JavaScript (the browser reuses it): no look-behind, no named groups, no inline flags.
 - Never print student names or registration numbers in output, logs or reports. Refer to rows by `sourceId` and `serial` only.
 - Keep IDs stable: they are content hashes of source + original title. Don't change `stable_id()`; URLs depend on it.
-- After any config change: rebuild, confirm `privacy check: passed`, read `reports/quality-report.json` (unclassified count, new issues), and spot-check ~20 random titles for tagging accuracy.
+- After any config change: rebuild, confirm `privacy check: passed`, run `python3 pipeline/src/report_summary.py --source <id> --sample 20` (unclassified count, new issues, random titles with tags) and check the tags.
 - A new spelling or split rule must not change correct words. Check the "split-glued-word" corrections listed in the report.
 
 ## Processing a new document
 
 The user places `.docx` files in `raw/`; you process them yourself (full procedure: `docs/design/MULTI_PROGRAMME_DESIGN.md` section 9).
 
-1. Get a summary first (`inspect_doc.py` once it exists; not built yet), then read the document only as far as needed.
-2. Ask the user for anything the document does not state: programme (EE, ME, ETE, CE, COE, SLT), level, academic year, list type. Never infer programme from titles.
+1. Get a summary first (`pipeline/src/inspect_doc.py` if present; otherwise read the header and first rows only), then read the document only as far as needed.
+2. Ask the user for anything the document does not state: programme (EE, ME, ETE, CE, COE, SLT), level, academic year, list type. If the programme is not stated, it is inferred per project from the title (design section 10); report the distribution and low-confidence titles.
 3. Add the `sources.json` entry; extend that programme's rule files.
 4. Build. It must print `privacy check: passed`.
-5. Review `reports/quality-report.json`: unclassified ≤ 5% for that programme, glued-word splits correct, ~20 random titles spot-checked.
+5. Review with `python3 pipeline/src/report_summary.py --source <id> --sample 20`: unclassified ≤ 5% for that programme, glued-word splits correct, the sampled titles tagged correctly.
 6. Report counts (projects, decisions, unclassified), sample tags and rules added. No student names.
