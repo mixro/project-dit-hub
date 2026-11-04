@@ -32,12 +32,18 @@ def parse_remark(remark: str) -> dict:
     r = remark.lower().strip()
     second = r.startswith("2nd")
     conditional = "condition" in r
+    # MUST panels write "Approved" alone, or "Approved with/subject to <changes>".
+    approved = re.match(r"^a(p)?proved\b", r)
     if "absent" in r:
         first = "not-presented"
     elif second:
         first = "rejected"
     elif conditional:
         first = "accepted-conditional"
+    elif approved:
+        first = "accepted" if r.rstrip(". ") in ("approved", "aproved") else "accepted-conditional"
+    elif re.search(r"\b(reframe|refrem)\b.*\bre-?present", r):
+        first = "pending"  # "Reframe title and represent": to be presented again
     elif "accepted" in r:
         first = "accepted"
     elif "rejected" in r:

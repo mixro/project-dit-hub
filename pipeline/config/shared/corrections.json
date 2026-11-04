@@ -428,6 +428,8 @@
     "GROUNDNUTS",
     "AQUAPONICS",
     "HYDROPONIC",
-    "AUTORECLOSER"
+    "AUTORECLOSER",
+    "hotspot",
+    "website"
   ]
 }

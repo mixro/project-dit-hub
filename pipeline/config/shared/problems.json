@@ -63,7 +63,7 @@
         "solar pv and",
         "mobile phone charging by using solar",
         "biomass",
-        "rice husk",
+        "rice husks?(?!s? ash)",
         "sound energy",
         "electromagnetic waves",
         "wireless power transfer",
@@ -139,7 +139,9 @@
         "water treatment",
         "desi?lination",
         "oil skimming",
-        "decarbonation"
+        "decarbonation",
+        "quality of water",
+        "river water screening"
       ]
     },
     {
@@ -663,7 +665,10 @@
         "service time for vehicles",
         "trafic",
         "road crossing assistance",
-        "child location"
+        "child location",
+        "road signs",
+        "warning signs",
+        "road furniture"
       ]
     },
     {
@@ -856,7 +861,7 @@
       ],
       "description": "LPG, chlorine dioxide and other gas leaks and electrical fires can cause deaths and destroy property if not detected early.",
       "any": [
-        "\\bfire",
+        "\\bfire(?!d\\b)",
         "gas leakage",
         "gas detection",
         "\\blpg",
@@ -915,7 +920,8 @@
         "safety practices",
         "emergency preparedness",
         "construction sites?",
-        "maritime safety"
+        "maritime safety",
+        "\\bosha\\b"
       ]
     },
     {
@@ -978,6 +984,9 @@
         "cloth(es)? line",
         "load sensing seats",
         "floor cleaner"
+      ],
+      "excludes": [
+        "structural design"
       ]
     },
     {

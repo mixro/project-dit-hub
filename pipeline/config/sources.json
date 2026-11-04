@@ -745,6 +745,134 @@
         "title": "PROJECT TITLE"
       },
       "notes": "Headed only 'BENG ME PROJECT TITLES DATABASE': 415 numbered projects in 16 tables (header on the first only), status DONE for all. Institution and years not stated; three titles mention DIT, but the heading does not. Notes to the student inside titles, e.g. '(come to explain)', are kept as annotations, not as part of the title. Two rows have no title. No names or registration numbers."
+    },
+    {
+      "id": "must-ce-beng-2026-water",
+      "file": "Bachelor_Project_Titles_and_Remarks_v2.docx",
+      "tables": [
+        0,
+        0
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "civil",
+      "programmeId": "civil-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor Degree (NTA Level 8 / UQF 8), 4th year",
+      "cohort": null,
+      "academicYear": "2025/2026",
+      "year": 2026,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Presentation 1 review with no remarks recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title",
+        "remarks": "Comments / Remarks"
+      },
+      "notes": "Headed 'Mbeya University of Science and Technology, College of Engineering and Technology, Department of Civil Engineering, Bachelor Degree (NTA Level 8 / UQF 8) 4th year final projects, compilation of project titles and presentation review remarks', with Water, Construction Management, Highway & Transportation and Structural panels. Not DIT, so shown as institution not confirmed. No names or registration numbers. This source: Water Engineering Panel, academic year 2025/2026 semester I, presentation 1 (table 1). The remarks column is empty (dashes); 14 rows have no title and are skipped."
+    },
+    {
+      "id": "must-ce-beng-2026-construction-management",
+      "file": "Bachelor_Project_Titles_and_Remarks_v2.docx",
+      "tables": [
+        1,
+        1
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "civil",
+      "programmeId": "civil-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor Degree (NTA Level 8 / UQF 8), 4th year",
+      "cohort": null,
+      "academicYear": "2025/2026",
+      "year": 2026,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Presentation 1 review with no remarks recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title",
+        "remarks": "Comments / Remarks"
+      },
+      "notes": "Headed 'Mbeya University of Science and Technology, College of Engineering and Technology, Department of Civil Engineering, Bachelor Degree (NTA Level 8 / UQF 8) 4th year final projects, compilation of project titles and presentation review remarks', with Water, Construction Management, Highway & Transportation and Structural panels. Not DIT, so shown as institution not confirmed. No names or registration numbers. This source: Construction Management Panel, academic year 2025/2026 semester I, presentation 1 (table 2). The remarks column is empty (dashes); 6 rows have no title and are skipped."
+    },
+    {
+      "id": "must-ce-beng-2025-highway-transportation",
+      "file": "Bachelor_Project_Titles_and_Remarks_v2.docx",
+      "tables": [
+        2,
+        2
+      ],
+      "layout": "title-defense-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "civil",
+      "programmeId": "civil-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor Degree (NTA Level 8 / UQF 8), 4th year",
+      "cohort": null,
+      "academicYear": "2024/2025",
+      "year": 2025,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Presentation 1 review; remark recorded per title."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title",
+        "remarks": "Comments / Remarks"
+      },
+      "notes": "Headed 'Mbeya University of Science and Technology, College of Engineering and Technology, Department of Civil Engineering, Bachelor Degree (NTA Level 8 / UQF 8) 4th year final projects, compilation of project titles and presentation review remarks', with Water, Construction Management, Highway & Transportation and Structural panels. Not DIT, so shown as institution not confirmed. No names or registration numbers. This source: Highway & Transportation Engineering Panel, academic year 2024/2025 semester II, presentation 1 (table 3). Remarks: 'Approved' = accepted; 'Approved with/subject to changes' = accepted with conditions; 'Absent' = not presented; 'Reframe title and represent' = pending."
+    },
+    {
+      "id": "must-ce-beng-2026-structural",
+      "file": "Bachelor_Project_Titles_and_Remarks_v2.docx",
+      "tables": [
+        3,
+        3
+      ],
+      "layout": "title-list-v1",
+      "institutionId": "unconfirmed",
+      "departmentId": "civil",
+      "programmeId": "civil-engineering",
+      "programmeProvenance": "recorded",
+      "levelId": "beng",
+      "level": "Bachelor Degree (NTA Level 8 / UQF 8), 4th year",
+      "cohort": null,
+      "academicYear": "2025/2026",
+      "year": 2026,
+      "yearProvenance": "recorded",
+      "event": "title-defense",
+      "eventDate": null,
+      "defaultDecision": {
+        "value": "unknown",
+        "provenance": "inferred",
+        "reason": "Presentation 1 review with no remarks recorded."
+      },
+      "columns": {
+        "serial": "S/N",
+        "title": "Project Title",
+        "remarks": "Comments / Remarks"
+      },
+      "notes": "Headed 'Mbeya University of Science and Technology, College of Engineering and Technology, Department of Civil Engineering, Bachelor Degree (NTA Level 8 / UQF 8) 4th year final projects, compilation of project titles and presentation review remarks', with Water, Construction Management, Highway & Transportation and Structural panels. Not DIT, so shown as institution not confirmed. No names or registration numbers. This source: Structural Engineering Panel, academic year 2025/2026 semester I, presentation 1 (table 4). The remarks column is empty (dashes)."
     }
   ],
   "duplicateFiles": [

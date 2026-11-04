@@ -18,7 +18,7 @@ WS_RE = re.compile(r"\s+")
 ZERO_WIDTH_RE = re.compile(r"[\u200b\u200c\u200d\ufeff]")
 LABEL_PREFIX_RE = re.compile(r"^\s*project\s+title\s*:\s*", re.IGNORECASE)
 # Cells that hold a status instead of a title ("change title", "POSTPONED", "DETAINED"...).
-PLACEHOLDER_RE = re.compile(r"^((changed?|new)\s+title|postponed|detained|deferred|absent)\.?$", re.IGNORECASE)
+PLACEHOLDER_RE = re.compile(r"^((changed?|new)\s+title|postponed|detained|deferred|absent|[-–—]+)\.?$", re.IGNORECASE)
 
 # Words that begin a fresh title. Used to tell "two alternative titles in one
 # cell" apart from "one long title wrapped onto a second line".

@@ -2,7 +2,7 @@
 
 A web platform that helps final-year engineering students at DIT (Dar es Salaam Institute of Technology) discover past projects, explore the real problems behind them, and check whether their own idea has already been done. Philosophy: help students understand problems, existing solutions and gaps, not copy titles.
 
-**Current stage: Phase 1 done (frontend-only prototype), multi-programme data in progress (3,301 projects, 25 source lists). Next: Phase 2, testing with real students.**
+**Current stage: Phase 1 done (frontend-only prototype), multi-programme data in progress (3,589 projects, 30 source lists). Next: Phase 2, testing with real students.**
 
 ## Where the history lives (read on demand, not every session)
 

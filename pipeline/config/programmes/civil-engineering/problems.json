@@ -28,7 +28,11 @@
         "building deterioration",
         "structural defects",
         "timber design",
-        "residential buildings"
+        "residential buildings",
+        "laboratory building",
+        "building defects",
+        "foundation",
+        "spectator stands?"
       ],
       "excludes": [
         "overrun",
@@ -37,9 +41,9 @@
         "rework",
         "abandonment",
         "solid waste",
-        "health",
         "safety",
-        "maintenance and repair"
+        "maintenance and repair",
+        "occupational health"
       ]
     },
     {
@@ -81,7 +85,13 @@
         "local sands",
         "curing",
         "steel (micro)?fib(er|re)s",
-        "pumice in making"
+        "pumice in making",
+        "building materials",
+        "embodied energy",
+        "acoustic panels",
+        "locally available materials",
+        "rice husk ash",
+        "replacement of cement"
       ],
       "excludes": [
         "structural design",
@@ -157,7 +167,18 @@
         "side drainage",
         "drainage system effectiveness on flexible pavement",
         "pavement failure",
-        "road characteristics"
+        "road characteristics",
+        "geometric (and |design)",
+        "bitumen standard",
+        "road condition",
+        "maintenance prioriti",
+        "side drain",
+        "surface def+ects?",
+        "gravel",
+        "low volume roads?",
+        "functional performance",
+        "climbing lane",
+        "failure (for|of|on) .*road"
       ]
     },
     {
@@ -183,7 +204,10 @@
         "junction",
         "motorcycle crashes",
         "road accidents",
-        "road safety"
+        "road safety",
+        "level of service",
+        "capacity and los",
+        "capacity of .*terminal"
       ]
     },
     {
@@ -203,7 +227,15 @@
         "water supply (system|scheme)",
         "first flush",
         "storage water tank",
-        "water tank"
+        "water tank",
+        "water demand",
+        "non-revenue water",
+        "water provision",
+        "water scheme",
+        "harvesting water",
+        "domestic water",
+        "supplying water",
+        "water sources?\\b"
       ]
     },
     {
@@ -257,7 +289,20 @@
         "force account",
         "contractors?",
         "maintenance and repair schedules",
-        "over ?run"
+        "over ?run",
+        "unfinished building",
+        "cost escalation",
+        "risks? (planning|management)",
+        "labou?r (practices|based)",
+        "timely completion",
+        "road networks",
+        "post-contract",
+        "smart construction",
+        "construction (works?\\b|industr|firms|stakeholders|compan|projects)"
+      ],
+      "excludes": [
+        "safety",
+        "aggregates?\\b"
       ]
     }
   ]

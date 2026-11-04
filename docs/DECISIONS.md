@@ -13,6 +13,12 @@ Template:
 
 ---
 
+## 2026-11-04: MUST Civil Engineering titles and remarks (four panels)
+**Context:** `Bachelor_Project_Titles_and_Remarks_v2.docx` added to `raw/`: Mbeya University of Science and Technology, Department of Civil Engineering, Bachelor (NTA 8) 4th-year titles with presentation 1 review remarks, in four panel tables. No names or registration numbers. Only the Highway & Transportation panel (2024/25 sem II) has remarks; the Water, Construction Management and Structural panels (2025/26 sem I) show dashes. No title overlaps an existing source.
+**Decision:** One source per panel (`must-ce-beng-2026-water`, `-2026-construction-management`, `-2025-highway-transportation`, `-2026-structural`), institution `unconfirmed` (header names MUST, not DIT), event `title-defense`. The Highway panel uses `title-defense-v1` so remarks become decisions. `parse_remark` now reads MUST wording: "Approved" = accepted; "Approved with/subject to …" = accepted-conditional; "Reframe title and represent" = pending. Dash-only cells are placeholder titles and skipped. Civil rules extended (water demand/sources, construction management, road geometry/condition, foundations, rice husk ash); shared rules narrowed: "rice husk" no longer matches rice husk ash (renewable-generation), `\bfire` no longer matches "fired", structural-design titles no longer get building-comfort; `\bosha\b`, road signs/furniture and "quality of water" added. `keepWords`: hotspot, website.
+**Alternatives:** One source for the whole file (rejected: the Highway panel is a different academic year). Mapping "reframe and represent" to rejected (rejected: the title is to be presented again, so the outcome is open).
+**Consequences:** 288 new projects, 3,589 published; Highway decisions 8 accepted, 77 conditional, 3 not presented, 2 pending, 2 unknown. Civil unclassified 2. Older projects: 4 tag corrections and 3 titles now joined by the glue-splitter (Multistorey, Subbase, Stormwater).
+
 ## 2026-11-04: Lighter session context and a graphify knowledge graph
 **Context:** CLAUDE.md auto-loaded SPEC, ROADMAP and DECISIONS (~62 KB, ~15k tokens) at the start of every Claude Code session, and DECISIONS grows with every list.
 **Decision:** remove the `@` imports; CLAUDE.md now has a table of which doc to read for which need. Add graphify (Graphify-Labs/graphify) so Claude Code can query a knowledge graph of the code and docs instead of reading many files.

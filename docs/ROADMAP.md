@@ -23,6 +23,7 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 - ✅ Projects with no identified programme left out (`publishUnidentifiedProgramme: false`): 130 removed, 2,063 published (2026-10-10)
 - ✅ 2026-10-16: BEE 2023/24 (DIT) and three BENG22 Civil lists added; first Civil Engineering rules; 2,447 projects
 - ❓ Year of the BENG22CE Civil lists (not stated)
+- ✅ 2026-11-04: MUST Civil Engineering Bachelor titles and remarks, four panels (288); MUST "Approved…" remarks read as decisions; 3,589 projects
 - ✅ 2026-10-30: BEng Mechanical Engineering titles database (406); first Mechanical rules; 3,301 projects
 - ✅ 2026-10-27: MUST Electrical and Power Engineering topics 2026/27 (300); three duplicate BENG22CE files recorded, not published; 2,895 projects
 - 💭 Stricter glue-splitter (each new list adds wrong splits of real words; reviewed by hand so far)
