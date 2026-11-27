@@ -12,7 +12,7 @@ export default function ProblemDetail({ id }: { id: string }) {
   const { state, retry } = useResource(() => projectService.getProblem(id), [id]);
   useEffect(() => { track("problem_opened", { id }); }, [id]);
   const title = state.status === "ready" ? state.data.problem.title : "Problem";
-  useDocumentTitle(title);
+  useDocumentTitle(title, state.status === "ready" ? { description: state.data.problem.description } : {});
 
   const byYear = useMemo(() => {
     if (state.status !== "ready") return [];

@@ -468,6 +468,64 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
   .home .notice { max-width: 720px; margin-left: auto; margin-right: auto; }
 }
 
+/* ---------- hero circuit (components/HeroCircuit.tsx) ----------
+   Traces sit behind the hero; pulses run edge → centre in 7 s cycles and reach the pad at 50%,
+   when the pad glows. Resting styles are the final state, so reduced motion shows a still board. */
+/* The board is 100vw wide (wider than the page when a scrollbar shows); clip, not hidden, so sticky still works. */
+body { overflow-x: clip; }
+.hero { position: relative; isolation: isolate; }
+.hero-circuit {
+  position: absolute; z-index: -1; top: -24px; left: 50%;
+  width: 100vw; max-width: 1440px; height: calc(100% + 96px);
+  transform: translateX(-50%); pointer-events: none; color: var(--accent);
+}
+.hc-base { fill: none; stroke: currentColor; stroke-opacity: 0.2; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.hc-pulse {
+  fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; vector-effect: non-scaling-stroke;
+  stroke-dasharray: 10 190; stroke-dashoffset: -100; opacity: 0;
+  animation: hc-flow 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) var(--d, 0s) infinite;
+}
+.hc-pad { fill: var(--paper); stroke: currentColor; stroke-opacity: 0.55; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.hc-glow { fill: currentColor; opacity: 0; transform-box: fill-box; transform-origin: center; animation: hc-glow 7s ease-out var(--d, 0s) infinite; }
+.hc-via { fill: none; stroke: currentColor; stroke-opacity: 0.35; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.hc-chip { fill: var(--surface); stroke: currentColor; stroke-opacity: 0.3; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+@keyframes hc-flow {
+  0% { stroke-dashoffset: 10; opacity: 0; }
+  5% { opacity: 1; }
+  50% { stroke-dashoffset: -100; opacity: 1; }
+  54%, 100% { stroke-dashoffset: -100; opacity: 0; }
+}
+@keyframes hc-glow {
+  0%, 46% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.55; transform: scale(1); }
+  72%, 100% { opacity: 0; transform: scale(2.6); }
+}
+
+/* Hero entrance: content rises in, then "solve?" gets a trace-style underline ending in a pad. */
+.hero > h1, .hero > .lead, .hero > .search, .hero > .examples { animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.hero > .lead { animation-delay: 0.08s; }
+.hero > .search { animation-delay: 0.16s; }
+.hero > .examples { animation-delay: 0.24s; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(12px); } }
+.hero h1 em { position: relative; display: inline-block; }
+.hero h1 em::after {
+  content: ""; position: absolute; left: 0.04em; right: 0.12em; bottom: 0.02em; height: 0.075em;
+  border-radius: 2px; background: currentColor; opacity: 0.6; transform-origin: left center;
+  animation: hc-draw 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.55s backwards;
+}
+.hero h1 em::before {
+  content: ""; position: absolute; right: -0.02em; bottom: -0.035em; width: 0.17em; height: 0.17em;
+  box-sizing: border-box; border: 0.045em solid currentColor; border-radius: 50%; background: var(--paper);
+  animation: hc-pop 0.35s ease-out 1.4s backwards;
+}
+@keyframes hc-draw { from { transform: scaleX(0); } }
+@keyframes hc-pop { from { transform: scale(0); opacity: 0; } }
+/* Phones show only the middle of the board, behind the text: fade it less there so it still reads. */
+@media (max-width: 639px) {
+  .hc-fade-0 { stop-opacity: 0.4; }
+  .hc-fade-1 { stop-opacity: 0.6; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
@@ -475,3 +533,8 @@ button:disabled, .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed
 /* ---------- programme badge: text code in a neutral chip, never colour-coded ---------- */
 .prog { display: inline-flex; align-items: center; padding: 0 6px; min-height: 20px; border: 1px solid var(--rule-strong); border-radius: 4px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; color: var(--ink-2); background: var(--surface); line-height: 1; }
 .inst-flag { display: inline-flex; align-items: center; padding: 0 6px; min-height: 20px; border: 1px dashed var(--warn); border-radius: 4px; font-size: 0.72rem; font-weight: 650; color: var(--warn); line-height: 1; }
+
+/* Static text written into each route's HTML at build time (vite.config.ts) for search engines
+   and visitors without JavaScript. React replaces it as soon as the app starts. */
+.seo-fallback { max-width: 720px; margin: 0 auto; padding: 48px 20px; color: var(--ink); }
+.seo-fallback nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }

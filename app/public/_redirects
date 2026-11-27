@@ -1,5 +1,17 @@
-# Force redirect default Netlify subdomain to primary domain
+# Force redirect default Netlify subdomain to primary domain (keep for at least 180 days after the move)
 https://instiwise-project-hub.netlify.app/* https://instiwise.micepdev.com/:splat 301!
 
-# SPA fallback
-/* /index.html 200
+# Fixed routes: each has its own built HTML file with its own title, description and canonical (vite.config.ts).
+/projects   /projects.html   200
+/problems   /problems.html   200
+/check      /check.html      200
+/insights   /insights.html   200
+/about      /about.html      200
+/compare    /compare.html    200
+
+# Detail pages: the app shell; the page sets its own canonical and description once data loads.
+/projects/:id   /index.html   200
+/problems/:id   /index.html   200
+
+# Anything else is a real 404 (the app still shows its "Page not found" view), not a soft 404.
+/*   /404.html   404

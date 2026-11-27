@@ -1,7 +1,7 @@
 import { Component, createElement, lazy, Suspense, useEffect, type ComponentType, type ReactNode } from "react";
 import { Layout } from "./components/Layout";
 import { Empty, PageSkeleton } from "./components/States";
-import { CoreProvider } from "./lib/core";
+import { CoreProvider, useDocumentTitle } from "./lib/core";
 import { Link, matchPath, useLocation } from "./lib/router";
 import { track } from "./lib/analytics";
 import { dataClient } from "./data/dataClient";
@@ -48,6 +48,11 @@ function route(path: string): ReactNode {
   if (m) return <ProjectDetail key={m.id} id={m.id} />;
   m = matchPath("/problems/:id", path);
   if (m) return <ProblemDetail key={m.id} id={m.id} />;
+  return <NotFound />;
+}
+
+function NotFound() {
+  useDocumentTitle("Page not found", { noindex: true });
   return (
     <Empty title="Page not found">
       <p>The link may be incomplete.</p>

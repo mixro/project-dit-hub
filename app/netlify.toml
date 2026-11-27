@@ -7,12 +7,8 @@
 [build.environment]
   NODE_VERSION = "20"         # Vite 6 needs Node 18+
 
-# SPA fallback. for deep links like /projects/p2026-...
-# Existing files (assets, data) are served first, so JS is never swapped for HTML.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Routing (fixed routes, detail pages, real 404s) lives in public/_redirects.
+# Do not add a "/*" -> "/index.html" rule here: it would turn every unknown URL into a soft 404.
 
 [[headers]]
   for = "/assets/*"
@@ -22,3 +18,5 @@
   for = "/data/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+    # Googlebot may fetch the data (the pages need it to render), but the raw JSON stays out of results.
+    X-Robots-Tag = "noindex"

@@ -82,6 +82,7 @@ export default function Projects() {
 
   return (
     <div className="projects-page">
+      <h1 className="visually-hidden">Past final-year engineering projects</h1>
       <div className="search-sticky">
         <SearchBox
           initial={query.text}
