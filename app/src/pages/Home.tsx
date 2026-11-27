@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { SearchBox } from "../components/SearchBox";
+import { HeroCircuit } from "../components/HeroCircuit";
 import { useCore, useDocumentTitle } from "../lib/core";
 import { Link, navigate } from "../lib/router";
 import { track } from "../lib/analytics";
@@ -30,6 +31,7 @@ export default function Home() {
   return (
     <div className="home">
       <section className="hero">
+        <HeroCircuit />
         {/* <p className="hero-pill">
           <span className="hero-pill-dot" aria-hidden="true" />
           {count} projects · {from}–{to}
