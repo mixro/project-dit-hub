@@ -37,7 +37,12 @@ export default function ProjectDetail({ id }: { id: string }) {
 function ProjectView({ project: p }: { project: Project }) {
   const core = useCore();
   const compare = useCompare();
-  useDocumentTitle(p.title);
+  // Built only from recorded fields; nothing invented about the project.
+  const programme = core.programmeById.get(p.programmeId)?.label;
+  useDocumentTitle(p.title, {
+    description: [`Past final-year project: ${p.title}.`, programme && `Programme: ${programme}.`, p.academicYear && `Year: ${p.academicYear}.`, "See its title history and related projects on INSTiWISE."]
+      .filter(Boolean).join(" "),
+  });
   useEffect(() => { track("project_opened", { id: p.id }); }, [p.id]);
 
   const d = p.detail;

@@ -33,6 +33,8 @@ Status key: ✅ done · 🔜 next · 💭 later · ❓ waiting on a decision
 
 ## Phase 2: Student testing 🔜
 - 🔜 Deploy to Netlify (base directory `app`) at https://instiwise.micepdev.com/. The address lives in `app/.env.production`, `public/robots.txt`, `public/sitemap.xml`, `public/mySitemap.txt` and `index.html` (canonical link, JSON-LD); update all of them if the domain changes
+- ✅ Search-engine indexing fixes: per-route canonical/description, static HTML per fixed route, real 404s, `noindex` on `/data/*` (decision 2026-11-28). The site address also lives in `app/src/lib/seo.ts` (fallback) and the `SITE_URL` used by `vite.config.ts`
+- 💭 Static pages for each problem (`/problems/:id`) and add them to the sitemap
 - 🔜 Student testing kit: task scripts, observation sheet, session-log analysis script
 - 🔜 Run 5–8 sessions; record findings in `docs/DECISIONS.md`
 - 💭 Commit the Playwright browser checks as `app/tests/e2e`

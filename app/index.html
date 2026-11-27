@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#10161D" />
     
-    <!-- Canonical Link Tag -->
+    <!-- Canonical Link Tag: rewritten per route at build time (vite.config.ts) and on navigation (src/lib/seo.ts). -->
     <link rel="canonical" href="https://instiwise.micepdev.com/" />
 
     <!-- Apply the saved theme before first paint, so light-mode users never see a dark flash. Key matches src/lib/theme.ts. -->
@@ -27,6 +27,7 @@
 
     <!-- Social previews (Open Graph: WhatsApp, Facebook, LinkedIn, Telegram). %SITE_URL% is filled in at build time (vite.config.ts). -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://instiwise.micepdev.com/" />
     <meta property="og:site_name" content="INSTiWISE" />
     <meta property="og:title" content="INSTiWISE – Explore past final-year engineering projects" />
     <meta property="og:description" content="Search past projects, explore the problems behind them, and see how close your idea is to existing work before you propose it." />

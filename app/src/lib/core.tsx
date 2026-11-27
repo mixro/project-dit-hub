@@ -5,6 +5,7 @@ import { projectService } from "../data/projectService";
 import { useResource } from "../data/useResource";
 import type { CoreData, Problem, Programme, ProjectSummary, SourceInfo } from "../data/types";
 import { ErrorPanel, PageSkeleton } from "../components/States";
+import { applyPageMeta, type PageMeta } from "./seo";
 
 export interface Core extends CoreData {
   byId: Map<string, ProjectSummary>;
@@ -45,8 +46,10 @@ export function useCore(): Core {
   return c;
 }
 
-export function useDocumentTitle(title: string) {
+/** Sets the page title plus description, canonical URL and robots tag for the current route (see seo.ts). */
+export function useDocumentTitle(title: string, meta: PageMeta = {}) {
+  const { description, noindex } = meta;
   useEffect(() => {
-    document.title = title ? `${title} – INSTiWISE` : "INSTiWISE – Explore past final-year engineering projects";
-  }, [title]);
+    applyPageMeta(title, window.location.pathname, { description, noindex });
+  }, [title, description, noindex]);
 }
